@@ -2,3 +2,4 @@ uchiwa_port: 3000
 datacenter_name: "raleigh-lab1"
 haproxy_vip: 192.0.2.251
 sensu_api_port: 4567
+sensu_download_url: "https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/"

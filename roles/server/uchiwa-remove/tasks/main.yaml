@@ -16,6 +16,18 @@
   file:
     path: /etc/sensu
     state: absent
+- name: Check if firewalld is installed
+  yum:
+      list: firewalld
+  register: firewalld_op
+- name: Close tcp port 3000 for dashboard access
+  firewalld:
+    port: "{{ dashboard_port }}/tcp"
+    permanent: true
+    state: disabled
+    immediate: true
+  when: firewalld_op.results|selectattr("yumstate", "match", "installed")|list|length != 0
+
 
     
 
