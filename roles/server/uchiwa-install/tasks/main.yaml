@@ -1,0 +1,40 @@
+- name: Add sensu repository
+  yum_repository:
+    name: sensu
+    description: EPEL YUM repo
+    baseurl: https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/
+    gpgcheck: no
+    enabled: true
+- name: Yum update and install sensu
+  yum:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  with_items:
+    - sensu
+    - uchiwa
+- name: Configure /etc/sensu/conf.d/uchiwa.json
+  template:
+    src: uchiwa_json.j2
+    dest: /etc/sensu/conf.d/uchiwa.json
+    owner: sensu
+    group: sensu
+    mode: 0644
+    backup: true
+- name: Enable and start uchiwa
+  service:
+    name: uchiwa
+    state: started
+    enabled: true
+- name: Check if firewalld is installed
+  yum:
+    list: firewalld
+  register: firewalld_op
+- name: Open tcp port 3000 for dashboard access
+  firewalld:
+    port: 3000/tcp
+    permanent: true
+    state: enabled
+  when: firewalld_op.results|selectattr("yumstate", "match", "installed")|list|length != 0
+    
+
