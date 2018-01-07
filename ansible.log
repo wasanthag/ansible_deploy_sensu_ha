@@ -1956,3 +1956,1290 @@
     "changed": false, 
     "ping": "pong"
 }
+2018-01-07 09:30:14,259 p=6393 u=root |   [WARNING]: While constructing a mapping from /root/ansible_deploy_sensu_ha/group_vars/all, line 1, column 1, found a duplicate dict key (sentinel_port). Using last defined
+value only.
+
+2018-01-07 09:30:16,146 p=6393 u=root |  192.0.2.248 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.0.2.248"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "2620:52:0:c22:5054:ff:feff:3b03", 
+            "fe80::5054:ff:feff:3b03"
+        ], 
+        "ansible_apparmor": {
+            "status": "disabled"
+        }, 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "04/01/2014", 
+        "ansible_bios_version": "1.9.1-5.el7", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-3.10.0-693.11.6.el7.x86_64", 
+            "LANG": "en_US.UTF-8", 
+            "console": "ttyS0,115200n8", 
+            "crashkernel": "auto", 
+            "net.ifnames": "0", 
+            "no_timer_check": true, 
+            "ro": true, 
+            "root": "UUID=716e713d-4e91-4186-81fd-c6cfa1b0974d"
+        }, 
+        "ansible_date_time": {
+            "date": "2018-01-07", 
+            "day": "07", 
+            "epoch": "1515335415", 
+            "hour": "09", 
+            "iso8601": "2018-01-07T14:30:15Z", 
+            "iso8601_basic": "20180107T093015756752", 
+            "iso8601_basic_short": "20180107T093015", 
+            "iso8601_micro": "2018-01-07T14:30:15.757017Z", 
+            "minute": "30", 
+            "month": "01", 
+            "second": "15", 
+            "time": "09:30:15", 
+            "tz": "EST", 
+            "tz_offset": "-0500", 
+            "weekday": "Sunday", 
+            "weekday_number": "0", 
+            "weeknumber": "01", 
+            "year": "2018"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.0.2.248", 
+            "alias": "eth0", 
+            "broadcast": "192.0.2.255", 
+            "gateway": "192.0.2.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.0.2.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {
+            "address": "2620:52:0:c22:5054:ff:feff:3b03", 
+            "gateway": "fe80:52:0:c22::fe", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "mtu": 1500, 
+            "prefix": "64", 
+            "scope": "global", 
+            "type": "ether"
+        }, 
+        "ansible_device_links": {
+            "ids": {}, 
+            "labels": {}, 
+            "masters": {}, 
+            "uuids": {
+                "vda1": [
+                    "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                ]
+            }
+        }, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "links": {
+                    "ids": [], 
+                    "labels": [], 
+                    "masters": [], 
+                    "uuids": []
+                }, 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "holders": [], 
+                        "links": {
+                            "ids": [], 
+                            "labels": [], 
+                            "masters": [], 
+                            "uuids": [
+                                "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                            ]
+                        }, 
+                        "sectors": "20967168", 
+                        "sectorsize": 512, 
+                        "size": "10.00 GB", 
+                        "start": "2048", 
+                        "uuid": "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "sas_address": null, 
+                "sas_device_handle": null, 
+                "scheduler_mode": "", 
+                "sectors": "20971520", 
+                "sectorsize": "512", 
+                "size": "10.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4", 
+                "virtual": 1
+            }
+        }, 
+        "ansible_distribution": "RedHat", 
+        "ansible_distribution_file_parsed": true, 
+        "ansible_distribution_file_path": "/etc/redhat-release", 
+        "ansible_distribution_file_variety": "RedHat", 
+        "ansible_distribution_major_version": "7", 
+        "ansible_distribution_release": "Maipo", 
+        "ansible_distribution_version": "7.4", 
+        "ansible_dns": {
+            "nameservers": [
+                "10.12.32.1", 
+                "8.8.8.8"
+            ]
+        }, 
+        "ansible_domain": "", 
+        "ansible_effective_group_id": 0, 
+        "ansible_effective_user_id": 0, 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "en_US.UTF-8", 
+            "LOGNAME": "root", 
+            "MAIL": "/var/mail/root", 
+            "PATH": "/sbin:/bin:/usr/sbin:/usr/bin", 
+            "PWD": "/root", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-absoamtcbqzytmgxsjofxpyyeqgutelr; /usr/bin/python", 
+            "SUDO_GID": "0", 
+            "SUDO_UID": "0", 
+            "SUDO_USER": "root", 
+            "TERM": "unknown", 
+            "USER": "root", 
+            "USERNAME": "root", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "on [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_csum_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_partial": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_mangleid_segmentation": "off", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "hw_timestamp_filters": [], 
+            "ipv4": {
+                "address": "192.0.2.248", 
+                "broadcast": "192.0.2.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.0.2.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "2620:52:0:c22:5054:ff:feff:3b03", 
+                    "prefix": "64", 
+                    "scope": "global"
+                }
+            ], 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "pciid": "virtio0", 
+            "promisc": false, 
+            "timestamping": [
+                "rx_software", 
+                "software"
+            ], 
+            "type": "ether"
+        }, 
+        "ansible_fips": false, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "base", 
+        "ansible_hostname": "base", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.10.0-693.11.6.el7.x86_64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "on [fixed]", 
+                "netns_local": "on [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on [fixed]", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "on [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_csum_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_partial": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off [fixed]", 
+                "tx_scatter_gather": "on [fixed]", 
+                "tx_scatter_gather_fraglist": "on [fixed]", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_mangleid_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "on [fixed]"
+            }, 
+            "hw_timestamp_filters": [], 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "host", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "timestamping": [
+                "rx_software", 
+                "software"
+            ], 
+            "type": "loopback"
+        }, 
+        "ansible_local": {}, 
+        "ansible_lsb": {}, 
+        "ansible_machine": "x86_64", 
+        "ansible_machine_id": "cef847269a9849f39fcf848e0457e991", 
+        "ansible_memfree_mb": 1328, 
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 1654, 
+                "used": 185
+            }, 
+            "real": {
+                "free": 1328, 
+                "total": 1839, 
+                "used": 511
+            }, 
+            "swap": {
+                "cached": 0, 
+                "free": 0, 
+                "total": 0, 
+                "used": 0
+            }
+        }, 
+        "ansible_memtotal_mb": 1839, 
+        "ansible_mounts": [
+            {
+                "block_available": 1655761, 
+                "block_size": 4096, 
+                "block_total": 2045440, 
+                "block_used": 389679, 
+                "device": "/dev/vda1", 
+                "fstype": "xfs", 
+                "inode_available": 4062913, 
+                "inode_total": 4096000, 
+                "inode_used": 33087, 
+                "mount": "/", 
+                "options": "rw,seclabel,relatime,attr2,inode64,noquota", 
+                "size_available": 6781997056, 
+                "size_total": 8378122240, 
+                "uuid": "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+            }
+        ], 
+        "ansible_nodename": "base", 
+        "ansible_os_family": "RedHat", 
+        "ansible_pkg_mgr": "yum", 
+        "ansible_processor": [
+            "0", 
+            "GenuineIntel", 
+            "Intel Xeon E3-12xx v2 (Ivy Bridge)"
+        ], 
+        "ansible_processor_cores": 1, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 1, 
+        "ansible_product_name": "KVM", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "CEF84726-9A98-49F3-9FCF-848E0457E991", 
+        "ansible_product_version": "RHEL 7.3.0 PC (i440FX + PIIX, 1996)", 
+        "ansible_python": {
+            "executable": "/usr/bin/python", 
+            "has_sslcontext": true, 
+            "type": "CPython", 
+            "version": {
+                "major": 2, 
+                "micro": 5, 
+                "minor": 7, 
+                "releaselevel": "final", 
+                "serial": 0
+            }, 
+            "version_info": [
+                2, 
+                7, 
+                5, 
+                "final", 
+                0
+            ]
+        }, 
+        "ansible_python_version": "2.7.5", 
+        "ansible_real_group_id": 0, 
+        "ansible_real_user_id": 0, 
+        "ansible_selinux": {
+            "config_mode": "enforcing", 
+            "mode": "enforcing", 
+            "policyvers": 28, 
+            "status": "enabled", 
+            "type": "targeted"
+        }, 
+        "ansible_selinux_python_present": true, 
+        "ansible_service_mgr": "systemd", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAJxDZZeLAgZAzjv98YU0Oib6jt72BNqHKupmC91HqYu0D1L3PGpU2O9iCnrs8dtDwRfUx//+v+O43CCTmWuNiY=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAINKbRXlCAIRjPb7CpVbsELCK88/2sZmXOrJGDWa39EOI", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDIhKbFCWDK1a3g9rntXFzRkqn86CD2/+BagPA4n+UKDI61dJI/Y8L2KrjUMzke/0eX4OVMex2kWhFNOllkGuBjgMwyUFlZ1FW1cX3xhGnCoNvVp88A/Ilzu0qEAWDTHz7ca8nSv9b3l+hYQpn38pIstacjdXR+17SlsEnuF3GENXwW6SqOju7tl4MK0yK+RtzwPIOIfhxPGXi3EWHl1bEd7ehUgp3G4i44mv6HXrwO1oNPcS/9o2EZT3FziVRk/Xga/Jka9EqTbbPVO+dF0KYIdFn0ozR3LU/b167rd2MBzUXlCqw3px4DelzdGQ+rgz4BFMO886C/ZqQGbCSGQ9mv", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_capabilities": [
+            "cap_chown", 
+            "cap_dac_override", 
+            "cap_dac_read_search", 
+            "cap_fowner", 
+            "cap_fsetid", 
+            "cap_kill", 
+            "cap_setgid", 
+            "cap_setuid", 
+            "cap_setpcap", 
+            "cap_linux_immutable", 
+            "cap_net_bind_service", 
+            "cap_net_broadcast", 
+            "cap_net_admin", 
+            "cap_net_raw", 
+            "cap_ipc_lock", 
+            "cap_ipc_owner", 
+            "cap_sys_module", 
+            "cap_sys_rawio", 
+            "cap_sys_chroot", 
+            "cap_sys_ptrace", 
+            "cap_sys_pacct", 
+            "cap_sys_admin", 
+            "cap_sys_boot", 
+            "cap_sys_nice", 
+            "cap_sys_resource", 
+            "cap_sys_time", 
+            "cap_sys_tty_config", 
+            "cap_mknod", 
+            "cap_lease", 
+            "cap_audit_write", 
+            "cap_audit_control", 
+            "cap_setfcap", 
+            "cap_mac_override", 
+            "cap_mac_admin", 
+            "cap_syslog", 
+            "35", 
+            "36+ep"
+        ], 
+        "ansible_system_capabilities_enforced": "True", 
+        "ansible_system_vendor": "Red Hat", 
+        "ansible_uptime_seconds": 73499, 
+        "ansible_user_dir": "/root", 
+        "ansible_user_gecos": "root", 
+        "ansible_user_gid": 0, 
+        "ansible_user_id": "root", 
+        "ansible_user_shell": "/bin/bash", 
+        "ansible_user_uid": 0, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm", 
+        "gather_subset": [
+            "all"
+        ], 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+2018-01-07 09:31:13,393 p=6456 u=root |   [WARNING]: While constructing a mapping from /root/ansible_deploy_sensu_ha/group_vars/all, line 1, column 1, found a duplicate dict key (sentinel_port). Using last defined
+value only.
+
+2018-01-07 09:31:14,333 p=6456 u=root |  192.0.2.248 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.0.2.248"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "2620:52:0:c22:5054:ff:feff:3b03", 
+            "fe80::5054:ff:feff:3b03"
+        ], 
+        "ansible_apparmor": {
+            "status": "disabled"
+        }, 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "04/01/2014", 
+        "ansible_bios_version": "1.9.1-5.el7", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-3.10.0-693.11.6.el7.x86_64", 
+            "LANG": "en_US.UTF-8", 
+            "console": "ttyS0,115200n8", 
+            "crashkernel": "auto", 
+            "net.ifnames": "0", 
+            "no_timer_check": true, 
+            "ro": true, 
+            "root": "UUID=716e713d-4e91-4186-81fd-c6cfa1b0974d"
+        }, 
+        "ansible_date_time": {
+            "date": "2018-01-07", 
+            "day": "07", 
+            "epoch": "1515335473", 
+            "hour": "09", 
+            "iso8601": "2018-01-07T14:31:13Z", 
+            "iso8601_basic": "20180107T093113865557", 
+            "iso8601_basic_short": "20180107T093113", 
+            "iso8601_micro": "2018-01-07T14:31:13.865896Z", 
+            "minute": "31", 
+            "month": "01", 
+            "second": "13", 
+            "time": "09:31:13", 
+            "tz": "EST", 
+            "tz_offset": "-0500", 
+            "weekday": "Sunday", 
+            "weekday_number": "0", 
+            "weeknumber": "01", 
+            "year": "2018"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.0.2.248", 
+            "alias": "eth0", 
+            "broadcast": "192.0.2.255", 
+            "gateway": "192.0.2.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.0.2.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {
+            "address": "2620:52:0:c22:5054:ff:feff:3b03", 
+            "gateway": "fe80:52:0:c22::fe", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "mtu": 1500, 
+            "prefix": "64", 
+            "scope": "global", 
+            "type": "ether"
+        }, 
+        "ansible_device_links": {
+            "ids": {}, 
+            "labels": {}, 
+            "masters": {}, 
+            "uuids": {
+                "vda1": [
+                    "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                ]
+            }
+        }, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "links": {
+                    "ids": [], 
+                    "labels": [], 
+                    "masters": [], 
+                    "uuids": []
+                }, 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "holders": [], 
+                        "links": {
+                            "ids": [], 
+                            "labels": [], 
+                            "masters": [], 
+                            "uuids": [
+                                "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                            ]
+                        }, 
+                        "sectors": "20967168", 
+                        "sectorsize": 512, 
+                        "size": "10.00 GB", 
+                        "start": "2048", 
+                        "uuid": "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "sas_address": null, 
+                "sas_device_handle": null, 
+                "scheduler_mode": "", 
+                "sectors": "20971520", 
+                "sectorsize": "512", 
+                "size": "10.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4", 
+                "virtual": 1
+            }
+        }, 
+        "ansible_distribution": "RedHat", 
+        "ansible_distribution_file_parsed": true, 
+        "ansible_distribution_file_path": "/etc/redhat-release", 
+        "ansible_distribution_file_variety": "RedHat", 
+        "ansible_distribution_major_version": "7", 
+        "ansible_distribution_release": "Maipo", 
+        "ansible_distribution_version": "7.4", 
+        "ansible_dns": {
+            "nameservers": [
+                "10.12.32.1", 
+                "8.8.8.8"
+            ]
+        }, 
+        "ansible_domain": "", 
+        "ansible_effective_group_id": 0, 
+        "ansible_effective_user_id": 0, 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "en_US.UTF-8", 
+            "LOGNAME": "root", 
+            "MAIL": "/var/mail/root", 
+            "PATH": "/sbin:/bin:/usr/sbin:/usr/bin", 
+            "PWD": "/root", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-cvlcobtdpfabsgdeyjcmzssinvdcibmr; /usr/bin/python", 
+            "SUDO_GID": "0", 
+            "SUDO_UID": "0", 
+            "SUDO_USER": "root", 
+            "TERM": "unknown", 
+            "USER": "root", 
+            "USERNAME": "root", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "on [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_csum_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_partial": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_mangleid_segmentation": "off", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "hw_timestamp_filters": [], 
+            "ipv4": {
+                "address": "192.0.2.248", 
+                "broadcast": "192.0.2.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.0.2.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "2620:52:0:c22:5054:ff:feff:3b03", 
+                    "prefix": "64", 
+                    "scope": "global"
+                }
+            ], 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "pciid": "virtio0", 
+            "promisc": false, 
+            "timestamping": [
+                "rx_software", 
+                "software"
+            ], 
+            "type": "ether"
+        }, 
+        "ansible_fips": false, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "base", 
+        "ansible_hostname": "base", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.10.0-693.11.6.el7.x86_64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "on [fixed]", 
+                "netns_local": "on [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on [fixed]", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "on [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_csum_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_partial": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off [fixed]", 
+                "tx_scatter_gather": "on [fixed]", 
+                "tx_scatter_gather_fraglist": "on [fixed]", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_mangleid_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "on [fixed]"
+            }, 
+            "hw_timestamp_filters": [], 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "host", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "timestamping": [
+                "rx_software", 
+                "software"
+            ], 
+            "type": "loopback"
+        }, 
+        "ansible_local": {}, 
+        "ansible_lsb": {}, 
+        "ansible_machine": "x86_64", 
+        "ansible_machine_id": "cef847269a9849f39fcf848e0457e991", 
+        "ansible_memfree_mb": 1328, 
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 1654, 
+                "used": 185
+            }, 
+            "real": {
+                "free": 1328, 
+                "total": 1839, 
+                "used": 511
+            }, 
+            "swap": {
+                "cached": 0, 
+                "free": 0, 
+                "total": 0, 
+                "used": 0
+            }
+        }, 
+        "ansible_memtotal_mb": 1839, 
+        "ansible_mounts": [
+            {
+                "block_available": 1655765, 
+                "block_size": 4096, 
+                "block_total": 2045440, 
+                "block_used": 389675, 
+                "device": "/dev/vda1", 
+                "fstype": "xfs", 
+                "inode_available": 4062913, 
+                "inode_total": 4096000, 
+                "inode_used": 33087, 
+                "mount": "/", 
+                "options": "rw,seclabel,relatime,attr2,inode64,noquota", 
+                "size_available": 6782013440, 
+                "size_total": 8378122240, 
+                "uuid": "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+            }
+        ], 
+        "ansible_nodename": "base", 
+        "ansible_os_family": "RedHat", 
+        "ansible_pkg_mgr": "yum", 
+        "ansible_processor": [
+            "0", 
+            "GenuineIntel", 
+            "Intel Xeon E3-12xx v2 (Ivy Bridge)"
+        ], 
+        "ansible_processor_cores": 1, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 1, 
+        "ansible_product_name": "KVM", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "CEF84726-9A98-49F3-9FCF-848E0457E991", 
+        "ansible_product_version": "RHEL 7.3.0 PC (i440FX + PIIX, 1996)", 
+        "ansible_python": {
+            "executable": "/usr/bin/python", 
+            "has_sslcontext": true, 
+            "type": "CPython", 
+            "version": {
+                "major": 2, 
+                "micro": 5, 
+                "minor": 7, 
+                "releaselevel": "final", 
+                "serial": 0
+            }, 
+            "version_info": [
+                2, 
+                7, 
+                5, 
+                "final", 
+                0
+            ]
+        }, 
+        "ansible_python_version": "2.7.5", 
+        "ansible_real_group_id": 0, 
+        "ansible_real_user_id": 0, 
+        "ansible_selinux": {
+            "config_mode": "enforcing", 
+            "mode": "enforcing", 
+            "policyvers": 28, 
+            "status": "enabled", 
+            "type": "targeted"
+        }, 
+        "ansible_selinux_python_present": true, 
+        "ansible_service_mgr": "systemd", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAJxDZZeLAgZAzjv98YU0Oib6jt72BNqHKupmC91HqYu0D1L3PGpU2O9iCnrs8dtDwRfUx//+v+O43CCTmWuNiY=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAINKbRXlCAIRjPb7CpVbsELCK88/2sZmXOrJGDWa39EOI", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDIhKbFCWDK1a3g9rntXFzRkqn86CD2/+BagPA4n+UKDI61dJI/Y8L2KrjUMzke/0eX4OVMex2kWhFNOllkGuBjgMwyUFlZ1FW1cX3xhGnCoNvVp88A/Ilzu0qEAWDTHz7ca8nSv9b3l+hYQpn38pIstacjdXR+17SlsEnuF3GENXwW6SqOju7tl4MK0yK+RtzwPIOIfhxPGXi3EWHl1bEd7ehUgp3G4i44mv6HXrwO1oNPcS/9o2EZT3FziVRk/Xga/Jka9EqTbbPVO+dF0KYIdFn0ozR3LU/b167rd2MBzUXlCqw3px4DelzdGQ+rgz4BFMO886C/ZqQGbCSGQ9mv", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_capabilities": [
+            "cap_chown", 
+            "cap_dac_override", 
+            "cap_dac_read_search", 
+            "cap_fowner", 
+            "cap_fsetid", 
+            "cap_kill", 
+            "cap_setgid", 
+            "cap_setuid", 
+            "cap_setpcap", 
+            "cap_linux_immutable", 
+            "cap_net_bind_service", 
+            "cap_net_broadcast", 
+            "cap_net_admin", 
+            "cap_net_raw", 
+            "cap_ipc_lock", 
+            "cap_ipc_owner", 
+            "cap_sys_module", 
+            "cap_sys_rawio", 
+            "cap_sys_chroot", 
+            "cap_sys_ptrace", 
+            "cap_sys_pacct", 
+            "cap_sys_admin", 
+            "cap_sys_boot", 
+            "cap_sys_nice", 
+            "cap_sys_resource", 
+            "cap_sys_time", 
+            "cap_sys_tty_config", 
+            "cap_mknod", 
+            "cap_lease", 
+            "cap_audit_write", 
+            "cap_audit_control", 
+            "cap_setfcap", 
+            "cap_mac_override", 
+            "cap_mac_admin", 
+            "cap_syslog", 
+            "35", 
+            "36+ep"
+        ], 
+        "ansible_system_capabilities_enforced": "True", 
+        "ansible_system_vendor": "Red Hat", 
+        "ansible_uptime_seconds": 73557, 
+        "ansible_user_dir": "/root", 
+        "ansible_user_gecos": "root", 
+        "ansible_user_gid": 0, 
+        "ansible_user_id": "root", 
+        "ansible_user_shell": "/bin/bash", 
+        "ansible_user_uid": 0, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm", 
+        "gather_subset": [
+            "all"
+        ], 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+2018-01-07 09:41:04,620 p=6973 u=root |  playbook: playbooks/install_sensu_api.yaml
+2018-01-07 09:41:17,259 p=6991 u=root |  ERROR! You must specify a playbook file to run
+2018-01-07 09:41:45,169 p=7018 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 09:41:45,265 p=7018 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 09:41:47,055 p=7018 u=root |  ok: [192.0.2.248]
+2018-01-07 09:41:47,062 p=7018 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 09:41:47,376 p=7018 u=root |  changed: [192.0.2.248]
+2018-01-07 09:41:47,383 p=7018 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 09:41:53,113 p=7018 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "No package matching 'sensu' found available, installed or updated", "rc": 126, "results": ["No package matching 'sensu' found available, installed or updated"]}
+2018-01-07 09:41:53,116 p=7018 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 09:41:53,117 p=7018 u=root |  192.0.2.248                : ok=2    changed=1    unreachable=0    failed=1   
+2018-01-07 09:42:28,059 p=7076 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 09:42:28,093 p=7076 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 09:42:28,751 p=7076 u=root |  ok: [192.0.2.248]
+2018-01-07 09:42:28,761 p=7076 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 09:42:29,284 p=7076 u=root |  changed: [192.0.2.248]
+2018-01-07 09:42:29,304 p=7076 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 09:42:44,704 p=7076 u=root |  changed: [192.0.2.248]
+2018-01-07 09:42:44,722 p=7076 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 09:42:44,835 p=7076 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: list object has no element 1"}
+2018-01-07 09:42:44,838 p=7076 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 09:42:44,839 p=7076 u=root |  192.0.2.248                : ok=3    changed=2    unreachable=0    failed=1   
+2018-01-07 09:45:11,254 p=7232 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 09:45:11,288 p=7232 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 09:45:12,559 p=7232 u=root |  ok: [192.0.2.248]
+2018-01-07 09:45:12,566 p=7232 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 09:45:12,884 p=7232 u=root |  ok: [192.0.2.248]
+2018-01-07 09:45:12,891 p=7232 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 09:45:18,258 p=7232 u=root |  ok: [192.0.2.248]
+2018-01-07 09:45:18,266 p=7232 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 09:45:19,815 p=7232 u=root |  changed: [192.0.2.248]
+2018-01-07 09:45:19,832 p=7232 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 09:45:20,998 p=7232 u=root |  changed: [192.0.2.248]
+2018-01-07 09:45:21,018 p=7232 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 09:45:22,196 p=7232 u=root |  changed: [192.0.2.248]
+2018-01-07 09:45:22,215 p=7232 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 09:45:23,392 p=7232 u=root |  changed: [192.0.2.248]
+2018-01-07 09:45:23,412 p=7232 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 09:45:24,609 p=7232 u=root |  changed: [192.0.2.248] => (item=sensu-api)
+2018-01-07 09:45:25,159 p=7232 u=root |  changed: [192.0.2.248] => (item=sensu-client)
+2018-01-07 09:45:25,167 p=7232 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 09:45:26,010 p=7232 u=root |  ok: [192.0.2.248]
+2018-01-07 09:45:26,019 p=7232 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 09:45:27,233 p=7232 u=root |  changed: [192.0.2.248]
+2018-01-07 09:45:27,257 p=7232 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 09:45:28,416 p=7232 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "dest": "/tmp", "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed: <urlopen error [Errno 111] Connection refused>", "owner": "root", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "uid": 0, "url": "http://192.0.2.248:4567//info"}
+2018-01-07 09:45:28,419 p=7232 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 09:45:28,420 p=7232 u=root |  192.0.2.248                : ok=10   changed=6    unreachable=0    failed=1   
+2018-01-07 09:48:39,734 p=7480 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 09:48:39,767 p=7480 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 09:48:41,166 p=7480 u=root |  ok: [192.0.2.248]
+2018-01-07 09:48:41,186 p=7480 u=root |  TASK [server/sensu-api-remove : Disable sensu repository] *******************************************************************************************************************
+2018-01-07 09:48:42,027 p=7480 u=root |  changed: [192.0.2.248]
+2018-01-07 09:48:42,045 p=7480 u=root |  TASK [server/sensu-api-remove : Remove sensu] *******************************************************************************************************************************
+2018-01-07 09:48:43,503 p=7480 u=root |  changed: [192.0.2.248]
+2018-01-07 09:48:43,509 p=7480 u=root |  TASK [server/sensu-api-remove : Remove sensu directory /etc/sensu] **********************************************************************************************************
+2018-01-07 09:48:43,843 p=7480 u=root |  changed: [192.0.2.248]
+2018-01-07 09:48:43,850 p=7480 u=root |  TASK [server/sensu-api-remove : Check if firewalld is installed] ************************************************************************************************************
+2018-01-07 09:48:44,827 p=7480 u=root |  ok: [192.0.2.248]
+2018-01-07 09:48:44,835 p=7480 u=root |  TASK [server/sensu-api-remove : Close tcp port 4567 for dashboard access] ***************************************************************************************************
+2018-01-07 09:48:46,176 p=7480 u=root |  changed: [192.0.2.248]
+2018-01-07 09:48:46,178 p=7480 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 09:48:46,178 p=7480 u=root |  192.0.2.248                : ok=6    changed=4    unreachable=0    failed=0   
+2018-01-07 09:48:52,739 p=7522 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 09:48:52,774 p=7522 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 09:48:53,448 p=7522 u=root |  ok: [192.0.2.248]
+2018-01-07 09:48:53,462 p=7522 u=root |  TASK [server/sensu-api-remove : Disable sensu repository] *******************************************************************************************************************
+2018-01-07 09:48:54,236 p=7522 u=root |  changed: [192.0.2.248]
+2018-01-07 09:48:54,255 p=7522 u=root |  TASK [server/sensu-api-remove : Remove sensu] *******************************************************************************************************************************
+2018-01-07 09:49:04,413 p=7522 u=root |  changed: [192.0.2.248]
+2018-01-07 09:49:04,431 p=7522 u=root |  TASK [server/sensu-api-remove : Remove sensu directory /etc/sensu] **********************************************************************************************************
+2018-01-07 09:49:05,245 p=7522 u=root |  changed: [192.0.2.248]
+2018-01-07 09:49:05,260 p=7522 u=root |  TASK [server/sensu-api-remove : Check if firewalld is installed] ************************************************************************************************************
+2018-01-07 09:49:06,282 p=7522 u=root |  ok: [192.0.2.248]
+2018-01-07 09:49:06,291 p=7522 u=root |  TASK [server/sensu-api-remove : Close tcp port 4567 for dashboard access] ***************************************************************************************************
+2018-01-07 09:49:07,920 p=7522 u=root |  changed: [192.0.2.248]
+2018-01-07 09:49:07,925 p=7522 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 09:49:07,926 p=7522 u=root |  192.0.2.248                : ok=6    changed=4    unreachable=0    failed=0   
+2018-01-07 09:58:36,677 p=8021 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 09:58:36,712 p=8021 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 09:58:38,471 p=8021 u=root |  ok: [192.0.2.248]
+2018-01-07 09:58:38,486 p=8021 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 09:58:39,171 p=8021 u=root |  changed: [192.0.2.248]
+2018-01-07 09:58:39,185 p=8021 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 09:58:54,881 p=8021 u=root |  changed: [192.0.2.248]
+2018-01-07 09:58:54,899 p=8021 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 09:58:56,730 p=8021 u=root |  changed: [192.0.2.248]
+2018-01-07 09:58:56,749 p=8021 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 09:58:57,909 p=8021 u=root |  changed: [192.0.2.248]
+2018-01-07 09:58:57,926 p=8021 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 09:58:59,112 p=8021 u=root |  changed: [192.0.2.248]
+2018-01-07 09:58:59,132 p=8021 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 09:59:00,320 p=8021 u=root |  changed: [192.0.2.248]
+2018-01-07 09:59:00,340 p=8021 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 09:59:01,508 p=8021 u=root |  changed: [192.0.2.248] => (item=sensu-api)
+2018-01-07 09:59:01,895 p=8021 u=root |  changed: [192.0.2.248] => (item=sensu-client)
+2018-01-07 09:59:01,903 p=8021 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 09:59:02,794 p=8021 u=root |  ok: [192.0.2.248]
+2018-01-07 09:59:02,803 p=8021 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 09:59:04,148 p=8021 u=root |  changed: [192.0.2.248]
+2018-01-07 09:59:04,156 p=8021 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 09:59:04,790 p=8021 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "dest": "/tmp", "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed: <urlopen error [Errno 111] Connection refused>", "owner": "root", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "uid": 0, "url": "http://192.0.2.248:4567//info"}
+2018-01-07 09:59:04,793 p=8021 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 09:59:04,794 p=8021 u=root |  192.0.2.248                : ok=10   changed=8    unreachable=0    failed=1   
+2018-01-07 10:01:35,049 p=8249 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 10:01:35,083 p=8249 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 10:01:36,909 p=8249 u=root |  ok: [192.0.2.248]
+2018-01-07 10:01:36,928 p=8249 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 10:01:37,588 p=8249 u=root |  ok: [192.0.2.248]
+2018-01-07 10:01:37,595 p=8249 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 10:01:43,220 p=8249 u=root |  ok: [192.0.2.248]
+2018-01-07 10:01:43,227 p=8249 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 10:01:44,867 p=8249 u=root |  changed: [192.0.2.248]
+2018-01-07 10:01:44,887 p=8249 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 10:01:46,374 p=8249 u=root |  ok: [192.0.2.248]
+2018-01-07 10:01:46,393 p=8249 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 10:01:47,479 p=8249 u=root |  ok: [192.0.2.248]
+2018-01-07 10:01:47,496 p=8249 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 10:01:48,502 p=8249 u=root |  ok: [192.0.2.248]
+2018-01-07 10:01:48,519 p=8249 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 10:01:49,328 p=8249 u=root |  ok: [192.0.2.248] => (item=sensu-api)
+2018-01-07 10:01:49,649 p=8249 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 10:01:49,669 p=8249 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 10:01:50,799 p=8249 u=root |  ok: [192.0.2.248]
+2018-01-07 10:01:50,809 p=8249 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 10:01:52,466 p=8249 u=root |  ok: [192.0.2.248]
+2018-01-07 10:01:52,525 p=8249 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 10:01:53,488 p=8249 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "dest": "/tmp", "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed: <urlopen error [Errno 111] Connection refused>", "owner": "root", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "uid": 0, "url": "http://192.0.2.248:4567//info"}
+2018-01-07 10:01:53,492 p=8249 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 10:01:53,492 p=8249 u=root |  192.0.2.248                : ok=10   changed=1    unreachable=0    failed=1   
+2018-01-07 11:03:12,515 p=11293 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:03:12,550 p=11293 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:03:13,840 p=11293 u=root |  ok: [192.0.2.248]
+2018-01-07 11:03:13,856 p=11293 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 11:03:14,547 p=11293 u=root |  ok: [192.0.2.248]
+2018-01-07 11:03:14,561 p=11293 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 11:03:20,085 p=11293 u=root |  ok: [192.0.2.248]
+2018-01-07 11:03:20,092 p=11293 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 11:03:21,523 p=11293 u=root |  ok: [192.0.2.248]
+2018-01-07 11:03:21,543 p=11293 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 11:03:23,088 p=11293 u=root |  changed: [192.0.2.248]
+2018-01-07 11:03:23,104 p=11293 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 11:03:24,108 p=11293 u=root |  ok: [192.0.2.248]
+2018-01-07 11:03:24,124 p=11293 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 11:03:25,297 p=11293 u=root |  changed: [192.0.2.248]
+2018-01-07 11:03:25,316 p=11293 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 11:03:26,026 p=11293 u=root |  ok: [192.0.2.248] => (item=sensu-api)
+2018-01-07 11:03:26,443 p=11293 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 11:03:26,470 p=11293 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 11:03:27,669 p=11293 u=root |  ok: [192.0.2.248]
+2018-01-07 11:03:27,678 p=11293 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 11:03:28,993 p=11293 u=root |  ok: [192.0.2.248]
+2018-01-07 11:03:29,002 p=11293 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 11:03:29,619 p=11293 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "dest": "/tmp", "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed: <urlopen error [Errno 111] Connection refused>", "owner": "root", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "uid": 0, "url": "http://192.0.2.248:4567//info"}
+2018-01-07 11:03:29,625 p=11293 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:03:29,625 p=11293 u=root |  192.0.2.248                : ok=10   changed=2    unreachable=0    failed=1   
+2018-01-07 11:17:07,603 p=12037 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:17:07,639 p=12037 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:17:09,100 p=12037 u=root |  ok: [192.0.2.248]
+2018-01-07 11:17:09,119 p=12037 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 11:17:09,977 p=12037 u=root |  ok: [192.0.2.248]
+2018-01-07 11:17:09,995 p=12037 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 11:17:15,880 p=12037 u=root |  ok: [192.0.2.248]
+2018-01-07 11:17:15,888 p=12037 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 11:17:17,246 p=12037 u=root |  changed: [192.0.2.248]
+2018-01-07 11:17:17,264 p=12037 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 11:17:17,380 p=12037 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'vhost_name' is undefined"}
+2018-01-07 11:17:17,383 p=12037 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:17:17,384 p=12037 u=root |  192.0.2.248                : ok=4    changed=1    unreachable=0    failed=1   
+2018-01-07 11:18:16,614 p=12127 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:18:16,709 p=12127 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:18:18,283 p=12127 u=root |  ok: [192.0.2.248]
+2018-01-07 11:18:18,300 p=12127 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 11:18:19,011 p=12127 u=root |  ok: [192.0.2.248]
+2018-01-07 11:18:19,025 p=12127 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 11:18:25,278 p=12127 u=root |  ok: [192.0.2.248]
+2018-01-07 11:18:25,285 p=12127 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 11:18:27,068 p=12127 u=root |  ok: [192.0.2.248]
+2018-01-07 11:18:27,086 p=12127 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 11:18:28,616 p=12127 u=root |  changed: [192.0.2.248]
+2018-01-07 11:18:28,633 p=12127 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 11:18:29,810 p=12127 u=root |  changed: [192.0.2.248]
+2018-01-07 11:18:29,827 p=12127 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 11:18:30,826 p=12127 u=root |  ok: [192.0.2.248]
+2018-01-07 11:18:30,844 p=12127 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 11:18:31,641 p=12127 u=root |  ok: [192.0.2.248] => (item=sensu-api)
+2018-01-07 11:18:31,926 p=12127 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 11:18:31,944 p=12127 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 11:18:33,085 p=12127 u=root |  ok: [192.0.2.248]
+2018-01-07 11:18:33,094 p=12127 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 11:18:34,097 p=12127 u=root |  ok: [192.0.2.248]
+2018-01-07 11:18:34,105 p=12127 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 11:18:34,929 p=12127 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "dest": "/tmp", "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed", "owner": "root", "response": "HTTP Error 500: Internal Server Error", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "status_code": 500, "uid": 0, "url": "http://192.0.2.248:4567//info"}
+2018-01-07 11:18:34,932 p=12127 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:18:34,932 p=12127 u=root |  192.0.2.248                : ok=10   changed=2    unreachable=0    failed=1   
+2018-01-07 11:20:07,031 p=12283 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:20:07,066 p=12283 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:20:08,337 p=12283 u=root |  ok: [192.0.2.248]
+2018-01-07 11:20:08,344 p=12283 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 11:20:08,665 p=12283 u=root |  ok: [192.0.2.248]
+2018-01-07 11:20:08,672 p=12283 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 11:20:14,019 p=12283 u=root |  ok: [192.0.2.248]
+2018-01-07 11:20:14,027 p=12283 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 11:20:15,402 p=12283 u=root |  ok: [192.0.2.248]
+2018-01-07 11:20:15,421 p=12283 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 11:20:17,064 p=12283 u=root |  changed: [192.0.2.248]
+2018-01-07 11:20:17,084 p=12283 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 11:20:18,143 p=12283 u=root |  ok: [192.0.2.248]
+2018-01-07 11:20:18,160 p=12283 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 11:20:19,172 p=12283 u=root |  ok: [192.0.2.248]
+2018-01-07 11:20:19,189 p=12283 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 11:20:20,156 p=12283 u=root |  ok: [192.0.2.248] => (item=sensu-api)
+2018-01-07 11:20:20,578 p=12283 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 11:20:20,605 p=12283 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 11:20:21,696 p=12283 u=root |  ok: [192.0.2.248]
+2018-01-07 11:20:21,705 p=12283 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 11:20:22,486 p=12283 u=root |  ok: [192.0.2.248]
+2018-01-07 11:20:22,496 p=12283 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 11:20:23,296 p=12283 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "dest": "/tmp", "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed", "owner": "root", "response": "HTTP Error 500: Internal Server Error", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "status_code": 500, "uid": 0, "url": "http://192.0.2.248:4567//info"}
+2018-01-07 11:20:23,299 p=12283 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:20:23,299 p=12283 u=root |  192.0.2.248                : ok=10   changed=1    unreachable=0    failed=1   
+2018-01-07 11:25:39,821 p=12612 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:25:39,856 p=12612 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:25:40,815 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:40,822 p=12612 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 11:25:41,142 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:41,149 p=12612 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 11:25:46,815 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:46,822 p=12612 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 11:25:47,936 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:47,955 p=12612 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 11:25:49,054 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:49,074 p=12612 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 11:25:50,127 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:50,145 p=12612 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 11:25:51,220 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:51,238 p=12612 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/transport.json] ************************************************************************************************
+2018-01-07 11:25:52,795 p=12612 u=root |  changed: [192.0.2.248]
+2018-01-07 11:25:52,815 p=12612 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 11:25:53,505 p=12612 u=root |  ok: [192.0.2.248] => (item=sensu-api)
+2018-01-07 11:25:53,673 p=12612 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 11:25:53,681 p=12612 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 11:25:54,666 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:54,690 p=12612 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 11:25:56,050 p=12612 u=root |  ok: [192.0.2.248]
+2018-01-07 11:25:56,058 p=12612 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 11:25:56,808 p=12612 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "dest": "/tmp", "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed", "owner": "root", "response": "HTTP Error 500: Internal Server Error", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "status_code": 500, "uid": 0, "url": "http://192.0.2.248:4567//info"}
+2018-01-07 11:25:56,809 p=12612 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:25:56,810 p=12612 u=root |  192.0.2.248                : ok=11   changed=1    unreachable=0    failed=1   
+2018-01-07 11:47:04,324 p=13714 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:47:04,357 p=13714 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:47:05,444 p=13714 u=root |  ok: [192.0.2.248]
+2018-01-07 11:47:05,463 p=13714 u=root |  TASK [server/sensu-api-remove : Disable sensu repository] *******************************************************************************************************************
+2018-01-07 11:47:06,287 p=13714 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:06,306 p=13714 u=root |  TASK [server/sensu-api-remove : Remove sensu] *******************************************************************************************************************************
+2018-01-07 11:47:18,518 p=13714 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:18,536 p=13714 u=root |  TASK [server/sensu-api-remove : Remove sensu directory /etc/sensu] **********************************************************************************************************
+2018-01-07 11:47:19,437 p=13714 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:19,456 p=13714 u=root |  TASK [server/sensu-api-remove : Check if firewalld is installed] ************************************************************************************************************
+2018-01-07 11:47:20,632 p=13714 u=root |  ok: [192.0.2.248]
+2018-01-07 11:47:20,639 p=13714 u=root |  TASK [server/sensu-api-remove : Close tcp port 4567 for dashboard access] ***************************************************************************************************
+2018-01-07 11:47:21,454 p=13714 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:21,458 p=13714 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:47:21,458 p=13714 u=root |  192.0.2.248                : ok=6    changed=4    unreachable=0    failed=0   
+2018-01-07 11:47:35,992 p=13771 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:47:36,026 p=13771 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:47:36,686 p=13771 u=root |  ok: [192.0.2.248]
+2018-01-07 11:47:36,693 p=13771 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 11:47:37,451 p=13771 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:37,470 p=13771 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 11:47:54,982 p=13771 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:55,000 p=13771 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 11:47:56,861 p=13771 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:56,880 p=13771 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 11:47:58,071 p=13771 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:58,090 p=13771 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 11:47:59,234 p=13771 u=root |  changed: [192.0.2.248]
+2018-01-07 11:47:59,253 p=13771 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 11:48:00,392 p=13771 u=root |  changed: [192.0.2.248]
+2018-01-07 11:48:00,411 p=13771 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/transport.json] ************************************************************************************************
+2018-01-07 11:48:01,594 p=13771 u=root |  changed: [192.0.2.248]
+2018-01-07 11:48:01,614 p=13771 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 11:48:02,806 p=13771 u=root |  changed: [192.0.2.248] => (item=sensu-api)
+2018-01-07 11:48:03,218 p=13771 u=root |  changed: [192.0.2.248] => (item=sensu-client)
+2018-01-07 11:48:03,226 p=13771 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 11:48:04,506 p=13771 u=root |  ok: [192.0.2.248]
+2018-01-07 11:48:04,515 p=13771 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 11:48:05,552 p=13771 u=root |  changed: [192.0.2.248]
+2018-01-07 11:48:05,561 p=13771 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 11:48:06,286 p=13771 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "dest": "/tmp", "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed", "owner": "root", "response": "HTTP Error 404: Not Found", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "status_code": 404, "uid": 0, "url": "http://192.0.2.248:4567//info"}
+2018-01-07 11:48:06,287 p=13771 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:48:06,288 p=13771 u=root |  192.0.2.248                : ok=11   changed=9    unreachable=0    failed=1   
+2018-01-07 11:54:31,359 p=14183 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:54:31,393 p=14183 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:54:32,552 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:32,572 p=14183 u=root |  TASK [server/sensu-api-install : Add sensu repository] **********************************************************************************************************************
+2018-01-07 11:54:33,430 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:33,450 p=14183 u=root |  TASK [server/sensu-api-install : Yum update and install sensu] **************************************************************************************************************
+2018-01-07 11:54:39,026 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:39,035 p=14183 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/redis.json] ****************************************************************************************************
+2018-01-07 11:54:40,503 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:40,522 p=14183 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/rabbitmq.json] *************************************************************************************************
+2018-01-07 11:54:41,580 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:41,599 p=14183 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/api.json] ******************************************************************************************************
+2018-01-07 11:54:42,691 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:42,711 p=14183 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/client.json] ***************************************************************************************************
+2018-01-07 11:54:43,797 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:43,814 p=14183 u=root |  TASK [server/sensu-api-install : Configure /etc/sensu/conf.d/transport.json] ************************************************************************************************
+2018-01-07 11:54:44,816 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:44,833 p=14183 u=root |  TASK [server/sensu-api-install : Enable and start sensu api and sensu client] ***********************************************************************************************
+2018-01-07 11:54:45,633 p=14183 u=root |  ok: [192.0.2.248] => (item=sensu-api)
+2018-01-07 11:54:46,040 p=14183 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 11:54:46,067 p=14183 u=root |  TASK [server/sensu-api-install : Check if firewalld is installed] ***********************************************************************************************************
+2018-01-07 11:54:47,467 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:47,476 p=14183 u=root |  TASK [server/sensu-api-install : Open tcp port {{ sensu-api-port }}for dashboard access] ************************************************************************************
+2018-01-07 11:54:48,509 p=14183 u=root |  ok: [192.0.2.248]
+2018-01-07 11:54:48,517 p=14183 u=root |  TASK [server/sensu-api-install : Verify if sensu API is listening on TCP port 4567] *****************************************************************************************
+2018-01-07 11:54:49,275 p=14183 u=root |  changed: [192.0.2.248]
+2018-01-07 11:54:49,282 p=14183 u=root |  TASK [server/sensu-api-install : fail] **************************************************************************************************************************************
+2018-01-07 11:54:49,300 p=14183 u=root |  skipping: [192.0.2.248]
+2018-01-07 11:54:49,302 p=14183 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:54:49,302 p=14183 u=root |  192.0.2.248                : ok=12   changed=1    unreachable=0    failed=0   
+2018-01-07 11:55:14,496 p=14285 u=root |  PLAY [sensu-api] ************************************************************************************************************************************************************
+2018-01-07 11:55:14,530 p=14285 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 11:55:15,182 p=14285 u=root |  ok: [192.0.2.248]
+2018-01-07 11:55:15,189 p=14285 u=root |  TASK [server/sensu-api-remove : Disable sensu repository] *******************************************************************************************************************
+2018-01-07 11:55:15,929 p=14285 u=root |  changed: [192.0.2.248]
+2018-01-07 11:55:15,948 p=14285 u=root |  TASK [server/sensu-api-remove : Remove sensu] *******************************************************************************************************************************
+2018-01-07 11:55:27,344 p=14285 u=root |  changed: [192.0.2.248]
+2018-01-07 11:55:27,363 p=14285 u=root |  TASK [server/sensu-api-remove : Remove sensu directory /etc/sensu] **********************************************************************************************************
+2018-01-07 11:55:28,218 p=14285 u=root |  changed: [192.0.2.248]
+2018-01-07 11:55:28,235 p=14285 u=root |  TASK [server/sensu-api-remove : Check if firewalld is installed] ************************************************************************************************************
+2018-01-07 11:55:29,545 p=14285 u=root |  ok: [192.0.2.248]
+2018-01-07 11:55:29,553 p=14285 u=root |  TASK [server/sensu-api-remove : Close tcp port 4567 for dashboard access] ***************************************************************************************************
+2018-01-07 11:55:30,915 p=14285 u=root |  changed: [192.0.2.248]
+2018-01-07 11:55:30,917 p=14285 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 11:55:30,917 p=14285 u=root |  192.0.2.248                : ok=6    changed=4    unreachable=0    failed=0   

@@ -20,7 +20,6 @@
     owner: uchiwa
     group: uchiwa
     mode: 0644
-    backup: true
 - name: Enable and start uchiwa
   service:
     name: uchiwa

@@ -6,4 +6,9 @@ sensu_download_url: "https://sensu.global.ssl.fastly.net/yum/$releasever/$basear
 rabbitmq_vip_port: 5670
 rabbitmq_port: 5672
 rabbitmq_vhost: sensu
+rabbitmq_user: sensu
+rabbitmq_password: "sprint"
 sentinel_port: 26379
+env_name: "Raleigh-Lab"
+redis_port: 6379
+redis_password: "sprint"
