@@ -30,12 +30,20 @@
   yum:
     list: firewalld
   register: firewalld_op
-- name: Open tcp port 3000 for dashboard access
+- name: Open tcp port {{ dashboard_port }} for dashboard access
   firewalld:
     port: "{{ dashboard_port }}/tcp"
     permanent: true
     state: enabled
     immediate: true
   when: firewalld_op.results|selectattr("yumstate", "match", "installed")|list|length != 0
-    
+- name: Verify if Uchiwa is listening on TCP port {{ dashboard_port }}
+  get_url:
+    url: "http://{{ ansible_default_ipv4.address }}:{{ dashboard_port }}/#/info"
+    dest: /tmp
+  register: dashboard_access
+- fail:
+    msg: "Uchiwa dashboard is not listening on port {{ dashboard_port }} on server {{ ansible_default_ipv4.address }}"
+  when: dashboard_access.status_code != 200
+  
 

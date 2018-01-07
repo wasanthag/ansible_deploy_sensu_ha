@@ -1,0 +1,1958 @@
+2018-01-06 17:59:48,842 p=24561 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 17:59:48,878 p=24561 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 17:59:50,290 p=24561 u=root |  ok: [192.0.2.248]
+2018-01-06 17:59:50,308 p=24561 u=root |  TASK [server/uchiwa-remove : Disable sensu repository] **********************************************************************************************************************
+2018-01-06 17:59:51,080 p=24561 u=root |  ok: [192.0.2.248]
+2018-01-06 17:59:51,104 p=24561 u=root |  TASK [server/uchiwa-remove : Remove sensu and uchiwa] ***********************************************************************************************************************
+2018-01-06 17:59:52,033 p=24561 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 17:59:52,041 p=24561 u=root |  TASK [server/uchiwa-remove : Remove sensu directory /etc/sensu] *************************************************************************************************************
+2018-01-06 17:59:52,867 p=24561 u=root |  ok: [192.0.2.248]
+2018-01-06 17:59:52,888 p=24561 u=root |  TASK [server/uchiwa-remove : Check if firewalld is installed] ***************************************************************************************************************
+2018-01-06 17:59:54,003 p=24561 u=root |  ok: [192.0.2.248]
+2018-01-06 17:59:54,010 p=24561 u=root |  TASK [server/uchiwa-remove : Close tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 17:59:54,791 p=24561 u=root |  ok: [192.0.2.248]
+2018-01-06 17:59:54,794 p=24561 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 17:59:54,794 p=24561 u=root |  192.0.2.248                : ok=6    changed=0    unreachable=0    failed=0   
+2018-01-06 18:00:47,086 p=24639 u=root |   [WARNING]: module curl not found in: /root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules:/usr/lib/python2.7/site-packages/ansible/modules
+
+2018-01-06 18:18:02,167 p=25518 u=root |  playbook: playbooks/install_server_uchiwa.yaml
+2018-01-06 18:18:07,354 p=25530 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:18:07,389 p=25530 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:18:08,669 p=25530 u=root |  ok: [192.0.2.248]
+2018-01-06 18:18:08,677 p=25530 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:18:09,003 p=25530 u=root |  changed: [192.0.2.248]
+2018-01-06 18:18:09,010 p=25530 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:18:31,649 p=25530 u=root |  changed: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:18:31,669 p=25530 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:18:33,696 p=25530 u=root |  changed: [192.0.2.248]
+2018-01-06 18:18:33,717 p=25530 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:18:35,130 p=25530 u=root |  changed: [192.0.2.248]
+2018-01-06 18:18:35,150 p=25530 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:18:36,408 p=25530 u=root |  ok: [192.0.2.248]
+2018-01-06 18:18:36,418 p=25530 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:18:37,783 p=25530 u=root |  changed: [192.0.2.248]
+2018-01-06 18:18:37,792 p=25530 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:18:37,811 p=25530 u=root |  fatal: [192.0.2.248]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_default' is undefined\n\nThe error appears to have been in '/root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml': line 40, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  when: firewalld_op.results|selectattr(\"yumstate\", \"match\", \"installed\")|list|length != 0\n- name: Verify if Uchiwa is listening on TCP port {{ dashboard_port }}\n  ^ here\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes.  Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_default' is undefined"}
+2018-01-06 18:18:37,813 p=25530 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:18:37,813 p=25530 u=root |  192.0.2.248                : ok=7    changed=5    unreachable=0    failed=1   
+2018-01-06 18:20:51,687 p=25703 u=root |  192.0.2.248 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.0.2.248"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "2620:52:0:c22:5054:ff:feff:3b03", 
+            "fe80::5054:ff:feff:3b03"
+        ], 
+        "ansible_apparmor": {
+            "status": "disabled"
+        }, 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "04/01/2014", 
+        "ansible_bios_version": "1.9.1-5.el7", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-3.10.0-693.11.6.el7.x86_64", 
+            "LANG": "en_US.UTF-8", 
+            "console": "ttyS0,115200n8", 
+            "crashkernel": "auto", 
+            "net.ifnames": "0", 
+            "no_timer_check": true, 
+            "ro": true, 
+            "root": "UUID=716e713d-4e91-4186-81fd-c6cfa1b0974d"
+        }, 
+        "ansible_date_time": {
+            "date": "2018-01-06", 
+            "day": "06", 
+            "epoch": "1515280851", 
+            "hour": "18", 
+            "iso8601": "2018-01-06T23:20:51Z", 
+            "iso8601_basic": "20180106T182051375245", 
+            "iso8601_basic_short": "20180106T182051", 
+            "iso8601_micro": "2018-01-06T23:20:51.375383Z", 
+            "minute": "20", 
+            "month": "01", 
+            "second": "51", 
+            "time": "18:20:51", 
+            "tz": "EST", 
+            "tz_offset": "-0500", 
+            "weekday": "Saturday", 
+            "weekday_number": "6", 
+            "weeknumber": "01", 
+            "year": "2018"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.0.2.248", 
+            "alias": "eth0", 
+            "broadcast": "192.0.2.255", 
+            "gateway": "192.0.2.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.0.2.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {
+            "address": "2620:52:0:c22:5054:ff:feff:3b03", 
+            "gateway": "fe80:52:0:c22::fe", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "mtu": 1500, 
+            "prefix": "64", 
+            "scope": "global", 
+            "type": "ether"
+        }, 
+        "ansible_device_links": {
+            "ids": {}, 
+            "labels": {}, 
+            "masters": {}, 
+            "uuids": {
+                "vda1": [
+                    "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                ]
+            }
+        }, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "links": {
+                    "ids": [], 
+                    "labels": [], 
+                    "masters": [], 
+                    "uuids": []
+                }, 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "holders": [], 
+                        "links": {
+                            "ids": [], 
+                            "labels": [], 
+                            "masters": [], 
+                            "uuids": [
+                                "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                            ]
+                        }, 
+                        "sectors": "20967168", 
+                        "sectorsize": 512, 
+                        "size": "10.00 GB", 
+                        "start": "2048", 
+                        "uuid": "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "sas_address": null, 
+                "sas_device_handle": null, 
+                "scheduler_mode": "", 
+                "sectors": "20971520", 
+                "sectorsize": "512", 
+                "size": "10.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4", 
+                "virtual": 1
+            }
+        }, 
+        "ansible_distribution": "RedHat", 
+        "ansible_distribution_file_parsed": true, 
+        "ansible_distribution_file_path": "/etc/redhat-release", 
+        "ansible_distribution_file_variety": "RedHat", 
+        "ansible_distribution_major_version": "7", 
+        "ansible_distribution_release": "Maipo", 
+        "ansible_distribution_version": "7.4", 
+        "ansible_dns": {
+            "nameservers": [
+                "10.12.32.1", 
+                "8.8.8.8"
+            ]
+        }, 
+        "ansible_domain": "", 
+        "ansible_effective_group_id": 0, 
+        "ansible_effective_user_id": 0, 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "en_US.UTF-8", 
+            "LOGNAME": "root", 
+            "MAIL": "/var/mail/root", 
+            "PATH": "/sbin:/bin:/usr/sbin:/usr/bin", 
+            "PWD": "/root", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-yukxptwnukwiawldmwfnrmnzqkbtiryr; /usr/bin/python", 
+            "SUDO_GID": "0", 
+            "SUDO_UID": "0", 
+            "SUDO_USER": "root", 
+            "TERM": "unknown", 
+            "USER": "root", 
+            "USERNAME": "root", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "on [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_csum_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_partial": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_mangleid_segmentation": "off", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "hw_timestamp_filters": [], 
+            "ipv4": {
+                "address": "192.0.2.248", 
+                "broadcast": "192.0.2.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.0.2.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "2620:52:0:c22:5054:ff:feff:3b03", 
+                    "prefix": "64", 
+                    "scope": "global"
+                }
+            ], 
+            "macaddress": "52:54:00:ff:3b:03", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "pciid": "virtio0", 
+            "promisc": false, 
+            "timestamping": [
+                "rx_software", 
+                "software"
+            ], 
+            "type": "ether"
+        }, 
+        "ansible_fips": false, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "base", 
+        "ansible_hostname": "base", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.10.0-693.11.6.el7.x86_64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "on [fixed]", 
+                "netns_local": "on [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on [fixed]", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "on [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_csum_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_partial": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off [fixed]", 
+                "tx_scatter_gather": "on [fixed]", 
+                "tx_scatter_gather_fraglist": "on [fixed]", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_mangleid_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "on [fixed]"
+            }, 
+            "hw_timestamp_filters": [], 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "host", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "timestamping": [
+                "rx_software", 
+                "software"
+            ], 
+            "type": "loopback"
+        }, 
+        "ansible_local": {}, 
+        "ansible_lsb": {}, 
+        "ansible_machine": "x86_64", 
+        "ansible_machine_id": "cef847269a9849f39fcf848e0457e991", 
+        "ansible_memfree_mb": 1205, 
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 1647, 
+                "used": 192
+            }, 
+            "real": {
+                "free": 1205, 
+                "total": 1839, 
+                "used": 634
+            }, 
+            "swap": {
+                "cached": 0, 
+                "free": 0, 
+                "total": 0, 
+                "used": 0
+            }
+        }, 
+        "ansible_memtotal_mb": 1839, 
+        "ansible_mounts": [
+            {
+                "block_available": 1624678, 
+                "block_size": 4096, 
+                "block_total": 2045440, 
+                "block_used": 420762, 
+                "device": "/dev/vda1", 
+                "fstype": "xfs", 
+                "inode_available": 4057128, 
+                "inode_total": 4096000, 
+                "inode_used": 38872, 
+                "mount": "/", 
+                "options": "rw,seclabel,relatime,attr2,inode64,noquota", 
+                "size_available": 6654681088, 
+                "size_total": 8378122240, 
+                "uuid": "716e713d-4e91-4186-81fd-c6cfa1b0974d"
+            }
+        ], 
+        "ansible_nodename": "base", 
+        "ansible_os_family": "RedHat", 
+        "ansible_pkg_mgr": "yum", 
+        "ansible_processor": [
+            "0", 
+            "GenuineIntel", 
+            "Intel Xeon E3-12xx v2 (Ivy Bridge)"
+        ], 
+        "ansible_processor_cores": 1, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 1, 
+        "ansible_product_name": "KVM", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "CEF84726-9A98-49F3-9FCF-848E0457E991", 
+        "ansible_product_version": "RHEL 7.3.0 PC (i440FX + PIIX, 1996)", 
+        "ansible_python": {
+            "executable": "/usr/bin/python", 
+            "has_sslcontext": true, 
+            "type": "CPython", 
+            "version": {
+                "major": 2, 
+                "micro": 5, 
+                "minor": 7, 
+                "releaselevel": "final", 
+                "serial": 0
+            }, 
+            "version_info": [
+                2, 
+                7, 
+                5, 
+                "final", 
+                0
+            ]
+        }, 
+        "ansible_python_version": "2.7.5", 
+        "ansible_real_group_id": 0, 
+        "ansible_real_user_id": 0, 
+        "ansible_selinux": {
+            "config_mode": "enforcing", 
+            "mode": "enforcing", 
+            "policyvers": 28, 
+            "status": "enabled", 
+            "type": "targeted"
+        }, 
+        "ansible_selinux_python_present": true, 
+        "ansible_service_mgr": "systemd", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAJxDZZeLAgZAzjv98YU0Oib6jt72BNqHKupmC91HqYu0D1L3PGpU2O9iCnrs8dtDwRfUx//+v+O43CCTmWuNiY=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAINKbRXlCAIRjPb7CpVbsELCK88/2sZmXOrJGDWa39EOI", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDIhKbFCWDK1a3g9rntXFzRkqn86CD2/+BagPA4n+UKDI61dJI/Y8L2KrjUMzke/0eX4OVMex2kWhFNOllkGuBjgMwyUFlZ1FW1cX3xhGnCoNvVp88A/Ilzu0qEAWDTHz7ca8nSv9b3l+hYQpn38pIstacjdXR+17SlsEnuF3GENXwW6SqOju7tl4MK0yK+RtzwPIOIfhxPGXi3EWHl1bEd7ehUgp3G4i44mv6HXrwO1oNPcS/9o2EZT3FziVRk/Xga/Jka9EqTbbPVO+dF0KYIdFn0ozR3LU/b167rd2MBzUXlCqw3px4DelzdGQ+rgz4BFMO886C/ZqQGbCSGQ9mv", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_capabilities": [
+            "cap_chown", 
+            "cap_dac_override", 
+            "cap_dac_read_search", 
+            "cap_fowner", 
+            "cap_fsetid", 
+            "cap_kill", 
+            "cap_setgid", 
+            "cap_setuid", 
+            "cap_setpcap", 
+            "cap_linux_immutable", 
+            "cap_net_bind_service", 
+            "cap_net_broadcast", 
+            "cap_net_admin", 
+            "cap_net_raw", 
+            "cap_ipc_lock", 
+            "cap_ipc_owner", 
+            "cap_sys_module", 
+            "cap_sys_rawio", 
+            "cap_sys_chroot", 
+            "cap_sys_ptrace", 
+            "cap_sys_pacct", 
+            "cap_sys_admin", 
+            "cap_sys_boot", 
+            "cap_sys_nice", 
+            "cap_sys_resource", 
+            "cap_sys_time", 
+            "cap_sys_tty_config", 
+            "cap_mknod", 
+            "cap_lease", 
+            "cap_audit_write", 
+            "cap_audit_control", 
+            "cap_setfcap", 
+            "cap_mac_override", 
+            "cap_mac_admin", 
+            "cap_syslog", 
+            "35", 
+            "36+ep"
+        ], 
+        "ansible_system_capabilities_enforced": "True", 
+        "ansible_system_vendor": "Red Hat", 
+        "ansible_uptime_seconds": 18935, 
+        "ansible_user_dir": "/root", 
+        "ansible_user_gecos": "root", 
+        "ansible_user_gid": 0, 
+        "ansible_user_id": "root", 
+        "ansible_user_shell": "/bin/bash", 
+        "ansible_user_uid": 0, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm", 
+        "gather_subset": [
+            "all"
+        ], 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+2018-01-06 18:22:07,761 p=25782 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:22:07,797 p=25782 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:22:09,101 p=25782 u=root |  ok: [192.0.2.248]
+2018-01-06 18:22:09,117 p=25782 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:22:09,790 p=25782 u=root |  ok: [192.0.2.248]
+2018-01-06 18:22:09,805 p=25782 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:22:15,707 p=25782 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:22:15,729 p=25782 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:22:17,599 p=25782 u=root |  ok: [192.0.2.248]
+2018-01-06 18:22:17,620 p=25782 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:22:18,483 p=25782 u=root |  ok: [192.0.2.248]
+2018-01-06 18:22:18,500 p=25782 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:22:19,800 p=25782 u=root |  ok: [192.0.2.248]
+2018-01-06 18:22:19,809 p=25782 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:22:20,825 p=25782 u=root |  ok: [192.0.2.248]
+2018-01-06 18:22:20,834 p=25782 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:22:21,581 p=25782 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (get_url) module: status Supported parameters include: attributes,backup,checksum,client_cert,client_key,content,delimiter,dest,directory_mode,follow,force,force_basic_auth,group,headers,http_agent,mode,owner,regexp,remote_src,selevel,serole,setype,seuser,sha256sum,src,timeout,tmp_dest,unsafe_writes,url,url_password,url_username,use_proxy,validate_certs"}
+2018-01-06 18:22:21,583 p=25782 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:22:21,583 p=25782 u=root |  192.0.2.248                : ok=7    changed=0    unreachable=0    failed=1   
+2018-01-06 18:23:16,373 p=25878 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:23:16,410 p=25878 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:23:17,119 p=25878 u=root |  ok: [192.0.2.248]
+2018-01-06 18:23:17,139 p=25878 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:23:17,725 p=25878 u=root |  ok: [192.0.2.248]
+2018-01-06 18:23:17,733 p=25878 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:23:23,186 p=25878 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:23:23,194 p=25878 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:23:24,476 p=25878 u=root |  ok: [192.0.2.248]
+2018-01-06 18:23:24,497 p=25878 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:23:25,376 p=25878 u=root |  ok: [192.0.2.248]
+2018-01-06 18:23:25,392 p=25878 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:23:26,470 p=25878 u=root |  ok: [192.0.2.248]
+2018-01-06 18:23:26,479 p=25878 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:23:27,505 p=25878 u=root |  ok: [192.0.2.248]
+2018-01-06 18:23:27,529 p=25878 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:23:28,292 p=25878 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "missing required arguments: dest"}
+2018-01-06 18:23:28,293 p=25878 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:23:28,294 p=25878 u=root |  192.0.2.248                : ok=7    changed=0    unreachable=0    failed=1   
+2018-01-06 18:26:15,345 p=26069 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:26:15,381 p=26069 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:26:16,814 p=26069 u=root |  ok: [192.0.2.248]
+2018-01-06 18:26:16,830 p=26069 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:26:17,635 p=26069 u=root |  ok: [192.0.2.248]
+2018-01-06 18:26:17,654 p=26069 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:26:23,640 p=26069 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:26:23,648 p=26069 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:26:24,827 p=26069 u=root |  ok: [192.0.2.248]
+2018-01-06 18:26:24,846 p=26069 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:26:25,799 p=26069 u=root |  ok: [192.0.2.248]
+2018-01-06 18:26:25,820 p=26069 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:26:26,951 p=26069 u=root |  ok: [192.0.2.248]
+2018-01-06 18:26:26,961 p=26069 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:26:27,737 p=26069 u=root |  ok: [192.0.2.248]
+2018-01-06 18:26:27,748 p=26069 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:26:28,567 p=26069 u=root |  changed: [192.0.2.248]
+2018-01-06 18:26:28,577 p=26069 u=root |  TASK [server/uchiwa-install : debug] ****************************************************************************************************************************************
+2018-01-06 18:26:28,619 p=26069 u=root |  ok: [192.0.2.248] => {
+    "dashboard_access": {
+        "changed": true, 
+        "checksum_dest": null, 
+        "checksum_src": "23792ed3b195aa2fecdc4cf3548be0f58deb2d35", 
+        "dest": "/tmp/index.html", 
+        "failed": false, 
+        "gid": 0, 
+        "group": "root", 
+        "md5sum": "0f21e724fce35ee82ea9ac5a7a3e5547", 
+        "mode": "0644", 
+        "msg": "OK (3922 bytes)", 
+        "owner": "root", 
+        "secontext": "unconfined_u:object_r:user_tmp_t:s0", 
+        "size": 3922, 
+        "src": "/tmp/tmp8cyhkG", 
+        "state": "file", 
+        "status_code": 200, 
+        "uid": 0, 
+        "url": "http://192.0.2.248:3000/#/info"
+    }
+}
+2018-01-06 18:26:28,621 p=26069 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:26:28,622 p=26069 u=root |  192.0.2.248                : ok=9    changed=1    unreachable=0    failed=0   
+2018-01-06 18:30:13,185 p=26302 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:30:13,222 p=26302 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:30:14,453 p=26302 u=root |  ok: [192.0.2.248]
+2018-01-06 18:30:14,474 p=26302 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:30:15,340 p=26302 u=root |  ok: [192.0.2.248]
+2018-01-06 18:30:15,360 p=26302 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:30:21,170 p=26302 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:30:21,178 p=26302 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:30:22,463 p=26302 u=root |  ok: [192.0.2.248]
+2018-01-06 18:30:22,484 p=26302 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:30:23,391 p=26302 u=root |  ok: [192.0.2.248]
+2018-01-06 18:30:23,408 p=26302 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:30:24,448 p=26302 u=root |  ok: [192.0.2.248]
+2018-01-06 18:30:24,457 p=26302 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:30:25,807 p=26302 u=root |  ok: [192.0.2.248]
+2018-01-06 18:30:25,816 p=26302 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:30:26,581 p=26302 u=root |  ok: [192.0.2.248]
+2018-01-06 18:30:26,589 p=26302 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:30:26,633 p=26302 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"}
+2018-01-06 18:30:26,635 p=26302 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:30:26,635 p=26302 u=root |  192.0.2.248                : ok=8    changed=0    unreachable=0    failed=1   
+2018-01-06 18:31:48,280 p=26422 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:31:48,316 p=26422 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:31:49,600 p=26422 u=root |  ok: [192.0.2.248]
+2018-01-06 18:31:49,608 p=26422 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:31:49,931 p=26422 u=root |  ok: [192.0.2.248]
+2018-01-06 18:31:49,938 p=26422 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:31:55,372 p=26422 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:31:55,380 p=26422 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:31:56,980 p=26422 u=root |  ok: [192.0.2.248]
+2018-01-06 18:31:57,001 p=26422 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:31:57,710 p=26422 u=root |  ok: [192.0.2.248]
+2018-01-06 18:31:57,717 p=26422 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:31:59,049 p=26422 u=root |  ok: [192.0.2.248]
+2018-01-06 18:31:59,073 p=26422 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:32:00,072 p=26422 u=root |  ok: [192.0.2.248]
+2018-01-06 18:32:00,081 p=26422 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:32:00,534 p=26422 u=root |  ok: [192.0.2.248]
+2018-01-06 18:32:00,552 p=26422 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:32:00,678 p=26422 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"}
+2018-01-06 18:32:00,682 p=26422 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:32:00,683 p=26422 u=root |  192.0.2.248                : ok=8    changed=0    unreachable=0    failed=1   
+2018-01-06 18:32:18,898 p=26489 u=root |  ansible-playbook 2.4.2.0
+  config file = /root/ansible_deploy_sensu_ha/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, May  3 2017, 07:55:04) [GCC 4.8.5 20150623 (Red Hat 4.8.5-14)]
+2018-01-06 18:32:18,898 p=26489 u=root |  Using /root/ansible_deploy_sensu_ha/ansible.cfg as config file
+2018-01-06 18:32:18,899 p=26489 u=root |  setting up inventory plugins
+2018-01-06 18:32:18,909 p=26489 u=root |  Parsed /root/ansible_deploy_sensu_ha/hosts inventory source with ini plugin
+2018-01-06 18:32:19,095 p=26489 u=root |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-01-06 18:32:19,206 p=26489 u=root |  PLAYBOOK: install_server_uchiwa.yaml ****************************************************************************************************************************************
+2018-01-06 18:32:19,206 p=26489 u=root |  1 plays in playbooks/install_server_uchiwa.yaml
+2018-01-06 18:32:19,232 p=26489 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:32:19,267 p=26489 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:32:19,617 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-06 18:32:19,936 p=26489 u=root |  ok: [192.0.2.248]
+2018-01-06 18:32:19,937 p=26489 u=root |  META: ran handlers
+2018-01-06 18:32:19,944 p=26489 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:32:19,944 p=26489 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:1
+2018-01-06 18:32:20,209 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum_repository.py
+2018-01-06 18:32:20,652 p=26489 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "diff": {
+        "after": "[sensu]\nbaseurl = https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/\nenabled = 1\ngpgcheck = 0\nname = EPEL YUM repo\n\n", 
+        "after_header": "/etc/yum.repos.d/sensu.repo", 
+        "before": "[sensu]\nbaseurl = https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/\nenabled = 1\ngpgcheck = 0\nname = EPEL YUM repo\n\n", 
+        "before_header": "/etc/yum.repos.d/sensu.repo"
+    }, 
+    "invocation": {
+        "module_args": {
+            "async": null, 
+            "attributes": null, 
+            "backup": null, 
+            "bandwidth": null, 
+            "baseurl": "https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/", 
+            "content": null, 
+            "cost": null, 
+            "delimiter": null, 
+            "deltarpm_metadata_percentage": null, 
+            "deltarpm_percentage": null, 
+            "dest": "/etc/yum.repos.d/sensu.repo", 
+            "directory_mode": null, 
+            "enabled": true, 
+            "enablegroups": null, 
+            "exclude": null, 
+            "failovermethod": null, 
+            "file": "sensu", 
+            "follow": false, 
+            "force": null, 
+            "gpgcakey": null, 
+            "gpgcheck": false, 
+            "gpgkey": null, 
+            "group": null, 
+            "http_caching": null, 
+            "include": null, 
+            "includepkgs": null, 
+            "ip_resolve": null, 
+            "keepalive": null, 
+            "keepcache": null, 
+            "metadata_expire": null, 
+            "metadata_expire_filter": null, 
+            "metalink": null, 
+            "mirrorlist": null, 
+            "mirrorlist_expire": null, 
+            "mode": null, 
+            "name": "EPEL YUM repo", 
+            "owner": null, 
+            "params": null, 
+            "password": null, 
+            "priority": null, 
+            "protect": null, 
+            "proxy": null, 
+            "proxy_password": null, 
+            "proxy_username": null, 
+            "regexp": null, 
+            "remote_src": null, 
+            "repo_gpgcheck": null, 
+            "repoid": "sensu", 
+            "reposdir": "/etc/yum.repos.d", 
+            "retries": null, 
+            "s3_enabled": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "skip_if_unavailable": null, 
+            "src": null, 
+            "ssl_check_cert_permissions": null, 
+            "sslcacert": null, 
+            "sslclientcert": null, 
+            "sslclientkey": null, 
+            "sslverify": null, 
+            "state": "present", 
+            "throttle": null, 
+            "timeout": null, 
+            "ui_repoid_vars": null, 
+            "unsafe_writes": null, 
+            "username": null
+        }
+    }, 
+    "repo": "sensu", 
+    "state": "present"
+}
+2018-01-06 18:32:20,671 p=26489 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:32:20,672 p=26489 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:8
+2018-01-06 18:32:21,300 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-06 18:32:26,651 p=26489 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "sensu", 
+                "uchiwa"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "sensu", 
+        "uchiwa"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing sensu are up to date", 
+        "All packages providing uchiwa are up to date", 
+        ""
+    ]
+}
+2018-01-06 18:32:26,659 p=26489 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:32:26,659 p=26489 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:16
+2018-01-06 18:32:26,897 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-06 18:32:27,477 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2018-01-06 18:32:27,892 p=26489 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "checksum": "5f7f9305bafaae0c45b8267744f96e2a632cd0e9", 
+    "diff": {
+        "after": {
+            "path": "/etc/sensu/uchiwa.json"
+        }, 
+        "before": {
+            "path": "/etc/sensu/uchiwa.json"
+        }
+    }, 
+    "gid": 993, 
+    "group": "uchiwa", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": "True", 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/etc/sensu/uchiwa.json", 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": "uchiwa", 
+            "mode": 420, 
+            "original_basename": "uchiwa_json.j2", 
+            "owner": "uchiwa", 
+            "path": "/etc/sensu/uchiwa.json", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "uchiwa_json.j2", 
+            "state": "file", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "uchiwa", 
+    "path": "/etc/sensu/uchiwa.json", 
+    "secontext": "system_u:object_r:etc_t:s0", 
+    "size": 211, 
+    "state": "file", 
+    "uid": 996
+}
+2018-01-06 18:32:27,911 p=26489 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:32:27,911 p=26489 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:24
+2018-01-06 18:32:28,004 p=26489 u=root |  Running systemd
+2018-01-06 18:32:28,400 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/systemd.py
+2018-01-06 18:32:28,850 p=26489 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "enabled": true, 
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false, 
+            "enabled": true, 
+            "masked": null, 
+            "name": "uchiwa", 
+            "no_block": false, 
+            "state": "started", 
+            "user": false
+        }
+    }, 
+    "name": "uchiwa", 
+    "state": "started", 
+    "status": {
+        "ActiveEnterTimestamp": "Sat 2018-01-06 18:18:34 EST", 
+        "ActiveEnterTimestampMonotonic": "18798834553", 
+        "ActiveExitTimestampMonotonic": "0", 
+        "ActiveState": "active", 
+        "After": "systemd-journald.socket basic.target network-online.target system.slice remote-fs.target", 
+        "AllowIsolate": "no", 
+        "AmbientCapabilities": "0", 
+        "AssertResult": "yes", 
+        "AssertTimestamp": "Sat 2018-01-06 18:18:34 EST", 
+        "AssertTimestampMonotonic": "18798665519", 
+        "Before": "graphical.target shutdown.target multi-user.target", 
+        "BlockIOAccounting": "no", 
+        "BlockIOWeight": "18446744073709551615", 
+        "CPUAccounting": "no", 
+        "CPUQuotaPerSecUSec": "infinity", 
+        "CPUSchedulingPolicy": "0", 
+        "CPUSchedulingPriority": "0", 
+        "CPUSchedulingResetOnFork": "no", 
+        "CPUShares": "18446744073709551615", 
+        "CanIsolate": "no", 
+        "CanReload": "no", 
+        "CanStart": "yes", 
+        "CanStop": "yes", 
+        "CapabilityBoundingSet": "18446744073709551615", 
+        "ConditionResult": "yes", 
+        "ConditionTimestamp": "Sat 2018-01-06 18:18:34 EST", 
+        "ConditionTimestampMonotonic": "18798665518", 
+        "Conflicts": "shutdown.target", 
+        "ControlPID": "0", 
+        "DefaultDependencies": "yes", 
+        "Delegate": "no", 
+        "Description": "LSB: Uchiwa, a Sensu dashboard.", 
+        "DevicePolicy": "auto", 
+        "Documentation": "man:systemd-sysv-generator(8)", 
+        "ExecMainCode": "0", 
+        "ExecMainExitTimestampMonotonic": "0", 
+        "ExecMainPID": "0", 
+        "ExecMainStartTimestampMonotonic": "0", 
+        "ExecMainStatus": "0", 
+        "ExecStart": "{ path=/etc/rc.d/init.d/uchiwa ; argv[]=/etc/rc.d/init.d/uchiwa start ; ignore_errors=no ; start_time=[Sat 2018-01-06 18:18:34 EST] ; stop_time=[Sat 2018-01-06 18:18:34 EST] ; pid=2111 ; code=exited ; status=0 }", 
+        "ExecStop": "{ path=/etc/rc.d/init.d/uchiwa ; argv[]=/etc/rc.d/init.d/uchiwa stop ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", 
+        "FailureAction": "none", 
+        "FileDescriptorStoreMax": "0", 
+        "FragmentPath": "/run/systemd/generator.late/uchiwa.service", 
+        "GuessMainPID": "no", 
+        "IOScheduling": "0", 
+        "Id": "uchiwa.service", 
+        "IgnoreOnIsolate": "no", 
+        "IgnoreOnSnapshot": "no", 
+        "IgnoreSIGPIPE": "no", 
+        "InactiveEnterTimestampMonotonic": "0", 
+        "InactiveExitTimestamp": "Sat 2018-01-06 18:18:34 EST", 
+        "InactiveExitTimestampMonotonic": "18798671886", 
+        "JobTimeoutAction": "none", 
+        "JobTimeoutUSec": "0", 
+        "KillMode": "process", 
+        "KillSignal": "15", 
+        "LimitAS": "18446744073709551615", 
+        "LimitCORE": "18446744073709551615", 
+        "LimitCPU": "18446744073709551615", 
+        "LimitDATA": "18446744073709551615", 
+        "LimitFSIZE": "18446744073709551615", 
+        "LimitLOCKS": "18446744073709551615", 
+        "LimitMEMLOCK": "65536", 
+        "LimitMSGQUEUE": "819200", 
+        "LimitNICE": "0", 
+        "LimitNOFILE": "4096", 
+        "LimitNPROC": "7194", 
+        "LimitRSS": "18446744073709551615", 
+        "LimitRTPRIO": "0", 
+        "LimitRTTIME": "18446744073709551615", 
+        "LimitSIGPENDING": "7194", 
+        "LimitSTACK": "18446744073709551615", 
+        "LoadState": "loaded", 
+        "MainPID": "0", 
+        "MemoryAccounting": "no", 
+        "MemoryCurrent": "18446744073709551615", 
+        "MemoryLimit": "18446744073709551615", 
+        "MountFlags": "0", 
+        "Names": "uchiwa.service", 
+        "NeedDaemonReload": "no", 
+        "Nice": "0", 
+        "NoNewPrivileges": "no", 
+        "NonBlocking": "no", 
+        "NotifyAccess": "none", 
+        "OOMScoreAdjust": "0", 
+        "OnFailureJobMode": "replace", 
+        "PermissionsStartOnly": "no", 
+        "PrivateDevices": "no", 
+        "PrivateNetwork": "no", 
+        "PrivateTmp": "no", 
+        "ProtectHome": "no", 
+        "ProtectSystem": "no", 
+        "RefuseManualStart": "no", 
+        "RefuseManualStop": "no", 
+        "RemainAfterExit": "yes", 
+        "Requires": "basic.target", 
+        "Restart": "no", 
+        "RestartUSec": "100ms", 
+        "Result": "success", 
+        "RootDirectoryStartOnly": "no", 
+        "RuntimeDirectoryMode": "0755", 
+        "SameProcessGroup": "no", 
+        "SecureBits": "0", 
+        "SendSIGHUP": "no", 
+        "SendSIGKILL": "yes", 
+        "Slice": "system.slice", 
+        "SourcePath": "/etc/rc.d/init.d/uchiwa", 
+        "StandardError": "inherit", 
+        "StandardInput": "null", 
+        "StandardOutput": "journal", 
+        "StartLimitAction": "none", 
+        "StartLimitBurst": "5", 
+        "StartLimitInterval": "10000000", 
+        "StartupBlockIOWeight": "18446744073709551615", 
+        "StartupCPUShares": "18446744073709551615", 
+        "StatusErrno": "0", 
+        "StopWhenUnneeded": "no", 
+        "SubState": "exited", 
+        "SyslogLevelPrefix": "yes", 
+        "SyslogPriority": "30", 
+        "SystemCallErrorNumber": "0", 
+        "TTYReset": "no", 
+        "TTYVHangup": "no", 
+        "TTYVTDisallocate": "no", 
+        "TasksAccounting": "no", 
+        "TasksCurrent": "18446744073709551615", 
+        "TasksMax": "18446744073709551615", 
+        "TimeoutStartUSec": "5min", 
+        "TimeoutStopUSec": "5min", 
+        "TimerSlackNSec": "50000", 
+        "Transient": "no", 
+        "Type": "forking", 
+        "UMask": "0022", 
+        "UnitFilePreset": "disabled", 
+        "UnitFileState": "bad", 
+        "WantedBy": "multi-user.target graphical.target", 
+        "Wants": "system.slice", 
+        "WatchdogTimestampMonotonic": "0", 
+        "WatchdogUSec": "0"
+    }
+}
+2018-01-06 18:32:28,868 p=26489 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:32:28,869 p=26489 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:29
+2018-01-06 18:32:28,957 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-06 18:32:29,955 p=26489 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": "firewalld", 
+            "name": null, 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "installed", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "results": [
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.3.9-11.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "11.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.3.9", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.3.9-14.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "14.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.3.9", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.3.9-7.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "7.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.3.9", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.3.2-8.1.el7_3.2.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "8.1.el7_3.2", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.3.2", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.3.2-8.1.el7_3.3.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "8.1.el7_3.3", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.3.2", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.3.2-8.1.el7_3.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "8.1.el7_3", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.3.2", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.3.2-8.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "8.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.3.2", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.4.4-6.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "6.el7", 
+            "repo": "installed", 
+            "version": "0.4.4.4", 
+            "yumstate": "installed"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.4.4-6.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "6.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.4.4", 
+            "yumstate": "available"
+        }
+    ]
+}
+2018-01-06 18:32:29,964 p=26489 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:32:29,964 p=26489 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:33
+2018-01-06 18:32:30,171 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/firewalld.py
+2018-01-06 18:32:30,950 p=26489 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "immediate": true, 
+            "interface": null, 
+            "masquerade": null, 
+            "offline": null, 
+            "permanent": true, 
+            "port": "3000/tcp", 
+            "rich_rule": null, 
+            "service": null, 
+            "source": null, 
+            "state": "enabled", 
+            "timeout": 0, 
+            "zone": null
+        }
+    }, 
+    "msg": "Permanent and Non-Permanent(immediate) operation"
+}
+2018-01-06 18:32:30,974 p=26489 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:32:30,974 p=26489 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:40
+2018-01-06 18:32:31,540 p=26489 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-06 18:32:31,794 p=26489 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "checksum_dest": "23792ed3b195aa2fecdc4cf3548be0f58deb2d35", 
+    "checksum_src": "23792ed3b195aa2fecdc4cf3548be0f58deb2d35", 
+    "dest": "/tmp/index.html", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/tmp", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": null, 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": null, 
+            "owner": null, 
+            "path": "/tmp/index.html", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "http://192.0.2.248:3000/#/info", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "md5sum": "0f21e724fce35ee82ea9ac5a7a3e5547", 
+    "mode": "0644", 
+    "msg": "OK (3922 bytes)", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:user_tmp_t:s0", 
+    "size": 3922, 
+    "src": "/tmp/tmpH6QWzD", 
+    "state": "file", 
+    "status_code": 200, 
+    "uid": 0, 
+    "url": "http://192.0.2.248:3000/#/info"
+}
+2018-01-06 18:32:31,802 p=26489 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:32:31,803 p=26489 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:45
+2018-01-06 18:32:31,848 p=26489 u=root |  fatal: [192.0.2.248]: FAILED! => {
+    "changed": false, 
+    "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"
+}
+2018-01-06 18:32:31,849 p=26489 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:32:31,849 p=26489 u=root |  192.0.2.248                : ok=8    changed=0    unreachable=0    failed=1   
+2018-01-06 18:35:43,081 p=26700 u=root |   [WARNING]: module selectattr not found in: /root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules:/usr/lib/python2.7/site-packages/ansible/modules
+
+2018-01-06 18:37:15,130 p=26780 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:37:15,167 p=26780 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:37:16,972 p=26780 u=root |  ok: [192.0.2.248]
+2018-01-06 18:37:16,992 p=26780 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:37:17,840 p=26780 u=root |  ok: [192.0.2.248]
+2018-01-06 18:37:17,856 p=26780 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:37:23,720 p=26780 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:37:23,728 p=26780 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:37:25,093 p=26780 u=root |  ok: [192.0.2.248]
+2018-01-06 18:37:25,116 p=26780 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:37:26,008 p=26780 u=root |  ok: [192.0.2.248]
+2018-01-06 18:37:26,026 p=26780 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:37:27,308 p=26780 u=root |  ok: [192.0.2.248]
+2018-01-06 18:37:27,316 p=26780 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:37:28,337 p=26780 u=root |  ok: [192.0.2.248]
+2018-01-06 18:37:28,345 p=26780 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:37:29,203 p=26780 u=root |  ok: [192.0.2.248]
+2018-01-06 18:37:29,222 p=26780 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:37:29,335 p=26780 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"}
+2018-01-06 18:37:29,339 p=26780 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:37:29,339 p=26780 u=root |  192.0.2.248                : ok=8    changed=0    unreachable=0    failed=1   
+2018-01-06 18:39:07,779 p=26914 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:39:07,816 p=26914 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:39:09,096 p=26914 u=root |  ok: [192.0.2.248]
+2018-01-06 18:39:09,103 p=26914 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:39:09,426 p=26914 u=root |  ok: [192.0.2.248]
+2018-01-06 18:39:09,433 p=26914 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:39:14,857 p=26914 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:39:14,865 p=26914 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:39:16,484 p=26914 u=root |  ok: [192.0.2.248]
+2018-01-06 18:39:16,505 p=26914 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:39:17,208 p=26914 u=root |  ok: [192.0.2.248]
+2018-01-06 18:39:17,216 p=26914 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:39:18,204 p=26914 u=root |  ok: [192.0.2.248]
+2018-01-06 18:39:18,213 p=26914 u=root |  TASK [server/uchiwa-install : Open tcp port "3000" for dashboard access] ****************************************************************************************************
+2018-01-06 18:39:19,247 p=26914 u=root |  ok: [192.0.2.248]
+2018-01-06 18:39:19,256 p=26914 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:39:20,014 p=26914 u=root |  ok: [192.0.2.248]
+2018-01-06 18:39:20,035 p=26914 u=root |  TASK [server/uchiwa-install : debug] ****************************************************************************************************************************************
+2018-01-06 18:39:20,137 p=26914 u=root |  ok: [192.0.2.248] => {
+    "msg": "dashboard_access.results|selectattr(\"status_code\")"
+}
+2018-01-06 18:39:20,159 p=26914 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:39:20,281 p=26914 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"}
+2018-01-06 18:39:20,284 p=26914 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:39:20,285 p=26914 u=root |  192.0.2.248                : ok=9    changed=0    unreachable=0    failed=1   
+2018-01-06 18:40:56,225 p=27045 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:40:56,262 p=27045 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:40:57,562 p=27045 u=root |  ok: [192.0.2.248]
+2018-01-06 18:40:57,580 p=27045 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:40:58,300 p=27045 u=root |  ok: [192.0.2.248]
+2018-01-06 18:40:58,316 p=27045 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:41:04,281 p=27045 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:41:04,289 p=27045 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:41:05,781 p=27045 u=root |  ok: [192.0.2.248]
+2018-01-06 18:41:05,802 p=27045 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:41:06,781 p=27045 u=root |  ok: [192.0.2.248]
+2018-01-06 18:41:06,802 p=27045 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:41:08,186 p=27045 u=root |  ok: [192.0.2.248]
+2018-01-06 18:41:08,195 p=27045 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:41:09,214 p=27045 u=root |  ok: [192.0.2.248]
+2018-01-06 18:41:09,223 p=27045 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:41:09,953 p=27045 u=root |  ok: [192.0.2.248]
+2018-01-06 18:41:09,974 p=27045 u=root |  TASK [server/uchiwa-install : debug] ****************************************************************************************************************************************
+2018-01-06 18:41:10,073 p=27045 u=root |  ok: [192.0.2.248] => {
+    "msg": "dashboard_access|selectattr(\"status_code\")"
+}
+2018-01-06 18:41:10,095 p=27045 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:41:10,217 p=27045 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"}
+2018-01-06 18:41:10,221 p=27045 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:41:10,221 p=27045 u=root |  192.0.2.248                : ok=9    changed=0    unreachable=0    failed=1   
+2018-01-06 18:41:52,806 p=27136 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:41:52,843 p=27136 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:41:53,508 p=27136 u=root |  ok: [192.0.2.248]
+2018-01-06 18:41:53,515 p=27136 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:41:54,320 p=27136 u=root |  ok: [192.0.2.248]
+2018-01-06 18:41:54,338 p=27136 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:42:01,152 p=27136 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:42:01,173 p=27136 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:42:03,041 p=27136 u=root |  ok: [192.0.2.248]
+2018-01-06 18:42:03,062 p=27136 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:42:03,718 p=27136 u=root |  ok: [192.0.2.248]
+2018-01-06 18:42:03,725 p=27136 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:42:04,721 p=27136 u=root |  ok: [192.0.2.248]
+2018-01-06 18:42:04,730 p=27136 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:42:05,746 p=27136 u=root |  ok: [192.0.2.248]
+2018-01-06 18:42:05,755 p=27136 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:42:06,516 p=27136 u=root |  ok: [192.0.2.248]
+2018-01-06 18:42:06,534 p=27136 u=root |  TASK [server/uchiwa-install : debug] ****************************************************************************************************************************************
+2018-01-06 18:42:06,619 p=27136 u=root |  ok: [192.0.2.248] => {
+    "msg": "dashboard_access.status_code"
+}
+2018-01-06 18:42:06,638 p=27136 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:42:06,737 p=27136 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"}
+2018-01-06 18:42:06,744 p=27136 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:42:06,744 p=27136 u=root |  192.0.2.248                : ok=9    changed=0    unreachable=0    failed=1   
+2018-01-06 18:43:43,741 p=27266 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:43:43,777 p=27266 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:43:45,104 p=27266 u=root |  ok: [192.0.2.248]
+2018-01-06 18:43:45,122 p=27266 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:43:45,798 p=27266 u=root |  ok: [192.0.2.248]
+2018-01-06 18:43:45,812 p=27266 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:43:52,120 p=27266 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:43:52,142 p=27266 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:43:54,001 p=27266 u=root |  ok: [192.0.2.248]
+2018-01-06 18:43:54,023 p=27266 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:43:54,705 p=27266 u=root |  ok: [192.0.2.248]
+2018-01-06 18:43:54,712 p=27266 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:43:55,389 p=27266 u=root |  ok: [192.0.2.248]
+2018-01-06 18:43:55,398 p=27266 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:43:56,753 p=27266 u=root |  ok: [192.0.2.248]
+2018-01-06 18:43:56,761 p=27266 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:43:57,526 p=27266 u=root |  ok: [192.0.2.248]
+2018-01-06 18:43:57,544 p=27266 u=root |  TASK [server/uchiwa-install : debug] ****************************************************************************************************************************************
+2018-01-06 18:43:57,624 p=27266 u=root |  ok: [192.0.2.248] => {
+    "msg": "dashboard_access"
+}
+2018-01-06 18:43:57,641 p=27266 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:43:57,735 p=27266 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"}
+2018-01-06 18:43:57,741 p=27266 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:43:57,741 p=27266 u=root |  192.0.2.248                : ok=9    changed=0    unreachable=0    failed=1   
+2018-01-06 18:45:38,435 p=27405 u=root |  ansible-playbook 2.4.2.0
+  config file = /root/ansible_deploy_sensu_ha/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, May  3 2017, 07:55:04) [GCC 4.8.5 20150623 (Red Hat 4.8.5-14)]
+2018-01-06 18:45:38,436 p=27405 u=root |  Using /root/ansible_deploy_sensu_ha/ansible.cfg as config file
+2018-01-06 18:45:38,437 p=27405 u=root |  setting up inventory plugins
+2018-01-06 18:45:38,446 p=27405 u=root |  Parsed /root/ansible_deploy_sensu_ha/hosts inventory source with ini plugin
+2018-01-06 18:45:38,632 p=27405 u=root |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-01-06 18:45:38,743 p=27405 u=root |  PLAYBOOK: install_server_uchiwa.yaml ****************************************************************************************************************************************
+2018-01-06 18:45:38,743 p=27405 u=root |  1 plays in playbooks/install_server_uchiwa.yaml
+2018-01-06 18:45:38,769 p=27405 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:45:38,806 p=27405 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:45:39,152 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-06 18:45:41,200 p=27405 u=root |  ok: [192.0.2.248]
+2018-01-06 18:45:41,202 p=27405 u=root |  META: ran handlers
+2018-01-06 18:45:41,220 p=27405 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:45:41,220 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:1
+2018-01-06 18:45:41,709 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum_repository.py
+2018-01-06 18:45:42,161 p=27405 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "diff": {
+        "after": "[sensu]\nbaseurl = https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/\nenabled = 1\ngpgcheck = 0\nname = EPEL YUM repo\n\n", 
+        "after_header": "/etc/yum.repos.d/sensu.repo", 
+        "before": "[sensu]\nbaseurl = https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/\nenabled = 1\ngpgcheck = 0\nname = EPEL YUM repo\n\n", 
+        "before_header": "/etc/yum.repos.d/sensu.repo"
+    }, 
+    "invocation": {
+        "module_args": {
+            "async": null, 
+            "attributes": null, 
+            "backup": null, 
+            "bandwidth": null, 
+            "baseurl": "https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/", 
+            "content": null, 
+            "cost": null, 
+            "delimiter": null, 
+            "deltarpm_metadata_percentage": null, 
+            "deltarpm_percentage": null, 
+            "dest": "/etc/yum.repos.d/sensu.repo", 
+            "directory_mode": null, 
+            "enabled": true, 
+            "enablegroups": null, 
+            "exclude": null, 
+            "failovermethod": null, 
+            "file": "sensu", 
+            "follow": false, 
+            "force": null, 
+            "gpgcakey": null, 
+            "gpgcheck": false, 
+            "gpgkey": null, 
+            "group": null, 
+            "http_caching": null, 
+            "include": null, 
+            "includepkgs": null, 
+            "ip_resolve": null, 
+            "keepalive": null, 
+            "keepcache": null, 
+            "metadata_expire": null, 
+            "metadata_expire_filter": null, 
+            "metalink": null, 
+            "mirrorlist": null, 
+            "mirrorlist_expire": null, 
+            "mode": null, 
+            "name": "EPEL YUM repo", 
+            "owner": null, 
+            "params": null, 
+            "password": null, 
+            "priority": null, 
+            "protect": null, 
+            "proxy": null, 
+            "proxy_password": null, 
+            "proxy_username": null, 
+            "regexp": null, 
+            "remote_src": null, 
+            "repo_gpgcheck": null, 
+            "repoid": "sensu", 
+            "reposdir": "/etc/yum.repos.d", 
+            "retries": null, 
+            "s3_enabled": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "skip_if_unavailable": null, 
+            "src": null, 
+            "ssl_check_cert_permissions": null, 
+            "sslcacert": null, 
+            "sslclientcert": null, 
+            "sslclientkey": null, 
+            "sslverify": null, 
+            "state": "present", 
+            "throttle": null, 
+            "timeout": null, 
+            "ui_repoid_vars": null, 
+            "unsafe_writes": null, 
+            "username": null
+        }
+    }, 
+    "repo": "sensu", 
+    "state": "present"
+}
+2018-01-06 18:45:42,181 p=27405 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:45:42,181 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:8
+2018-01-06 18:45:42,828 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-06 18:45:48,172 p=27405 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "sensu", 
+                "uchiwa"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "sensu", 
+        "uchiwa"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing sensu are up to date", 
+        "All packages providing uchiwa are up to date", 
+        ""
+    ]
+}
+2018-01-06 18:45:48,180 p=27405 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:45:48,180 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:16
+2018-01-06 18:45:48,420 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-06 18:45:49,083 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2018-01-06 18:45:49,529 p=27405 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "checksum": "5f7f9305bafaae0c45b8267744f96e2a632cd0e9", 
+    "diff": {
+        "after": {
+            "path": "/etc/sensu/uchiwa.json"
+        }, 
+        "before": {
+            "path": "/etc/sensu/uchiwa.json"
+        }
+    }, 
+    "gid": 993, 
+    "group": "uchiwa", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": "True", 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/etc/sensu/uchiwa.json", 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": "uchiwa", 
+            "mode": 420, 
+            "original_basename": "uchiwa_json.j2", 
+            "owner": "uchiwa", 
+            "path": "/etc/sensu/uchiwa.json", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "uchiwa_json.j2", 
+            "state": "file", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "uchiwa", 
+    "path": "/etc/sensu/uchiwa.json", 
+    "secontext": "system_u:object_r:etc_t:s0", 
+    "size": 211, 
+    "state": "file", 
+    "uid": 996
+}
+2018-01-06 18:45:49,550 p=27405 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:45:49,550 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:24
+2018-01-06 18:45:49,653 p=27405 u=root |  Running systemd
+2018-01-06 18:45:50,029 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/systemd.py
+2018-01-06 18:45:50,224 p=27405 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "enabled": true, 
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false, 
+            "enabled": true, 
+            "masked": null, 
+            "name": "uchiwa", 
+            "no_block": false, 
+            "state": "started", 
+            "user": false
+        }
+    }, 
+    "name": "uchiwa", 
+    "state": "started", 
+    "status": {
+        "ActiveEnterTimestamp": "Sat 2018-01-06 18:18:34 EST", 
+        "ActiveEnterTimestampMonotonic": "18798834553", 
+        "ActiveExitTimestampMonotonic": "0", 
+        "ActiveState": "active", 
+        "After": "systemd-journald.socket basic.target network-online.target system.slice remote-fs.target", 
+        "AllowIsolate": "no", 
+        "AmbientCapabilities": "0", 
+        "AssertResult": "yes", 
+        "AssertTimestamp": "Sat 2018-01-06 18:18:34 EST", 
+        "AssertTimestampMonotonic": "18798665519", 
+        "Before": "graphical.target shutdown.target multi-user.target", 
+        "BlockIOAccounting": "no", 
+        "BlockIOWeight": "18446744073709551615", 
+        "CPUAccounting": "no", 
+        "CPUQuotaPerSecUSec": "infinity", 
+        "CPUSchedulingPolicy": "0", 
+        "CPUSchedulingPriority": "0", 
+        "CPUSchedulingResetOnFork": "no", 
+        "CPUShares": "18446744073709551615", 
+        "CanIsolate": "no", 
+        "CanReload": "no", 
+        "CanStart": "yes", 
+        "CanStop": "yes", 
+        "CapabilityBoundingSet": "18446744073709551615", 
+        "ConditionResult": "yes", 
+        "ConditionTimestamp": "Sat 2018-01-06 18:18:34 EST", 
+        "ConditionTimestampMonotonic": "18798665518", 
+        "Conflicts": "shutdown.target", 
+        "ControlPID": "0", 
+        "DefaultDependencies": "yes", 
+        "Delegate": "no", 
+        "Description": "LSB: Uchiwa, a Sensu dashboard.", 
+        "DevicePolicy": "auto", 
+        "Documentation": "man:systemd-sysv-generator(8)", 
+        "ExecMainCode": "0", 
+        "ExecMainExitTimestampMonotonic": "0", 
+        "ExecMainPID": "0", 
+        "ExecMainStartTimestampMonotonic": "0", 
+        "ExecMainStatus": "0", 
+        "ExecStart": "{ path=/etc/rc.d/init.d/uchiwa ; argv[]=/etc/rc.d/init.d/uchiwa start ; ignore_errors=no ; start_time=[Sat 2018-01-06 18:18:34 EST] ; stop_time=[Sat 2018-01-06 18:18:34 EST] ; pid=2111 ; code=exited ; status=0 }", 
+        "ExecStop": "{ path=/etc/rc.d/init.d/uchiwa ; argv[]=/etc/rc.d/init.d/uchiwa stop ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", 
+        "FailureAction": "none", 
+        "FileDescriptorStoreMax": "0", 
+        "FragmentPath": "/run/systemd/generator.late/uchiwa.service", 
+        "GuessMainPID": "no", 
+        "IOScheduling": "0", 
+        "Id": "uchiwa.service", 
+        "IgnoreOnIsolate": "no", 
+        "IgnoreOnSnapshot": "no", 
+        "IgnoreSIGPIPE": "no", 
+        "InactiveEnterTimestampMonotonic": "0", 
+        "InactiveExitTimestamp": "Sat 2018-01-06 18:18:34 EST", 
+        "InactiveExitTimestampMonotonic": "18798671886", 
+        "JobTimeoutAction": "none", 
+        "JobTimeoutUSec": "0", 
+        "KillMode": "process", 
+        "KillSignal": "15", 
+        "LimitAS": "18446744073709551615", 
+        "LimitCORE": "18446744073709551615", 
+        "LimitCPU": "18446744073709551615", 
+        "LimitDATA": "18446744073709551615", 
+        "LimitFSIZE": "18446744073709551615", 
+        "LimitLOCKS": "18446744073709551615", 
+        "LimitMEMLOCK": "65536", 
+        "LimitMSGQUEUE": "819200", 
+        "LimitNICE": "0", 
+        "LimitNOFILE": "4096", 
+        "LimitNPROC": "7194", 
+        "LimitRSS": "18446744073709551615", 
+        "LimitRTPRIO": "0", 
+        "LimitRTTIME": "18446744073709551615", 
+        "LimitSIGPENDING": "7194", 
+        "LimitSTACK": "18446744073709551615", 
+        "LoadState": "loaded", 
+        "MainPID": "0", 
+        "MemoryAccounting": "no", 
+        "MemoryCurrent": "18446744073709551615", 
+        "MemoryLimit": "18446744073709551615", 
+        "MountFlags": "0", 
+        "Names": "uchiwa.service", 
+        "NeedDaemonReload": "no", 
+        "Nice": "0", 
+        "NoNewPrivileges": "no", 
+        "NonBlocking": "no", 
+        "NotifyAccess": "none", 
+        "OOMScoreAdjust": "0", 
+        "OnFailureJobMode": "replace", 
+        "PermissionsStartOnly": "no", 
+        "PrivateDevices": "no", 
+        "PrivateNetwork": "no", 
+        "PrivateTmp": "no", 
+        "ProtectHome": "no", 
+        "ProtectSystem": "no", 
+        "RefuseManualStart": "no", 
+        "RefuseManualStop": "no", 
+        "RemainAfterExit": "yes", 
+        "Requires": "basic.target", 
+        "Restart": "no", 
+        "RestartUSec": "100ms", 
+        "Result": "success", 
+        "RootDirectoryStartOnly": "no", 
+        "RuntimeDirectoryMode": "0755", 
+        "SameProcessGroup": "no", 
+        "SecureBits": "0", 
+        "SendSIGHUP": "no", 
+        "SendSIGKILL": "yes", 
+        "Slice": "system.slice", 
+        "SourcePath": "/etc/rc.d/init.d/uchiwa", 
+        "StandardError": "inherit", 
+        "StandardInput": "null", 
+        "StandardOutput": "journal", 
+        "StartLimitAction": "none", 
+        "StartLimitBurst": "5", 
+        "StartLimitInterval": "10000000", 
+        "StartupBlockIOWeight": "18446744073709551615", 
+        "StartupCPUShares": "18446744073709551615", 
+        "StatusErrno": "0", 
+        "StopWhenUnneeded": "no", 
+        "SubState": "exited", 
+        "SyslogLevelPrefix": "yes", 
+        "SyslogPriority": "30", 
+        "SystemCallErrorNumber": "0", 
+        "TTYReset": "no", 
+        "TTYVHangup": "no", 
+        "TTYVTDisallocate": "no", 
+        "TasksAccounting": "no", 
+        "TasksCurrent": "18446744073709551615", 
+        "TasksMax": "18446744073709551615", 
+        "TimeoutStartUSec": "5min", 
+        "TimeoutStopUSec": "5min", 
+        "TimerSlackNSec": "50000", 
+        "Transient": "no", 
+        "Type": "forking", 
+        "UMask": "0022", 
+        "UnitFilePreset": "disabled", 
+        "UnitFileState": "bad", 
+        "WantedBy": "multi-user.target graphical.target", 
+        "Wants": "system.slice", 
+        "WatchdogTimestampMonotonic": "0", 
+        "WatchdogUSec": "0"
+    }
+}
+2018-01-06 18:45:50,231 p=27405 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:45:50,231 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:29
+2018-01-06 18:45:50,268 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-06 18:45:50,946 p=27405 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": "firewalld", 
+            "name": null, 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "installed", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "results": [
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.3.9-11.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "11.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.3.9", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.3.9-14.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "14.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.3.9", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.3.9-7.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "7.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.3.9", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.3.2-8.1.el7_3.2.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "8.1.el7_3.2", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.3.2", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.3.2-8.1.el7_3.3.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "8.1.el7_3.3", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.3.2", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.3.2-8.1.el7_3.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "8.1.el7_3", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.3.2", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.3.2-8.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "8.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.3.2", 
+            "yumstate": "available"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.4.4-6.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "6.el7", 
+            "repo": "installed", 
+            "version": "0.4.4.4", 
+            "yumstate": "installed"
+        }, 
+        {
+            "arch": "noarch", 
+            "envra": "0:firewalld-0.4.4.4-6.el7.noarch", 
+            "epoch": "0", 
+            "name": "firewalld", 
+            "release": "6.el7", 
+            "repo": "rhelosp-rhel-7.4-server", 
+            "version": "0.4.4.4", 
+            "yumstate": "available"
+        }
+    ]
+}
+2018-01-06 18:45:50,955 p=27405 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:45:50,956 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:33
+2018-01-06 18:45:51,155 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/firewalld.py
+2018-01-06 18:45:51,956 p=27405 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "immediate": true, 
+            "interface": null, 
+            "masquerade": null, 
+            "offline": null, 
+            "permanent": true, 
+            "port": "3000/tcp", 
+            "rich_rule": null, 
+            "service": null, 
+            "source": null, 
+            "state": "enabled", 
+            "timeout": 0, 
+            "zone": null
+        }
+    }, 
+    "msg": "Permanent and Non-Permanent(immediate) operation"
+}
+2018-01-06 18:45:51,980 p=27405 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:45:51,981 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:40
+2018-01-06 18:45:52,503 p=27405 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-06 18:45:52,765 p=27405 u=root |  ok: [192.0.2.248] => {
+    "changed": false, 
+    "checksum_dest": "23792ed3b195aa2fecdc4cf3548be0f58deb2d35", 
+    "checksum_src": "23792ed3b195aa2fecdc4cf3548be0f58deb2d35", 
+    "dest": "/tmp/index.html", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/tmp", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": null, 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": null, 
+            "owner": null, 
+            "path": "/tmp/index.html", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "http://192.0.2.248:3000/#/info", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "md5sum": "0f21e724fce35ee82ea9ac5a7a3e5547", 
+    "mode": "0644", 
+    "msg": "OK (3922 bytes)", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:user_tmp_t:s0", 
+    "size": 3922, 
+    "src": "/tmp/tmp_UVRZp", 
+    "state": "file", 
+    "status_code": 200, 
+    "uid": 0, 
+    "url": "http://192.0.2.248:3000/#/info"
+}
+2018-01-06 18:45:52,773 p=27405 u=root |  TASK [server/uchiwa-install : debug] ****************************************************************************************************************************************
+2018-01-06 18:45:52,773 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:45
+2018-01-06 18:45:52,810 p=27405 u=root |  ok: [192.0.2.248] => {
+    "msg": "dashboard_access"
+}
+2018-01-06 18:45:52,817 p=27405 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:45:52,817 p=27405 u=root |  task path: /root/ansible_deploy_sensu_ha/roles/server/uchiwa-install/tasks/main.yaml:46
+2018-01-06 18:45:52,861 p=27405 u=root |  fatal: [192.0.2.248]: FAILED! => {
+    "changed": false, 
+    "msg": "Uchiwa dashboard is not listening on port 3000 on server 192.0.2.248"
+}
+2018-01-06 18:45:52,862 p=27405 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:45:52,863 p=27405 u=root |  192.0.2.248                : ok=9    changed=0    unreachable=0    failed=1   
+2018-01-06 18:54:51,577 p=27895 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:54:51,678 p=27895 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:54:53,304 p=27895 u=root |  ok: [192.0.2.248]
+2018-01-06 18:54:53,322 p=27895 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:54:54,158 p=27895 u=root |  ok: [192.0.2.248]
+2018-01-06 18:54:54,177 p=27895 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:55:00,242 p=27895 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:55:00,250 p=27895 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:55:01,978 p=27895 u=root |  ok: [192.0.2.248]
+2018-01-06 18:55:01,999 p=27895 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:55:02,686 p=27895 u=root |  ok: [192.0.2.248]
+2018-01-06 18:55:02,693 p=27895 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:55:03,385 p=27895 u=root |  ok: [192.0.2.248]
+2018-01-06 18:55:03,395 p=27895 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:55:04,123 p=27895 u=root |  ok: [192.0.2.248]
+2018-01-06 18:55:04,133 p=27895 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:55:04,850 p=27895 u=root |  ok: [192.0.2.248]
+2018-01-06 18:55:04,872 p=27895 u=root |  TASK [server/uchiwa-install : debug] ****************************************************************************************************************************************
+2018-01-06 18:55:04,974 p=27895 u=root |  ok: [192.0.2.248] => {
+    "msg": "dashboard_access"
+}
+2018-01-06 18:55:04,995 p=27895 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:55:05,048 p=27895 u=root |  skipping: [192.0.2.248]
+2018-01-06 18:55:05,053 p=27895 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:55:05,054 p=27895 u=root |  192.0.2.248                : ok=9    changed=0    unreachable=0    failed=0   
+2018-01-06 18:55:52,680 p=27989 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:55:52,716 p=27989 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:55:53,382 p=27989 u=root |  ok: [192.0.2.248]
+2018-01-06 18:55:53,390 p=27989 u=root |  TASK [server/uchiwa-install : Add sensu repository] *************************************************************************************************************************
+2018-01-06 18:55:54,061 p=27989 u=root |  ok: [192.0.2.248]
+2018-01-06 18:55:54,082 p=27989 u=root |  TASK [server/uchiwa-install : Yum update and install sensu] *****************************************************************************************************************
+2018-01-06 18:55:59,792 p=27989 u=root |  ok: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:55:59,800 p=27989 u=root |  TASK [server/uchiwa-install : Configure /etc/sensu/uchiwa.json] *************************************************************************************************************
+2018-01-06 18:56:01,299 p=27989 u=root |  ok: [192.0.2.248]
+2018-01-06 18:56:01,319 p=27989 u=root |  TASK [server/uchiwa-install : Enable and start uchiwa] **********************************************************************************************************************
+2018-01-06 18:56:02,339 p=27989 u=root |  changed: [192.0.2.248]
+2018-01-06 18:56:02,360 p=27989 u=root |  TASK [server/uchiwa-install : Check if firewalld is installed] **************************************************************************************************************
+2018-01-06 18:56:03,417 p=27989 u=root |  ok: [192.0.2.248]
+2018-01-06 18:56:03,426 p=27989 u=root |  TASK [server/uchiwa-install : Open tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:56:04,423 p=27989 u=root |  ok: [192.0.2.248]
+2018-01-06 18:56:04,448 p=27989 u=root |  TASK [server/uchiwa-install : Verify if Uchiwa is listening on TCP port 3000] ***********************************************************************************************
+2018-01-06 18:56:05,252 p=27989 u=root |  ok: [192.0.2.248]
+2018-01-06 18:56:05,260 p=27989 u=root |  TASK [server/uchiwa-install : fail] *****************************************************************************************************************************************
+2018-01-06 18:56:05,280 p=27989 u=root |  skipping: [192.0.2.248]
+2018-01-06 18:56:05,282 p=27989 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:56:05,282 p=27989 u=root |  192.0.2.248                : ok=8    changed=1    unreachable=0    failed=0   
+2018-01-06 18:58:36,772 p=28165 u=root |  PLAY [uchiwa] ***************************************************************************************************************************************************************
+2018-01-06 18:58:36,810 p=28165 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-06 18:58:38,097 p=28165 u=root |  ok: [192.0.2.248]
+2018-01-06 18:58:38,104 p=28165 u=root |  TASK [server/uchiwa-remove : Disable sensu repository] **********************************************************************************************************************
+2018-01-06 18:58:38,423 p=28165 u=root |  changed: [192.0.2.248]
+2018-01-06 18:58:38,431 p=28165 u=root |  TASK [server/uchiwa-remove : Remove sensu and uchiwa] ***********************************************************************************************************************
+2018-01-06 18:58:52,135 p=28165 u=root |  changed: [192.0.2.248] => (item=[u'sensu', u'uchiwa'])
+2018-01-06 18:58:52,157 p=28165 u=root |  TASK [server/uchiwa-remove : Remove sensu directory /etc/sensu] *************************************************************************************************************
+2018-01-06 18:58:53,084 p=28165 u=root |  changed: [192.0.2.248]
+2018-01-06 18:58:53,101 p=28165 u=root |  TASK [server/uchiwa-remove : Check if firewalld is installed] ***************************************************************************************************************
+2018-01-06 18:58:54,328 p=28165 u=root |  ok: [192.0.2.248]
+2018-01-06 18:58:54,336 p=28165 u=root |  TASK [server/uchiwa-remove : Close tcp port 3000 for dashboard access] ******************************************************************************************************
+2018-01-06 18:58:55,686 p=28165 u=root |  changed: [192.0.2.248]
+2018-01-06 18:58:55,691 p=28165 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-06 18:58:55,692 p=28165 u=root |  192.0.2.248                : ok=6    changed=4    unreachable=0    failed=0   
+2018-01-06 19:01:37,958 p=28356 u=root |  192.0.2.248 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
