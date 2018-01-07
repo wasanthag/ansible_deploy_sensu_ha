@@ -3243,3 +3243,1496 @@ value only.
 2018-01-07 11:55:30,915 p=14285 u=root |  changed: [192.0.2.248]
 2018-01-07 11:55:30,917 p=14285 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
 2018-01-07 11:55:30,917 p=14285 u=root |  192.0.2.248                : ok=6    changed=4    unreachable=0    failed=0   
+2018-01-07 12:02:02,670 p=14673 u=root |   [WARNING]: Could not match supplied host pattern, ignoring: sensu-server
+
+2018-01-07 12:02:02,670 p=14673 u=root |   [WARNING]: No hosts matched, nothing to do
+
+2018-01-07 12:02:08,709 p=14686 u=root |  192.0.2.248 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-01-07 12:21:30,987 p=15653 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 12:21:31,023 p=15653 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 12:21:32,576 p=15653 u=root |  ok: [192.0.2.248]
+2018-01-07 12:21:32,594 p=15653 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 12:21:33,393 p=15653 u=root |  changed: [192.0.2.248]
+2018-01-07 12:21:33,411 p=15653 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 12:21:39,628 p=15653 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "No package matching 'sensu' found available, installed or updated", "rc": 126, "results": ["No package matching 'sensu' found available, installed or updated"]}
+2018-01-07 12:21:39,632 p=15653 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 12:21:39,632 p=15653 u=root |  192.0.2.248                : ok=2    changed=1    unreachable=0    failed=1   
+2018-01-07 12:41:35,166 p=16644 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 12:41:35,200 p=16644 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 12:41:36,687 p=16644 u=root |  ok: [192.0.2.248]
+2018-01-07 12:41:36,704 p=16644 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 12:41:37,381 p=16644 u=root |  changed: [192.0.2.248]
+2018-01-07 12:41:37,395 p=16644 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 12:41:43,189 p=16644 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "No package matching 'sensu' found available, installed or updated", "rc": 126, "results": ["No package matching 'sensu' found available, installed or updated"]}
+2018-01-07 12:41:43,192 p=16644 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 12:41:43,193 p=16644 u=root |  192.0.2.248                : ok=2    changed=1    unreachable=0    failed=1   
+2018-01-07 12:41:50,870 p=16679 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 12:41:50,902 p=16679 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 12:41:51,567 p=16679 u=root |  ok: [192.0.2.248]
+2018-01-07 12:41:51,574 p=16679 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 12:41:52,282 p=16679 u=root |  changed: [192.0.2.248]
+2018-01-07 12:41:52,301 p=16679 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 12:42:11,078 p=16679 u=root |  changed: [192.0.2.248]
+2018-01-07 12:42:11,095 p=16679 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 12:42:12,909 p=16679 u=root |  changed: [192.0.2.248]
+2018-01-07 12:42:12,925 p=16679 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 12:42:14,068 p=16679 u=root |  changed: [192.0.2.248]
+2018-01-07 12:42:14,085 p=16679 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 12:42:15,259 p=16679 u=root |  changed: [192.0.2.248]
+2018-01-07 12:42:15,278 p=16679 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 12:42:16,454 p=16679 u=root |  changed: [192.0.2.248]
+2018-01-07 12:42:16,473 p=16679 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 12:42:17,605 p=16679 u=root |  changed: [192.0.2.248]
+2018-01-07 12:42:17,624 p=16679 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 12:42:18,865 p=16679 u=root |  changed: [192.0.2.248] => (item=sensu-server)
+2018-01-07 12:42:19,389 p=16679 u=root |  changed: [192.0.2.248] => (item=sensu-client)
+2018-01-07 12:42:19,392 p=16679 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 12:42:19,393 p=16679 u=root |  192.0.2.248                : ok=9    changed=8    unreachable=0    failed=0   
+2018-01-07 12:49:56,884 p=17146 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 12:49:56,920 p=17146 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 12:49:58,679 p=17146 u=root |  ok: [192.0.2.248]
+2018-01-07 12:49:58,686 p=17146 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 12:49:59,032 p=17146 u=root |  ok: [192.0.2.248]
+2018-01-07 12:49:59,039 p=17146 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 12:50:04,875 p=17146 u=root |  ok: [192.0.2.248]
+2018-01-07 12:50:04,882 p=17146 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 12:50:06,265 p=17146 u=root |  ok: [192.0.2.248]
+2018-01-07 12:50:06,284 p=17146 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 12:50:07,349 p=17146 u=root |  ok: [192.0.2.248]
+2018-01-07 12:50:07,365 p=17146 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 12:50:08,368 p=17146 u=root |  ok: [192.0.2.248]
+2018-01-07 12:50:08,384 p=17146 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 12:50:09,390 p=17146 u=root |  ok: [192.0.2.248]
+2018-01-07 12:50:09,407 p=17146 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 12:50:10,408 p=17146 u=root |  ok: [192.0.2.248]
+2018-01-07 12:50:10,424 p=17146 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 12:50:11,392 p=17146 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 12:50:11,837 p=17146 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 12:50:11,864 p=17146 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 12:50:12,528 p=17146 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 12:50:12,983 p=17146 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 12:50:13,020 p=17146 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 12:50:13,072 p=17146 u=root |  fatal: [192.0.2.248]: FAILED! => {"msg": "The conditional check 'service_status.rc != 0' failed. The error was: error while evaluating conditional (service_status.rc != 0): 'dict object' has no attribute 'rc'\n\nThe error appears to have been in '/root/ansible_deploy_sensu_ha/roles/server/sensu-server-install/tasks/main.yaml': line 64, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  register: service_status\n- fail:\n  ^ here\n"}
+2018-01-07 12:50:13,078 p=17146 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 12:50:13,079 p=17146 u=root |  192.0.2.248                : ok=10   changed=0    unreachable=0    failed=1   
+2018-01-07 12:51:31,256 p=17286 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 12:51:31,294 p=17286 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 12:51:32,284 p=17286 u=root |  ok: [192.0.2.248]
+2018-01-07 12:51:32,293 p=17286 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 12:51:32,693 p=17286 u=root |  ok: [192.0.2.248]
+2018-01-07 12:51:32,712 p=17286 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 12:51:39,142 p=17286 u=root |  ok: [192.0.2.248]
+2018-01-07 12:51:39,149 p=17286 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 12:51:40,171 p=17286 u=root |  ok: [192.0.2.248]
+2018-01-07 12:51:40,190 p=17286 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 12:51:41,274 p=17286 u=root |  ok: [192.0.2.248]
+2018-01-07 12:51:41,291 p=17286 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 12:51:42,308 p=17286 u=root |  ok: [192.0.2.248]
+2018-01-07 12:51:42,325 p=17286 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 12:51:43,352 p=17286 u=root |  ok: [192.0.2.248]
+2018-01-07 12:51:43,368 p=17286 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 12:51:44,372 p=17286 u=root |  ok: [192.0.2.248]
+2018-01-07 12:51:44,389 p=17286 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 12:51:45,353 p=17286 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 12:51:45,782 p=17286 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 12:51:45,810 p=17286 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 12:51:46,475 p=17286 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 12:51:46,928 p=17286 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 12:51:46,966 p=17286 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 12:51:47,171 p=17286 u=root |  ok: [192.0.2.248] => {
+    "service_status": {
+        "changed": false, 
+        "msg": "All items completed", 
+        "results": [
+            {
+                "_ansible_ignore_errors": null, 
+                "_ansible_item_result": true, 
+                "_ansible_no_log": false, 
+                "_ansible_parsed": true, 
+                "changed": false, 
+                "failed": false, 
+                "invocation": {
+                    "module_args": {
+                        "daemon_reload": false, 
+                        "enabled": null, 
+                        "masked": null, 
+                        "name": "sensu-server", 
+                        "no_block": false, 
+                        "state": "started", 
+                        "user": false
+                    }
+                }, 
+                "item": "sensu-server", 
+                "name": "sensu-server", 
+                "state": "started", 
+                "status": {
+                    "ActiveEnterTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ActiveEnterTimestampMonotonic": "2048315902", 
+                    "ActiveExitTimestampMonotonic": "0", 
+                    "ActiveState": "active", 
+                    "After": "basic.target network-online.target systemd-journald.socket system.slice", 
+                    "AllowIsolate": "no", 
+                    "AmbientCapabilities": "0", 
+                    "AssertResult": "yes", 
+                    "AssertTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "AssertTimestampMonotonic": "2048310320", 
+                    "Before": "shutdown.target", 
+                    "BlockIOAccounting": "no", 
+                    "BlockIOWeight": "18446744073709551615", 
+                    "CPUAccounting": "no", 
+                    "CPUQuotaPerSecUSec": "infinity", 
+                    "CPUSchedulingPolicy": "0", 
+                    "CPUSchedulingPriority": "0", 
+                    "CPUSchedulingResetOnFork": "no", 
+                    "CPUShares": "18446744073709551615", 
+                    "CanIsolate": "no", 
+                    "CanReload": "no", 
+                    "CanStart": "yes", 
+                    "CanStop": "yes", 
+                    "CapabilityBoundingSet": "18446744073709551615", 
+                    "ConditionResult": "yes", 
+                    "ConditionTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ConditionTimestampMonotonic": "2048310319", 
+                    "Conflicts": "shutdown.target", 
+                    "ControlGroup": "/system.slice/sensu-server.service", 
+                    "ControlPID": "0", 
+                    "DefaultDependencies": "yes", 
+                    "Delegate": "no", 
+                    "Description": "sensu server", 
+                    "DevicePolicy": "auto", 
+                    "ExecMainCode": "0", 
+                    "ExecMainExitTimestampMonotonic": "0", 
+                    "ExecMainPID": "1662", 
+                    "ExecMainStartTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ExecMainStartTimestampMonotonic": "2048315731", 
+                    "ExecMainStatus": "0", 
+                    "ExecStart": "{ path=/opt/sensu/bin/sensu-service ; argv[]=/opt/sensu/bin/sensu-service start server ; ignore_errors=no ; start_time=[Sun 2018-01-07 12:42:18 EST] ; stop_time=[n/a] ; pid=1662 ; code=(null) ; status=0/0 }", 
+                    "FailureAction": "none", 
+                    "FileDescriptorStoreMax": "0", 
+                    "FragmentPath": "/usr/lib/systemd/system/sensu-server.service", 
+                    "Group": "sensu", 
+                    "GuessMainPID": "yes", 
+                    "IOScheduling": "0", 
+                    "Id": "sensu-server.service", 
+                    "IgnoreOnIsolate": "no", 
+                    "IgnoreOnSnapshot": "no", 
+                    "IgnoreSIGPIPE": "yes", 
+                    "InactiveEnterTimestampMonotonic": "0", 
+                    "InactiveExitTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "InactiveExitTimestampMonotonic": "2048315902", 
+                    "JobTimeoutAction": "none", 
+                    "JobTimeoutUSec": "0", 
+                    "KillMode": "process", 
+                    "KillSignal": "15", 
+                    "LimitAS": "18446744073709551615", 
+                    "LimitCORE": "18446744073709551615", 
+                    "LimitCPU": "18446744073709551615", 
+                    "LimitDATA": "18446744073709551615", 
+                    "LimitFSIZE": "18446744073709551615", 
+                    "LimitLOCKS": "18446744073709551615", 
+                    "LimitMEMLOCK": "65536", 
+                    "LimitMSGQUEUE": "819200", 
+                    "LimitNICE": "0", 
+                    "LimitNOFILE": "4096", 
+                    "LimitNPROC": "7194", 
+                    "LimitRSS": "18446744073709551615", 
+                    "LimitRTPRIO": "0", 
+                    "LimitRTTIME": "18446744073709551615", 
+                    "LimitSIGPENDING": "7194", 
+                    "LimitSTACK": "18446744073709551615", 
+                    "LoadState": "loaded", 
+                    "MainPID": "1662", 
+                    "MemoryAccounting": "no", 
+                    "MemoryCurrent": "18446744073709551615", 
+                    "MemoryLimit": "18446744073709551615", 
+                    "MountFlags": "0", 
+                    "Names": "sensu-server.service", 
+                    "NeedDaemonReload": "no", 
+                    "Nice": "0", 
+                    "NoNewPrivileges": "no", 
+                    "NonBlocking": "no", 
+                    "NotifyAccess": "none", 
+                    "OOMScoreAdjust": "0", 
+                    "OnFailureJobMode": "replace", 
+                    "PermissionsStartOnly": "no", 
+                    "PrivateDevices": "no", 
+                    "PrivateNetwork": "no", 
+                    "PrivateTmp": "no", 
+                    "ProtectHome": "no", 
+                    "ProtectSystem": "no", 
+                    "RefuseManualStart": "no", 
+                    "RefuseManualStop": "no", 
+                    "RemainAfterExit": "no", 
+                    "Requires": "basic.target", 
+                    "Restart": "on-failure", 
+                    "RestartUSec": "1min", 
+                    "Result": "success", 
+                    "RootDirectoryStartOnly": "no", 
+                    "RuntimeDirectoryMode": "0755", 
+                    "SameProcessGroup": "no", 
+                    "SecureBits": "0", 
+                    "SendSIGHUP": "no", 
+                    "SendSIGKILL": "yes", 
+                    "Slice": "system.slice", 
+                    "StandardError": "inherit", 
+                    "StandardInput": "null", 
+                    "StandardOutput": "journal", 
+                    "StartLimitAction": "none", 
+                    "StartLimitBurst": "5", 
+                    "StartLimitInterval": "10000000", 
+                    "StartupBlockIOWeight": "18446744073709551615", 
+                    "StartupCPUShares": "18446744073709551615", 
+                    "StatusErrno": "0", 
+                    "StopWhenUnneeded": "no", 
+                    "SubState": "running", 
+                    "SyslogLevelPrefix": "yes", 
+                    "SyslogPriority": "30", 
+                    "SystemCallErrorNumber": "0", 
+                    "TTYReset": "no", 
+                    "TTYVHangup": "no", 
+                    "TTYVTDisallocate": "no", 
+                    "TasksAccounting": "no", 
+                    "TasksCurrent": "18446744073709551615", 
+                    "TasksMax": "18446744073709551615", 
+                    "TimeoutStartUSec": "1min 30s", 
+                    "TimeoutStopUSec": "1min 30s", 
+                    "TimerSlackNSec": "50000", 
+                    "Transient": "no", 
+                    "Type": "simple", 
+                    "UMask": "0022", 
+                    "UnitFilePreset": "disabled", 
+                    "UnitFileState": "enabled", 
+                    "User": "sensu", 
+                    "WantedBy": "network-online.target", 
+                    "Wants": "system.slice", 
+                    "WatchdogTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "WatchdogTimestampMonotonic": "2048315835", 
+                    "WatchdogUSec": "0"
+                }
+            }, 
+            {
+                "_ansible_ignore_errors": null, 
+                "_ansible_item_result": true, 
+                "_ansible_no_log": false, 
+                "_ansible_parsed": true, 
+                "changed": false, 
+                "failed": false, 
+                "invocation": {
+                    "module_args": {
+                        "daemon_reload": false, 
+                        "enabled": null, 
+                        "masked": null, 
+                        "name": "sensu-client", 
+                        "no_block": false, 
+                        "state": "started", 
+                        "user": false
+                    }
+                }, 
+                "item": "sensu-client", 
+                "name": "sensu-client", 
+                "state": "started", 
+                "status": {
+                    "ActiveEnterTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ActiveEnterTimestampMonotonic": "2049086336", 
+                    "ActiveExitTimestampMonotonic": "0", 
+                    "ActiveState": "active", 
+                    "After": "basic.target network-online.target systemd-journald.socket system.slice", 
+                    "AllowIsolate": "no", 
+                    "AmbientCapabilities": "0", 
+                    "AssertResult": "yes", 
+                    "AssertTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "AssertTimestampMonotonic": "2049085473", 
+                    "Before": "shutdown.target", 
+                    "BlockIOAccounting": "no", 
+                    "BlockIOWeight": "18446744073709551615", 
+                    "CPUAccounting": "no", 
+                    "CPUQuotaPerSecUSec": "infinity", 
+                    "CPUSchedulingPolicy": "0", 
+                    "CPUSchedulingPriority": "0", 
+                    "CPUSchedulingResetOnFork": "no", 
+                    "CPUShares": "18446744073709551615", 
+                    "CanIsolate": "no", 
+                    "CanReload": "no", 
+                    "CanStart": "yes", 
+                    "CanStop": "yes", 
+                    "CapabilityBoundingSet": "18446744073709551615", 
+                    "ConditionResult": "yes", 
+                    "ConditionTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ConditionTimestampMonotonic": "2049085473", 
+                    "Conflicts": "shutdown.target", 
+                    "ControlGroup": "/system.slice/sensu-client.service", 
+                    "ControlPID": "0", 
+                    "DefaultDependencies": "yes", 
+                    "Delegate": "no", 
+                    "Description": "sensu client", 
+                    "DevicePolicy": "auto", 
+                    "ExecMainCode": "0", 
+                    "ExecMainExitTimestampMonotonic": "0", 
+                    "ExecMainPID": "1677", 
+                    "ExecMainStartTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ExecMainStartTimestampMonotonic": "2049086250", 
+                    "ExecMainStatus": "0", 
+                    "ExecStart": "{ path=/opt/sensu/bin/sensu-service ; argv[]=/opt/sensu/bin/sensu-service start client ; ignore_errors=no ; start_time=[Sun 2018-01-07 12:42:19 EST] ; stop_time=[n/a] ; pid=1677 ; code=(null) ; status=0/0 }", 
+                    "FailureAction": "none", 
+                    "FileDescriptorStoreMax": "0", 
+                    "FragmentPath": "/usr/lib/systemd/system/sensu-client.service", 
+                    "Group": "sensu", 
+                    "GuessMainPID": "yes", 
+                    "IOScheduling": "0", 
+                    "Id": "sensu-client.service", 
+                    "IgnoreOnIsolate": "no", 
+                    "IgnoreOnSnapshot": "no", 
+                    "IgnoreSIGPIPE": "yes", 
+                    "InactiveEnterTimestampMonotonic": "0", 
+                    "InactiveExitTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "InactiveExitTimestampMonotonic": "2049086336", 
+                    "JobTimeoutAction": "none", 
+                    "JobTimeoutUSec": "0", 
+                    "KillMode": "process", 
+                    "KillSignal": "15", 
+                    "LimitAS": "18446744073709551615", 
+                    "LimitCORE": "18446744073709551615", 
+                    "LimitCPU": "18446744073709551615", 
+                    "LimitDATA": "18446744073709551615", 
+                    "LimitFSIZE": "18446744073709551615", 
+                    "LimitLOCKS": "18446744073709551615", 
+                    "LimitMEMLOCK": "65536", 
+                    "LimitMSGQUEUE": "819200", 
+                    "LimitNICE": "0", 
+                    "LimitNOFILE": "4096", 
+                    "LimitNPROC": "7194", 
+                    "LimitRSS": "18446744073709551615", 
+                    "LimitRTPRIO": "0", 
+                    "LimitRTTIME": "18446744073709551615", 
+                    "LimitSIGPENDING": "7194", 
+                    "LimitSTACK": "18446744073709551615", 
+                    "LoadState": "loaded", 
+                    "MainPID": "1677", 
+                    "MemoryAccounting": "no", 
+                    "MemoryCurrent": "18446744073709551615", 
+                    "MemoryLimit": "18446744073709551615", 
+                    "MountFlags": "0", 
+                    "Names": "sensu-client.service", 
+                    "NeedDaemonReload": "no", 
+                    "Nice": "0", 
+                    "NoNewPrivileges": "no", 
+                    "NonBlocking": "no", 
+                    "NotifyAccess": "none", 
+                    "OOMScoreAdjust": "0", 
+                    "OnFailureJobMode": "replace", 
+                    "PermissionsStartOnly": "no", 
+                    "PrivateDevices": "no", 
+                    "PrivateNetwork": "no", 
+                    "PrivateTmp": "no", 
+                    "ProtectHome": "no", 
+                    "ProtectSystem": "no", 
+                    "RefuseManualStart": "no", 
+                    "RefuseManualStop": "no", 
+                    "RemainAfterExit": "no", 
+                    "Requires": "basic.target", 
+                    "Restart": "on-failure", 
+                    "RestartUSec": "1min", 
+                    "Result": "success", 
+                    "RootDirectoryStartOnly": "no", 
+                    "RuntimeDirectoryMode": "0755", 
+                    "SameProcessGroup": "no", 
+                    "SecureBits": "0", 
+                    "SendSIGHUP": "no", 
+                    "SendSIGKILL": "yes", 
+                    "Slice": "system.slice", 
+                    "StandardError": "inherit", 
+                    "StandardInput": "null", 
+                    "StandardOutput": "journal", 
+                    "StartLimitAction": "none", 
+                    "StartLimitBurst": "5", 
+                    "StartLimitInterval": "10000000", 
+                    "StartupBlockIOWeight": "18446744073709551615", 
+                    "StartupCPUShares": "18446744073709551615", 
+                    "StatusErrno": "0", 
+                    "StopWhenUnneeded": "no", 
+                    "SubState": "running", 
+                    "SyslogLevelPrefix": "yes", 
+                    "SyslogPriority": "30", 
+                    "SystemCallErrorNumber": "0", 
+                    "TTYReset": "no", 
+                    "TTYVHangup": "no", 
+                    "TTYVTDisallocate": "no", 
+                    "TasksAccounting": "no", 
+                    "TasksCurrent": "18446744073709551615", 
+                    "TasksMax": "18446744073709551615", 
+                    "TimeoutStartUSec": "1min 30s", 
+                    "TimeoutStopUSec": "1min 30s", 
+                    "TimerSlackNSec": "50000", 
+                    "Transient": "no", 
+                    "Type": "simple", 
+                    "UMask": "0022", 
+                    "UnitFilePreset": "disabled", 
+                    "UnitFileState": "enabled", 
+                    "User": "sensu", 
+                    "WantedBy": "network-online.target", 
+                    "Wants": "system.slice", 
+                    "WatchdogTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "WatchdogTimestampMonotonic": "2049086301", 
+                    "WatchdogUSec": "0"
+                }
+            }
+        ]
+    }
+}
+2018-01-07 12:51:47,190 p=17286 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 12:51:47,244 p=17286 u=root |  fatal: [192.0.2.248]: FAILED! => {"msg": "The conditional check 'service_status.rc != 0' failed. The error was: error while evaluating conditional (service_status.rc != 0): 'dict object' has no attribute 'rc'\n\nThe error appears to have been in '/root/ansible_deploy_sensu_ha/roles/server/sensu-server-install/tasks/main.yaml': line 65, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n- debug: var=service_status\n- fail:\n  ^ here\n"}
+2018-01-07 12:51:47,248 p=17286 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 12:51:47,248 p=17286 u=root |  192.0.2.248                : ok=11   changed=0    unreachable=0    failed=1   
+2018-01-07 13:03:01,905 p=17918 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:03:01,939 p=17918 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:03:03,205 p=17918 u=root |  ok: [192.0.2.248]
+2018-01-07 13:03:03,212 p=17918 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:03:03,531 p=17918 u=root |  ok: [192.0.2.248]
+2018-01-07 13:03:03,537 p=17918 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:03:09,830 p=17918 u=root |  ok: [192.0.2.248]
+2018-01-07 13:03:09,837 p=17918 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:03:11,181 p=17918 u=root |  ok: [192.0.2.248]
+2018-01-07 13:03:11,200 p=17918 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:03:12,323 p=17918 u=root |  ok: [192.0.2.248]
+2018-01-07 13:03:12,343 p=17918 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:03:13,431 p=17918 u=root |  ok: [192.0.2.248]
+2018-01-07 13:03:13,450 p=17918 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:03:14,509 p=17918 u=root |  ok: [192.0.2.248]
+2018-01-07 13:03:14,526 p=17918 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:03:15,594 p=17918 u=root |  ok: [192.0.2.248]
+2018-01-07 13:03:15,614 p=17918 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:03:16,323 p=17918 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:03:16,488 p=17918 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:03:16,496 p=17918 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:03:16,974 p=17918 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:03:17,424 p=17918 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:03:17,466 p=17918 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 13:03:17,671 p=17918 u=root |  ok: [192.0.2.248] => {
+    "service_status": {
+        "changed": false, 
+        "msg": "All items completed", 
+        "results": [
+            {
+                "_ansible_ignore_errors": null, 
+                "_ansible_item_result": true, 
+                "_ansible_no_log": false, 
+                "_ansible_parsed": true, 
+                "changed": false, 
+                "failed": false, 
+                "invocation": {
+                    "module_args": {
+                        "daemon_reload": false, 
+                        "enabled": null, 
+                        "masked": null, 
+                        "name": "sensu-server", 
+                        "no_block": false, 
+                        "state": "started", 
+                        "user": false
+                    }
+                }, 
+                "item": "sensu-server", 
+                "name": "sensu-server", 
+                "state": "started", 
+                "status": {
+                    "ActiveEnterTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ActiveEnterTimestampMonotonic": "2048315902", 
+                    "ActiveExitTimestampMonotonic": "0", 
+                    "ActiveState": "active", 
+                    "After": "basic.target network-online.target systemd-journald.socket system.slice", 
+                    "AllowIsolate": "no", 
+                    "AmbientCapabilities": "0", 
+                    "AssertResult": "yes", 
+                    "AssertTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "AssertTimestampMonotonic": "2048310320", 
+                    "Before": "shutdown.target", 
+                    "BlockIOAccounting": "no", 
+                    "BlockIOWeight": "18446744073709551615", 
+                    "CPUAccounting": "no", 
+                    "CPUQuotaPerSecUSec": "infinity", 
+                    "CPUSchedulingPolicy": "0", 
+                    "CPUSchedulingPriority": "0", 
+                    "CPUSchedulingResetOnFork": "no", 
+                    "CPUShares": "18446744073709551615", 
+                    "CanIsolate": "no", 
+                    "CanReload": "no", 
+                    "CanStart": "yes", 
+                    "CanStop": "yes", 
+                    "CapabilityBoundingSet": "18446744073709551615", 
+                    "ConditionResult": "yes", 
+                    "ConditionTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ConditionTimestampMonotonic": "2048310319", 
+                    "Conflicts": "shutdown.target", 
+                    "ControlGroup": "/system.slice/sensu-server.service", 
+                    "ControlPID": "0", 
+                    "DefaultDependencies": "yes", 
+                    "Delegate": "no", 
+                    "Description": "sensu server", 
+                    "DevicePolicy": "auto", 
+                    "ExecMainCode": "0", 
+                    "ExecMainExitTimestampMonotonic": "0", 
+                    "ExecMainPID": "1662", 
+                    "ExecMainStartTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ExecMainStartTimestampMonotonic": "2048315731", 
+                    "ExecMainStatus": "0", 
+                    "ExecStart": "{ path=/opt/sensu/bin/sensu-service ; argv[]=/opt/sensu/bin/sensu-service start server ; ignore_errors=no ; start_time=[Sun 2018-01-07 12:42:18 EST] ; stop_time=[n/a] ; pid=1662 ; code=(null) ; status=0/0 }", 
+                    "FailureAction": "none", 
+                    "FileDescriptorStoreMax": "0", 
+                    "FragmentPath": "/usr/lib/systemd/system/sensu-server.service", 
+                    "Group": "sensu", 
+                    "GuessMainPID": "yes", 
+                    "IOScheduling": "0", 
+                    "Id": "sensu-server.service", 
+                    "IgnoreOnIsolate": "no", 
+                    "IgnoreOnSnapshot": "no", 
+                    "IgnoreSIGPIPE": "yes", 
+                    "InactiveEnterTimestampMonotonic": "0", 
+                    "InactiveExitTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "InactiveExitTimestampMonotonic": "2048315902", 
+                    "JobTimeoutAction": "none", 
+                    "JobTimeoutUSec": "0", 
+                    "KillMode": "process", 
+                    "KillSignal": "15", 
+                    "LimitAS": "18446744073709551615", 
+                    "LimitCORE": "18446744073709551615", 
+                    "LimitCPU": "18446744073709551615", 
+                    "LimitDATA": "18446744073709551615", 
+                    "LimitFSIZE": "18446744073709551615", 
+                    "LimitLOCKS": "18446744073709551615", 
+                    "LimitMEMLOCK": "65536", 
+                    "LimitMSGQUEUE": "819200", 
+                    "LimitNICE": "0", 
+                    "LimitNOFILE": "4096", 
+                    "LimitNPROC": "7194", 
+                    "LimitRSS": "18446744073709551615", 
+                    "LimitRTPRIO": "0", 
+                    "LimitRTTIME": "18446744073709551615", 
+                    "LimitSIGPENDING": "7194", 
+                    "LimitSTACK": "18446744073709551615", 
+                    "LoadState": "loaded", 
+                    "MainPID": "1662", 
+                    "MemoryAccounting": "no", 
+                    "MemoryCurrent": "18446744073709551615", 
+                    "MemoryLimit": "18446744073709551615", 
+                    "MountFlags": "0", 
+                    "Names": "sensu-server.service", 
+                    "NeedDaemonReload": "no", 
+                    "Nice": "0", 
+                    "NoNewPrivileges": "no", 
+                    "NonBlocking": "no", 
+                    "NotifyAccess": "none", 
+                    "OOMScoreAdjust": "0", 
+                    "OnFailureJobMode": "replace", 
+                    "PermissionsStartOnly": "no", 
+                    "PrivateDevices": "no", 
+                    "PrivateNetwork": "no", 
+                    "PrivateTmp": "no", 
+                    "ProtectHome": "no", 
+                    "ProtectSystem": "no", 
+                    "RefuseManualStart": "no", 
+                    "RefuseManualStop": "no", 
+                    "RemainAfterExit": "no", 
+                    "Requires": "basic.target", 
+                    "Restart": "on-failure", 
+                    "RestartUSec": "1min", 
+                    "Result": "success", 
+                    "RootDirectoryStartOnly": "no", 
+                    "RuntimeDirectoryMode": "0755", 
+                    "SameProcessGroup": "no", 
+                    "SecureBits": "0", 
+                    "SendSIGHUP": "no", 
+                    "SendSIGKILL": "yes", 
+                    "Slice": "system.slice", 
+                    "StandardError": "inherit", 
+                    "StandardInput": "null", 
+                    "StandardOutput": "journal", 
+                    "StartLimitAction": "none", 
+                    "StartLimitBurst": "5", 
+                    "StartLimitInterval": "10000000", 
+                    "StartupBlockIOWeight": "18446744073709551615", 
+                    "StartupCPUShares": "18446744073709551615", 
+                    "StatusErrno": "0", 
+                    "StopWhenUnneeded": "no", 
+                    "SubState": "running", 
+                    "SyslogLevelPrefix": "yes", 
+                    "SyslogPriority": "30", 
+                    "SystemCallErrorNumber": "0", 
+                    "TTYReset": "no", 
+                    "TTYVHangup": "no", 
+                    "TTYVTDisallocate": "no", 
+                    "TasksAccounting": "no", 
+                    "TasksCurrent": "18446744073709551615", 
+                    "TasksMax": "18446744073709551615", 
+                    "TimeoutStartUSec": "1min 30s", 
+                    "TimeoutStopUSec": "1min 30s", 
+                    "TimerSlackNSec": "50000", 
+                    "Transient": "no", 
+                    "Type": "simple", 
+                    "UMask": "0022", 
+                    "UnitFilePreset": "disabled", 
+                    "UnitFileState": "enabled", 
+                    "User": "sensu", 
+                    "WantedBy": "network-online.target", 
+                    "Wants": "system.slice", 
+                    "WatchdogTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "WatchdogTimestampMonotonic": "2048315835", 
+                    "WatchdogUSec": "0"
+                }
+            }, 
+            {
+                "_ansible_ignore_errors": null, 
+                "_ansible_item_result": true, 
+                "_ansible_no_log": false, 
+                "_ansible_parsed": true, 
+                "changed": false, 
+                "failed": false, 
+                "invocation": {
+                    "module_args": {
+                        "daemon_reload": false, 
+                        "enabled": null, 
+                        "masked": null, 
+                        "name": "sensu-client", 
+                        "no_block": false, 
+                        "state": "started", 
+                        "user": false
+                    }
+                }, 
+                "item": "sensu-client", 
+                "name": "sensu-client", 
+                "state": "started", 
+                "status": {
+                    "ActiveEnterTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ActiveEnterTimestampMonotonic": "2049086336", 
+                    "ActiveExitTimestampMonotonic": "0", 
+                    "ActiveState": "active", 
+                    "After": "basic.target network-online.target systemd-journald.socket system.slice", 
+                    "AllowIsolate": "no", 
+                    "AmbientCapabilities": "0", 
+                    "AssertResult": "yes", 
+                    "AssertTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "AssertTimestampMonotonic": "2049085473", 
+                    "Before": "shutdown.target", 
+                    "BlockIOAccounting": "no", 
+                    "BlockIOWeight": "18446744073709551615", 
+                    "CPUAccounting": "no", 
+                    "CPUQuotaPerSecUSec": "infinity", 
+                    "CPUSchedulingPolicy": "0", 
+                    "CPUSchedulingPriority": "0", 
+                    "CPUSchedulingResetOnFork": "no", 
+                    "CPUShares": "18446744073709551615", 
+                    "CanIsolate": "no", 
+                    "CanReload": "no", 
+                    "CanStart": "yes", 
+                    "CanStop": "yes", 
+                    "CapabilityBoundingSet": "18446744073709551615", 
+                    "ConditionResult": "yes", 
+                    "ConditionTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ConditionTimestampMonotonic": "2049085473", 
+                    "Conflicts": "shutdown.target", 
+                    "ControlGroup": "/system.slice/sensu-client.service", 
+                    "ControlPID": "0", 
+                    "DefaultDependencies": "yes", 
+                    "Delegate": "no", 
+                    "Description": "sensu client", 
+                    "DevicePolicy": "auto", 
+                    "ExecMainCode": "0", 
+                    "ExecMainExitTimestampMonotonic": "0", 
+                    "ExecMainPID": "1677", 
+                    "ExecMainStartTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ExecMainStartTimestampMonotonic": "2049086250", 
+                    "ExecMainStatus": "0", 
+                    "ExecStart": "{ path=/opt/sensu/bin/sensu-service ; argv[]=/opt/sensu/bin/sensu-service start client ; ignore_errors=no ; start_time=[Sun 2018-01-07 12:42:19 EST] ; stop_time=[n/a] ; pid=1677 ; code=(null) ; status=0/0 }", 
+                    "FailureAction": "none", 
+                    "FileDescriptorStoreMax": "0", 
+                    "FragmentPath": "/usr/lib/systemd/system/sensu-client.service", 
+                    "Group": "sensu", 
+                    "GuessMainPID": "yes", 
+                    "IOScheduling": "0", 
+                    "Id": "sensu-client.service", 
+                    "IgnoreOnIsolate": "no", 
+                    "IgnoreOnSnapshot": "no", 
+                    "IgnoreSIGPIPE": "yes", 
+                    "InactiveEnterTimestampMonotonic": "0", 
+                    "InactiveExitTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "InactiveExitTimestampMonotonic": "2049086336", 
+                    "JobTimeoutAction": "none", 
+                    "JobTimeoutUSec": "0", 
+                    "KillMode": "process", 
+                    "KillSignal": "15", 
+                    "LimitAS": "18446744073709551615", 
+                    "LimitCORE": "18446744073709551615", 
+                    "LimitCPU": "18446744073709551615", 
+                    "LimitDATA": "18446744073709551615", 
+                    "LimitFSIZE": "18446744073709551615", 
+                    "LimitLOCKS": "18446744073709551615", 
+                    "LimitMEMLOCK": "65536", 
+                    "LimitMSGQUEUE": "819200", 
+                    "LimitNICE": "0", 
+                    "LimitNOFILE": "4096", 
+                    "LimitNPROC": "7194", 
+                    "LimitRSS": "18446744073709551615", 
+                    "LimitRTPRIO": "0", 
+                    "LimitRTTIME": "18446744073709551615", 
+                    "LimitSIGPENDING": "7194", 
+                    "LimitSTACK": "18446744073709551615", 
+                    "LoadState": "loaded", 
+                    "MainPID": "1677", 
+                    "MemoryAccounting": "no", 
+                    "MemoryCurrent": "18446744073709551615", 
+                    "MemoryLimit": "18446744073709551615", 
+                    "MountFlags": "0", 
+                    "Names": "sensu-client.service", 
+                    "NeedDaemonReload": "no", 
+                    "Nice": "0", 
+                    "NoNewPrivileges": "no", 
+                    "NonBlocking": "no", 
+                    "NotifyAccess": "none", 
+                    "OOMScoreAdjust": "0", 
+                    "OnFailureJobMode": "replace", 
+                    "PermissionsStartOnly": "no", 
+                    "PrivateDevices": "no", 
+                    "PrivateNetwork": "no", 
+                    "PrivateTmp": "no", 
+                    "ProtectHome": "no", 
+                    "ProtectSystem": "no", 
+                    "RefuseManualStart": "no", 
+                    "RefuseManualStop": "no", 
+                    "RemainAfterExit": "no", 
+                    "Requires": "basic.target", 
+                    "Restart": "on-failure", 
+                    "RestartUSec": "1min", 
+                    "Result": "success", 
+                    "RootDirectoryStartOnly": "no", 
+                    "RuntimeDirectoryMode": "0755", 
+                    "SameProcessGroup": "no", 
+                    "SecureBits": "0", 
+                    "SendSIGHUP": "no", 
+                    "SendSIGKILL": "yes", 
+                    "Slice": "system.slice", 
+                    "StandardError": "inherit", 
+                    "StandardInput": "null", 
+                    "StandardOutput": "journal", 
+                    "StartLimitAction": "none", 
+                    "StartLimitBurst": "5", 
+                    "StartLimitInterval": "10000000", 
+                    "StartupBlockIOWeight": "18446744073709551615", 
+                    "StartupCPUShares": "18446744073709551615", 
+                    "StatusErrno": "0", 
+                    "StopWhenUnneeded": "no", 
+                    "SubState": "running", 
+                    "SyslogLevelPrefix": "yes", 
+                    "SyslogPriority": "30", 
+                    "SystemCallErrorNumber": "0", 
+                    "TTYReset": "no", 
+                    "TTYVHangup": "no", 
+                    "TTYVTDisallocate": "no", 
+                    "TasksAccounting": "no", 
+                    "TasksCurrent": "18446744073709551615", 
+                    "TasksMax": "18446744073709551615", 
+                    "TimeoutStartUSec": "1min 30s", 
+                    "TimeoutStopUSec": "1min 30s", 
+                    "TimerSlackNSec": "50000", 
+                    "Transient": "no", 
+                    "Type": "simple", 
+                    "UMask": "0022", 
+                    "UnitFilePreset": "disabled", 
+                    "UnitFileState": "enabled", 
+                    "User": "sensu", 
+                    "WantedBy": "network-online.target", 
+                    "Wants": "system.slice", 
+                    "WatchdogTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "WatchdogTimestampMonotonic": "2049086301", 
+                    "WatchdogUSec": "0"
+                }
+            }
+        ]
+    }
+}
+2018-01-07 13:03:17,691 p=17918 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 13:03:17,745 p=17918 u=root |  fatal: [192.0.2.248]: FAILED! => {"msg": "The conditional check 'service_status.results.state != \"started\"' failed. The error was: error while evaluating conditional (service_status.results.state != \"started\"): 'list object' has no attribute 'state'\n\nThe error appears to have been in '/root/ansible_deploy_sensu_ha/roles/server/sensu-server-install/tasks/main.yaml': line 65, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n- debug: var=service_status\n- fail:\n  ^ here\n"}
+2018-01-07 13:03:17,749 p=17918 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:03:17,749 p=17918 u=root |  192.0.2.248                : ok=11   changed=0    unreachable=0    failed=1   
+2018-01-07 13:06:42,232 p=18160 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:06:42,266 p=18160 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:06:43,242 p=18160 u=root |  ok: [192.0.2.248]
+2018-01-07 13:06:43,250 p=18160 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:06:43,610 p=18160 u=root |  ok: [192.0.2.248]
+2018-01-07 13:06:43,624 p=18160 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:06:48,660 p=18160 u=root |  ok: [192.0.2.248]
+2018-01-07 13:06:48,679 p=18160 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:06:50,447 p=18160 u=root |  ok: [192.0.2.248]
+2018-01-07 13:06:50,466 p=18160 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:06:51,547 p=18160 u=root |  ok: [192.0.2.248]
+2018-01-07 13:06:51,566 p=18160 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:06:52,646 p=18160 u=root |  ok: [192.0.2.248]
+2018-01-07 13:06:52,663 p=18160 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:06:53,705 p=18160 u=root |  ok: [192.0.2.248]
+2018-01-07 13:06:53,724 p=18160 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:06:54,805 p=18160 u=root |  ok: [192.0.2.248]
+2018-01-07 13:06:54,825 p=18160 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:06:55,825 p=18160 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:06:56,264 p=18160 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:06:56,291 p=18160 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:06:56,947 p=18160 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:06:57,397 p=18160 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:06:57,435 p=18160 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 13:06:57,643 p=18160 u=root |  ok: [192.0.2.248] => {
+    "service_status": {
+        "changed": false, 
+        "msg": "All items completed", 
+        "results": [
+            {
+                "_ansible_ignore_errors": null, 
+                "_ansible_item_result": true, 
+                "_ansible_no_log": false, 
+                "_ansible_parsed": true, 
+                "changed": false, 
+                "failed": false, 
+                "invocation": {
+                    "module_args": {
+                        "daemon_reload": false, 
+                        "enabled": null, 
+                        "masked": null, 
+                        "name": "sensu-server", 
+                        "no_block": false, 
+                        "state": "started", 
+                        "user": false
+                    }
+                }, 
+                "item": "sensu-server", 
+                "name": "sensu-server", 
+                "state": "started", 
+                "status": {
+                    "ActiveEnterTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ActiveEnterTimestampMonotonic": "2048315902", 
+                    "ActiveExitTimestampMonotonic": "0", 
+                    "ActiveState": "active", 
+                    "After": "basic.target network-online.target systemd-journald.socket system.slice", 
+                    "AllowIsolate": "no", 
+                    "AmbientCapabilities": "0", 
+                    "AssertResult": "yes", 
+                    "AssertTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "AssertTimestampMonotonic": "2048310320", 
+                    "Before": "shutdown.target", 
+                    "BlockIOAccounting": "no", 
+                    "BlockIOWeight": "18446744073709551615", 
+                    "CPUAccounting": "no", 
+                    "CPUQuotaPerSecUSec": "infinity", 
+                    "CPUSchedulingPolicy": "0", 
+                    "CPUSchedulingPriority": "0", 
+                    "CPUSchedulingResetOnFork": "no", 
+                    "CPUShares": "18446744073709551615", 
+                    "CanIsolate": "no", 
+                    "CanReload": "no", 
+                    "CanStart": "yes", 
+                    "CanStop": "yes", 
+                    "CapabilityBoundingSet": "18446744073709551615", 
+                    "ConditionResult": "yes", 
+                    "ConditionTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ConditionTimestampMonotonic": "2048310319", 
+                    "Conflicts": "shutdown.target", 
+                    "ControlGroup": "/system.slice/sensu-server.service", 
+                    "ControlPID": "0", 
+                    "DefaultDependencies": "yes", 
+                    "Delegate": "no", 
+                    "Description": "sensu server", 
+                    "DevicePolicy": "auto", 
+                    "ExecMainCode": "0", 
+                    "ExecMainExitTimestampMonotonic": "0", 
+                    "ExecMainPID": "1662", 
+                    "ExecMainStartTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "ExecMainStartTimestampMonotonic": "2048315731", 
+                    "ExecMainStatus": "0", 
+                    "ExecStart": "{ path=/opt/sensu/bin/sensu-service ; argv[]=/opt/sensu/bin/sensu-service start server ; ignore_errors=no ; start_time=[Sun 2018-01-07 12:42:18 EST] ; stop_time=[n/a] ; pid=1662 ; code=(null) ; status=0/0 }", 
+                    "FailureAction": "none", 
+                    "FileDescriptorStoreMax": "0", 
+                    "FragmentPath": "/usr/lib/systemd/system/sensu-server.service", 
+                    "Group": "sensu", 
+                    "GuessMainPID": "yes", 
+                    "IOScheduling": "0", 
+                    "Id": "sensu-server.service", 
+                    "IgnoreOnIsolate": "no", 
+                    "IgnoreOnSnapshot": "no", 
+                    "IgnoreSIGPIPE": "yes", 
+                    "InactiveEnterTimestampMonotonic": "0", 
+                    "InactiveExitTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "InactiveExitTimestampMonotonic": "2048315902", 
+                    "JobTimeoutAction": "none", 
+                    "JobTimeoutUSec": "0", 
+                    "KillMode": "process", 
+                    "KillSignal": "15", 
+                    "LimitAS": "18446744073709551615", 
+                    "LimitCORE": "18446744073709551615", 
+                    "LimitCPU": "18446744073709551615", 
+                    "LimitDATA": "18446744073709551615", 
+                    "LimitFSIZE": "18446744073709551615", 
+                    "LimitLOCKS": "18446744073709551615", 
+                    "LimitMEMLOCK": "65536", 
+                    "LimitMSGQUEUE": "819200", 
+                    "LimitNICE": "0", 
+                    "LimitNOFILE": "4096", 
+                    "LimitNPROC": "7194", 
+                    "LimitRSS": "18446744073709551615", 
+                    "LimitRTPRIO": "0", 
+                    "LimitRTTIME": "18446744073709551615", 
+                    "LimitSIGPENDING": "7194", 
+                    "LimitSTACK": "18446744073709551615", 
+                    "LoadState": "loaded", 
+                    "MainPID": "1662", 
+                    "MemoryAccounting": "no", 
+                    "MemoryCurrent": "18446744073709551615", 
+                    "MemoryLimit": "18446744073709551615", 
+                    "MountFlags": "0", 
+                    "Names": "sensu-server.service", 
+                    "NeedDaemonReload": "no", 
+                    "Nice": "0", 
+                    "NoNewPrivileges": "no", 
+                    "NonBlocking": "no", 
+                    "NotifyAccess": "none", 
+                    "OOMScoreAdjust": "0", 
+                    "OnFailureJobMode": "replace", 
+                    "PermissionsStartOnly": "no", 
+                    "PrivateDevices": "no", 
+                    "PrivateNetwork": "no", 
+                    "PrivateTmp": "no", 
+                    "ProtectHome": "no", 
+                    "ProtectSystem": "no", 
+                    "RefuseManualStart": "no", 
+                    "RefuseManualStop": "no", 
+                    "RemainAfterExit": "no", 
+                    "Requires": "basic.target", 
+                    "Restart": "on-failure", 
+                    "RestartUSec": "1min", 
+                    "Result": "success", 
+                    "RootDirectoryStartOnly": "no", 
+                    "RuntimeDirectoryMode": "0755", 
+                    "SameProcessGroup": "no", 
+                    "SecureBits": "0", 
+                    "SendSIGHUP": "no", 
+                    "SendSIGKILL": "yes", 
+                    "Slice": "system.slice", 
+                    "StandardError": "inherit", 
+                    "StandardInput": "null", 
+                    "StandardOutput": "journal", 
+                    "StartLimitAction": "none", 
+                    "StartLimitBurst": "5", 
+                    "StartLimitInterval": "10000000", 
+                    "StartupBlockIOWeight": "18446744073709551615", 
+                    "StartupCPUShares": "18446744073709551615", 
+                    "StatusErrno": "0", 
+                    "StopWhenUnneeded": "no", 
+                    "SubState": "running", 
+                    "SyslogLevelPrefix": "yes", 
+                    "SyslogPriority": "30", 
+                    "SystemCallErrorNumber": "0", 
+                    "TTYReset": "no", 
+                    "TTYVHangup": "no", 
+                    "TTYVTDisallocate": "no", 
+                    "TasksAccounting": "no", 
+                    "TasksCurrent": "18446744073709551615", 
+                    "TasksMax": "18446744073709551615", 
+                    "TimeoutStartUSec": "1min 30s", 
+                    "TimeoutStopUSec": "1min 30s", 
+                    "TimerSlackNSec": "50000", 
+                    "Transient": "no", 
+                    "Type": "simple", 
+                    "UMask": "0022", 
+                    "UnitFilePreset": "disabled", 
+                    "UnitFileState": "enabled", 
+                    "User": "sensu", 
+                    "WantedBy": "network-online.target", 
+                    "Wants": "system.slice", 
+                    "WatchdogTimestamp": "Sun 2018-01-07 12:42:18 EST", 
+                    "WatchdogTimestampMonotonic": "2048315835", 
+                    "WatchdogUSec": "0"
+                }
+            }, 
+            {
+                "_ansible_ignore_errors": null, 
+                "_ansible_item_result": true, 
+                "_ansible_no_log": false, 
+                "_ansible_parsed": true, 
+                "changed": false, 
+                "failed": false, 
+                "invocation": {
+                    "module_args": {
+                        "daemon_reload": false, 
+                        "enabled": null, 
+                        "masked": null, 
+                        "name": "sensu-client", 
+                        "no_block": false, 
+                        "state": "started", 
+                        "user": false
+                    }
+                }, 
+                "item": "sensu-client", 
+                "name": "sensu-client", 
+                "state": "started", 
+                "status": {
+                    "ActiveEnterTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ActiveEnterTimestampMonotonic": "2049086336", 
+                    "ActiveExitTimestampMonotonic": "0", 
+                    "ActiveState": "active", 
+                    "After": "basic.target network-online.target systemd-journald.socket system.slice", 
+                    "AllowIsolate": "no", 
+                    "AmbientCapabilities": "0", 
+                    "AssertResult": "yes", 
+                    "AssertTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "AssertTimestampMonotonic": "2049085473", 
+                    "Before": "shutdown.target", 
+                    "BlockIOAccounting": "no", 
+                    "BlockIOWeight": "18446744073709551615", 
+                    "CPUAccounting": "no", 
+                    "CPUQuotaPerSecUSec": "infinity", 
+                    "CPUSchedulingPolicy": "0", 
+                    "CPUSchedulingPriority": "0", 
+                    "CPUSchedulingResetOnFork": "no", 
+                    "CPUShares": "18446744073709551615", 
+                    "CanIsolate": "no", 
+                    "CanReload": "no", 
+                    "CanStart": "yes", 
+                    "CanStop": "yes", 
+                    "CapabilityBoundingSet": "18446744073709551615", 
+                    "ConditionResult": "yes", 
+                    "ConditionTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ConditionTimestampMonotonic": "2049085473", 
+                    "Conflicts": "shutdown.target", 
+                    "ControlGroup": "/system.slice/sensu-client.service", 
+                    "ControlPID": "0", 
+                    "DefaultDependencies": "yes", 
+                    "Delegate": "no", 
+                    "Description": "sensu client", 
+                    "DevicePolicy": "auto", 
+                    "ExecMainCode": "0", 
+                    "ExecMainExitTimestampMonotonic": "0", 
+                    "ExecMainPID": "1677", 
+                    "ExecMainStartTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "ExecMainStartTimestampMonotonic": "2049086250", 
+                    "ExecMainStatus": "0", 
+                    "ExecStart": "{ path=/opt/sensu/bin/sensu-service ; argv[]=/opt/sensu/bin/sensu-service start client ; ignore_errors=no ; start_time=[Sun 2018-01-07 12:42:19 EST] ; stop_time=[n/a] ; pid=1677 ; code=(null) ; status=0/0 }", 
+                    "FailureAction": "none", 
+                    "FileDescriptorStoreMax": "0", 
+                    "FragmentPath": "/usr/lib/systemd/system/sensu-client.service", 
+                    "Group": "sensu", 
+                    "GuessMainPID": "yes", 
+                    "IOScheduling": "0", 
+                    "Id": "sensu-client.service", 
+                    "IgnoreOnIsolate": "no", 
+                    "IgnoreOnSnapshot": "no", 
+                    "IgnoreSIGPIPE": "yes", 
+                    "InactiveEnterTimestampMonotonic": "0", 
+                    "InactiveExitTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "InactiveExitTimestampMonotonic": "2049086336", 
+                    "JobTimeoutAction": "none", 
+                    "JobTimeoutUSec": "0", 
+                    "KillMode": "process", 
+                    "KillSignal": "15", 
+                    "LimitAS": "18446744073709551615", 
+                    "LimitCORE": "18446744073709551615", 
+                    "LimitCPU": "18446744073709551615", 
+                    "LimitDATA": "18446744073709551615", 
+                    "LimitFSIZE": "18446744073709551615", 
+                    "LimitLOCKS": "18446744073709551615", 
+                    "LimitMEMLOCK": "65536", 
+                    "LimitMSGQUEUE": "819200", 
+                    "LimitNICE": "0", 
+                    "LimitNOFILE": "4096", 
+                    "LimitNPROC": "7194", 
+                    "LimitRSS": "18446744073709551615", 
+                    "LimitRTPRIO": "0", 
+                    "LimitRTTIME": "18446744073709551615", 
+                    "LimitSIGPENDING": "7194", 
+                    "LimitSTACK": "18446744073709551615", 
+                    "LoadState": "loaded", 
+                    "MainPID": "1677", 
+                    "MemoryAccounting": "no", 
+                    "MemoryCurrent": "18446744073709551615", 
+                    "MemoryLimit": "18446744073709551615", 
+                    "MountFlags": "0", 
+                    "Names": "sensu-client.service", 
+                    "NeedDaemonReload": "no", 
+                    "Nice": "0", 
+                    "NoNewPrivileges": "no", 
+                    "NonBlocking": "no", 
+                    "NotifyAccess": "none", 
+                    "OOMScoreAdjust": "0", 
+                    "OnFailureJobMode": "replace", 
+                    "PermissionsStartOnly": "no", 
+                    "PrivateDevices": "no", 
+                    "PrivateNetwork": "no", 
+                    "PrivateTmp": "no", 
+                    "ProtectHome": "no", 
+                    "ProtectSystem": "no", 
+                    "RefuseManualStart": "no", 
+                    "RefuseManualStop": "no", 
+                    "RemainAfterExit": "no", 
+                    "Requires": "basic.target", 
+                    "Restart": "on-failure", 
+                    "RestartUSec": "1min", 
+                    "Result": "success", 
+                    "RootDirectoryStartOnly": "no", 
+                    "RuntimeDirectoryMode": "0755", 
+                    "SameProcessGroup": "no", 
+                    "SecureBits": "0", 
+                    "SendSIGHUP": "no", 
+                    "SendSIGKILL": "yes", 
+                    "Slice": "system.slice", 
+                    "StandardError": "inherit", 
+                    "StandardInput": "null", 
+                    "StandardOutput": "journal", 
+                    "StartLimitAction": "none", 
+                    "StartLimitBurst": "5", 
+                    "StartLimitInterval": "10000000", 
+                    "StartupBlockIOWeight": "18446744073709551615", 
+                    "StartupCPUShares": "18446744073709551615", 
+                    "StatusErrno": "0", 
+                    "StopWhenUnneeded": "no", 
+                    "SubState": "running", 
+                    "SyslogLevelPrefix": "yes", 
+                    "SyslogPriority": "30", 
+                    "SystemCallErrorNumber": "0", 
+                    "TTYReset": "no", 
+                    "TTYVHangup": "no", 
+                    "TTYVTDisallocate": "no", 
+                    "TasksAccounting": "no", 
+                    "TasksCurrent": "18446744073709551615", 
+                    "TasksMax": "18446744073709551615", 
+                    "TimeoutStartUSec": "1min 30s", 
+                    "TimeoutStopUSec": "1min 30s", 
+                    "TimerSlackNSec": "50000", 
+                    "Transient": "no", 
+                    "Type": "simple", 
+                    "UMask": "0022", 
+                    "UnitFilePreset": "disabled", 
+                    "UnitFileState": "enabled", 
+                    "User": "sensu", 
+                    "WantedBy": "network-online.target", 
+                    "Wants": "system.slice", 
+                    "WatchdogTimestamp": "Sun 2018-01-07 12:42:19 EST", 
+                    "WatchdogTimestampMonotonic": "2049086301", 
+                    "WatchdogUSec": "0"
+                }
+            }
+        ]
+    }
+}
+2018-01-07 13:06:57,662 p=18160 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 13:06:57,823 p=18160 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Sensu Server is not running"}
+2018-01-07 13:06:57,827 p=18160 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:06:57,828 p=18160 u=root |  192.0.2.248                : ok=11   changed=0    unreachable=0    failed=1   
+2018-01-07 13:19:14,787 p=18829 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:19:14,825 p=18829 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:19:16,561 p=18829 u=root |  ok: [192.0.2.248]
+2018-01-07 13:19:16,578 p=18829 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:19:17,332 p=18829 u=root |  ok: [192.0.2.248]
+2018-01-07 13:19:17,347 p=18829 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:19:23,315 p=18829 u=root |  ok: [192.0.2.248]
+2018-01-07 13:19:23,323 p=18829 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:19:24,708 p=18829 u=root |  ok: [192.0.2.248]
+2018-01-07 13:19:24,727 p=18829 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:19:25,819 p=18829 u=root |  ok: [192.0.2.248]
+2018-01-07 13:19:25,838 p=18829 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:19:26,924 p=18829 u=root |  ok: [192.0.2.248]
+2018-01-07 13:19:26,944 p=18829 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:19:28,017 p=18829 u=root |  ok: [192.0.2.248]
+2018-01-07 13:19:28,035 p=18829 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:19:29,106 p=18829 u=root |  ok: [192.0.2.248]
+2018-01-07 13:19:29,122 p=18829 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:19:29,929 p=18829 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:19:30,213 p=18829 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:19:30,230 p=18829 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:19:30,685 p=18829 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:19:31,130 p=18829 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:19:31,172 p=18829 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 13:19:31,325 p=18829 u=root |  ok: [192.0.2.248] => {
+    "service_status.results.state": "VARIABLE IS NOT DEFINED!"
+}
+2018-01-07 13:19:31,345 p=18829 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 13:19:31,503 p=18829 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Sensu Server is not running"}
+2018-01-07 13:19:31,506 p=18829 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:19:31,507 p=18829 u=root |  192.0.2.248                : ok=11   changed=0    unreachable=0    failed=1   
+2018-01-07 13:20:25,297 p=18953 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:20:25,331 p=18953 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:20:25,982 p=18953 u=root |  ok: [192.0.2.248]
+2018-01-07 13:20:25,989 p=18953 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:20:26,644 p=18953 u=root |  ok: [192.0.2.248]
+2018-01-07 13:20:26,664 p=18953 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:20:32,748 p=18953 u=root |  ok: [192.0.2.248]
+2018-01-07 13:20:32,755 p=18953 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:20:34,043 p=18953 u=root |  ok: [192.0.2.248]
+2018-01-07 13:20:34,062 p=18953 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:20:35,147 p=18953 u=root |  ok: [192.0.2.248]
+2018-01-07 13:20:35,164 p=18953 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:20:36,165 p=18953 u=root |  ok: [192.0.2.248]
+2018-01-07 13:20:36,184 p=18953 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:20:37,243 p=18953 u=root |  ok: [192.0.2.248]
+2018-01-07 13:20:37,260 p=18953 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:20:38,268 p=18953 u=root |  ok: [192.0.2.248]
+2018-01-07 13:20:38,286 p=18953 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:20:39,235 p=18953 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:20:39,662 p=18953 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:20:39,690 p=18953 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:20:40,358 p=18953 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:20:40,810 p=18953 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:20:40,853 p=18953 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 13:20:41,002 p=18953 u=root |  ok: [192.0.2.248] => {
+    "service_status.results['state']": "VARIABLE IS NOT DEFINED!"
+}
+2018-01-07 13:20:41,027 p=18953 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 13:20:41,186 p=18953 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Sensu Server is not running"}
+2018-01-07 13:20:41,191 p=18953 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:20:41,191 p=18953 u=root |  192.0.2.248                : ok=11   changed=0    unreachable=0    failed=1   
+2018-01-07 13:22:14,823 p=19103 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:22:14,856 p=19103 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:22:16,118 p=19103 u=root |  ok: [192.0.2.248]
+2018-01-07 13:22:16,126 p=19103 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:22:16,441 p=19103 u=root |  ok: [192.0.2.248]
+2018-01-07 13:22:16,448 p=19103 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:22:22,206 p=19103 u=root |  ok: [192.0.2.248]
+2018-01-07 13:22:22,213 p=19103 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:22:23,385 p=19103 u=root |  ok: [192.0.2.248]
+2018-01-07 13:22:23,402 p=19103 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:22:24,450 p=19103 u=root |  ok: [192.0.2.248]
+2018-01-07 13:22:24,467 p=19103 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:22:25,504 p=19103 u=root |  ok: [192.0.2.248]
+2018-01-07 13:22:25,521 p=19103 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:22:26,607 p=19103 u=root |  ok: [192.0.2.248]
+2018-01-07 13:22:26,624 p=19103 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:22:27,626 p=19103 u=root |  ok: [192.0.2.248]
+2018-01-07 13:22:27,646 p=19103 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:22:28,574 p=19103 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:22:28,998 p=19103 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:22:29,023 p=19103 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:22:29,671 p=19103 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:22:30,099 p=19103 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:22:30,112 p=19103 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:22:30,113 p=19103 u=root |  192.0.2.248                : ok=10   changed=0    unreachable=0    failed=0   
+2018-01-07 13:29:03,607 p=19502 u=root |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/root/ansible_deploy_sensu_ha/roles/server/sensu-server-install/tasks/main.yaml': line 58, column 10, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  shell: systemctl status sensu-server
+    state: started
+         ^ here
+
+exception type: <class 'yaml.scanner.ScannerError'>
+exception: mapping values are not allowed in this context
+  in "<unicode string>", line 58, column 10
+2018-01-07 13:29:35,332 p=19534 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:29:35,367 p=19534 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:29:36,626 p=19534 u=root |  ok: [192.0.2.248]
+2018-01-07 13:29:36,634 p=19534 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:29:36,950 p=19534 u=root |  ok: [192.0.2.248]
+2018-01-07 13:29:36,957 p=19534 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:29:42,293 p=19534 u=root |  ok: [192.0.2.248]
+2018-01-07 13:29:42,300 p=19534 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:29:43,686 p=19534 u=root |  ok: [192.0.2.248]
+2018-01-07 13:29:43,705 p=19534 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:29:44,786 p=19534 u=root |  ok: [192.0.2.248]
+2018-01-07 13:29:44,802 p=19534 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:29:45,803 p=19534 u=root |  ok: [192.0.2.248]
+2018-01-07 13:29:45,819 p=19534 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:29:46,828 p=19534 u=root |  ok: [192.0.2.248]
+2018-01-07 13:29:46,844 p=19534 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:29:47,891 p=19534 u=root |  ok: [192.0.2.248]
+2018-01-07 13:29:47,911 p=19534 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:29:48,932 p=19534 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:29:49,361 p=19534 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:29:49,388 p=19534 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:29:50,282 p=19534 u=root |  changed: [192.0.2.248]
+2018-01-07 13:29:50,302 p=19534 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 13:29:50,460 p=19534 u=root |  ok: [192.0.2.248] => {
+    "sensu_status": {
+        "changed": true, 
+        "cmd": "systemctl status sensu-server", 
+        "delta": "0:00:00.028675", 
+        "end": "2018-01-07 13:29:50.347848", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2018-01-07 13:29:50.319173", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "● sensu-server.service - sensu server\n   Loaded: loaded (/usr/lib/systemd/system/sensu-server.service; enabled; vendor preset: disabled)\n   Active: active (running) since Sun 2018-01-07 12:42:18 EST; 47min ago\n Main PID: 1662 (sensu-server)\n   CGroup: /system.slice/sensu-server.service\n           └─1662 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-server -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-server.pid -l /var/log/sensu/sensu-server.log -L info\n\nJan 07 12:42:18 base systemd[1]: Started sensu server.\nJan 07 12:42:18 base systemd[1]: Starting sensu server...", 
+        "stdout_lines": [
+            "● sensu-server.service - sensu server", 
+            "   Loaded: loaded (/usr/lib/systemd/system/sensu-server.service; enabled; vendor preset: disabled)", 
+            "   Active: active (running) since Sun 2018-01-07 12:42:18 EST; 47min ago", 
+            " Main PID: 1662 (sensu-server)", 
+            "   CGroup: /system.slice/sensu-server.service", 
+            "           └─1662 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-server -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-server.pid -l /var/log/sensu/sensu-server.log -L info", 
+            "", 
+            "Jan 07 12:42:18 base systemd[1]: Started sensu server.", 
+            "Jan 07 12:42:18 base systemd[1]: Starting sensu server..."
+        ]
+    }
+}
+2018-01-07 13:29:50,479 p=19534 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 13:29:50,535 p=19534 u=root |  fatal: [192.0.2.248]: FAILED! => {"msg": "The conditional check 'sensu_status.find('running') != 0' failed. The error was: error while evaluating conditional (sensu_status.find('running') != 0): 'dict object' has no attribute 'find'\n\nThe error appears to have been in '/root/ansible_deploy_sensu_ha/roles/server/sensu-server-install/tasks/main.yaml': line 60, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n- debug: var=sensu_status\n- fail:\n  ^ here\n"}
+2018-01-07 13:29:50,539 p=19534 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:29:50,540 p=19534 u=root |  192.0.2.248                : ok=11   changed=1    unreachable=0    failed=1   
+2018-01-07 13:31:39,249 p=19698 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:31:39,284 p=19698 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:31:40,527 p=19698 u=root |  ok: [192.0.2.248]
+2018-01-07 13:31:40,547 p=19698 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:31:41,365 p=19698 u=root |  ok: [192.0.2.248]
+2018-01-07 13:31:41,383 p=19698 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:31:46,788 p=19698 u=root |  ok: [192.0.2.248]
+2018-01-07 13:31:46,795 p=19698 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:31:48,160 p=19698 u=root |  ok: [192.0.2.248]
+2018-01-07 13:31:48,179 p=19698 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:31:49,244 p=19698 u=root |  ok: [192.0.2.248]
+2018-01-07 13:31:49,261 p=19698 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:31:50,260 p=19698 u=root |  ok: [192.0.2.248]
+2018-01-07 13:31:50,276 p=19698 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:31:51,281 p=19698 u=root |  ok: [192.0.2.248]
+2018-01-07 13:31:51,298 p=19698 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:31:52,303 p=19698 u=root |  ok: [192.0.2.248]
+2018-01-07 13:31:52,321 p=19698 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:31:53,284 p=19698 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:31:53,724 p=19698 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:31:53,754 p=19698 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:31:54,642 p=19698 u=root |  changed: [192.0.2.248]
+2018-01-07 13:31:54,662 p=19698 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 13:31:54,820 p=19698 u=root |  ok: [192.0.2.248] => {
+    "sensu_status": {
+        "changed": true, 
+        "cmd": "systemctl status sensu-server", 
+        "delta": "0:00:00.027129", 
+        "end": "2018-01-07 13:31:54.709051", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2018-01-07 13:31:54.681922", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "● sensu-server.service - sensu server\n   Loaded: loaded (/usr/lib/systemd/system/sensu-server.service; enabled; vendor preset: disabled)\n   Active: active (running) since Sun 2018-01-07 12:42:18 EST; 49min ago\n Main PID: 1662 (sensu-server)\n   CGroup: /system.slice/sensu-server.service\n           └─1662 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-server -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-server.pid -l /var/log/sensu/sensu-server.log -L info\n\nJan 07 12:42:18 base systemd[1]: Started sensu server.\nJan 07 12:42:18 base systemd[1]: Starting sensu server...", 
+        "stdout_lines": [
+            "● sensu-server.service - sensu server", 
+            "   Loaded: loaded (/usr/lib/systemd/system/sensu-server.service; enabled; vendor preset: disabled)", 
+            "   Active: active (running) since Sun 2018-01-07 12:42:18 EST; 49min ago", 
+            " Main PID: 1662 (sensu-server)", 
+            "   CGroup: /system.slice/sensu-server.service", 
+            "           └─1662 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-server -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-server.pid -l /var/log/sensu/sensu-server.log -L info", 
+            "", 
+            "Jan 07 12:42:18 base systemd[1]: Started sensu server.", 
+            "Jan 07 12:42:18 base systemd[1]: Starting sensu server..."
+        ]
+    }
+}
+2018-01-07 13:31:54,840 p=19698 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 13:31:55,000 p=19698 u=root |  fatal: [192.0.2.248]: FAILED! => {"changed": false, "msg": "Sensu server is not running"}
+2018-01-07 13:31:55,003 p=19698 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:31:55,004 p=19698 u=root |  192.0.2.248                : ok=11   changed=1    unreachable=0    failed=1   
+2018-01-07 13:34:42,173 p=19909 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:34:42,207 p=19909 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:34:43,167 p=19909 u=root |  ok: [192.0.2.248]
+2018-01-07 13:34:43,175 p=19909 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:34:43,511 p=19909 u=root |  ok: [192.0.2.248]
+2018-01-07 13:34:43,519 p=19909 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:34:48,703 p=19909 u=root |  ok: [192.0.2.248]
+2018-01-07 13:34:48,710 p=19909 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:34:49,937 p=19909 u=root |  ok: [192.0.2.248]
+2018-01-07 13:34:49,956 p=19909 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:34:51,071 p=19909 u=root |  ok: [192.0.2.248]
+2018-01-07 13:34:51,090 p=19909 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:34:52,165 p=19909 u=root |  ok: [192.0.2.248]
+2018-01-07 13:34:52,185 p=19909 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:34:53,236 p=19909 u=root |  ok: [192.0.2.248]
+2018-01-07 13:34:53,252 p=19909 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:34:54,295 p=19909 u=root |  ok: [192.0.2.248]
+2018-01-07 13:34:54,315 p=19909 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:34:55,297 p=19909 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:34:55,763 p=19909 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:34:55,790 p=19909 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:34:56,676 p=19909 u=root |  changed: [192.0.2.248]
+2018-01-07 13:34:56,696 p=19909 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 13:34:56,858 p=19909 u=root |  ok: [192.0.2.248] => {
+    "sensu_status": {
+        "changed": true, 
+        "cmd": "systemctl status sensu-server", 
+        "delta": "0:00:00.028918", 
+        "end": "2018-01-07 13:34:56.741512", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2018-01-07 13:34:56.712594", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "● sensu-server.service - sensu server\n   Loaded: loaded (/usr/lib/systemd/system/sensu-server.service; enabled; vendor preset: disabled)\n   Active: active (running) since Sun 2018-01-07 12:42:18 EST; 52min ago\n Main PID: 1662 (sensu-server)\n   CGroup: /system.slice/sensu-server.service\n           └─1662 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-server -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-server.pid -l /var/log/sensu/sensu-server.log -L info\n\nJan 07 12:42:18 base systemd[1]: Started sensu server.\nJan 07 12:42:18 base systemd[1]: Starting sensu server...", 
+        "stdout_lines": [
+            "● sensu-server.service - sensu server", 
+            "   Loaded: loaded (/usr/lib/systemd/system/sensu-server.service; enabled; vendor preset: disabled)", 
+            "   Active: active (running) since Sun 2018-01-07 12:42:18 EST; 52min ago", 
+            " Main PID: 1662 (sensu-server)", 
+            "   CGroup: /system.slice/sensu-server.service", 
+            "           └─1662 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-server -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-server.pid -l /var/log/sensu/sensu-server.log -L info", 
+            "", 
+            "Jan 07 12:42:18 base systemd[1]: Started sensu server.", 
+            "Jan 07 12:42:18 base systemd[1]: Starting sensu server..."
+        ]
+    }
+}
+2018-01-07 13:34:56,878 p=19909 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 13:34:56,926 p=19909 u=root |  skipping: [192.0.2.248]
+2018-01-07 13:34:56,931 p=19909 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:34:56,931 p=19909 u=root |  192.0.2.248                : ok=11   changed=1    unreachable=0    failed=0   
+2018-01-07 13:40:38,341 p=20259 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:40:38,376 p=20259 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:40:39,632 p=20259 u=root |  ok: [192.0.2.248]
+2018-01-07 13:40:39,640 p=20259 u=root |  TASK [server/sensu-server-install : Add sensu repository] *******************************************************************************************************************
+2018-01-07 13:40:39,959 p=20259 u=root |  ok: [192.0.2.248]
+2018-01-07 13:40:39,966 p=20259 u=root |  TASK [server/sensu-server-install : Yum update and install sensu] ***********************************************************************************************************
+2018-01-07 13:40:45,260 p=20259 u=root |  ok: [192.0.2.248]
+2018-01-07 13:40:45,280 p=20259 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/redis.json] *************************************************************************************************
+2018-01-07 13:40:47,121 p=20259 u=root |  ok: [192.0.2.248]
+2018-01-07 13:40:47,140 p=20259 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/rabbitmq.json] **********************************************************************************************
+2018-01-07 13:40:48,210 p=20259 u=root |  ok: [192.0.2.248]
+2018-01-07 13:40:48,226 p=20259 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/api.json] ***************************************************************************************************
+2018-01-07 13:40:49,224 p=20259 u=root |  ok: [192.0.2.248]
+2018-01-07 13:40:49,241 p=20259 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/client.json] ************************************************************************************************
+2018-01-07 13:40:50,269 p=20259 u=root |  ok: [192.0.2.248]
+2018-01-07 13:40:50,288 p=20259 u=root |  TASK [server/sensu-server-install : Configure /etc/sensu/conf.d/transport.json] *********************************************************************************************
+2018-01-07 13:40:51,373 p=20259 u=root |  ok: [192.0.2.248]
+2018-01-07 13:40:51,393 p=20259 u=root |  TASK [server/sensu-server-install : Enable and start sensu server and sensu client] *****************************************************************************************
+2018-01-07 13:40:52,408 p=20259 u=root |  ok: [192.0.2.248] => (item=sensu-server)
+2018-01-07 13:40:52,839 p=20259 u=root |  ok: [192.0.2.248] => (item=sensu-client)
+2018-01-07 13:40:52,866 p=20259 u=root |  TASK [server/sensu-server-install : Verify if sensu server and client are running] ******************************************************************************************
+2018-01-07 13:40:53,757 p=20259 u=root |  changed: [192.0.2.248]
+2018-01-07 13:40:53,777 p=20259 u=root |  TASK [server/sensu-server-install : debug] **********************************************************************************************************************************
+2018-01-07 13:40:53,929 p=20259 u=root |  ok: [192.0.2.248] => {
+    "sensu_status.stdout": "● sensu-server.service - sensu server\n   Loaded: loaded (/usr/lib/systemd/system/sensu-server.service; enabled; vendor preset: disabled)\n   Active: active (running) since Sun 2018-01-07 12:42:18 EST; 58min ago\n Main PID: 1662 (sensu-server)\n   CGroup: /system.slice/sensu-server.service\n           └─1662 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-server -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-server.pid -l /var/log/sensu/sensu-server.log -L info\n\nJan 07 12:42:18 base systemd[1]: Started sensu server.\nJan 07 12:42:18 base systemd[1]: Starting sensu server..."
+}
+2018-01-07 13:40:53,950 p=20259 u=root |  TASK [server/sensu-server-install : fail] ***********************************************************************************************************************************
+2018-01-07 13:40:53,999 p=20259 u=root |  skipping: [192.0.2.248]
+2018-01-07 13:40:54,003 p=20259 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:40:54,004 p=20259 u=root |  192.0.2.248                : ok=11   changed=1    unreachable=0    failed=0   
+2018-01-07 13:41:27,280 p=20362 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:41:27,315 p=20362 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:41:28,596 p=20362 u=root |  ok: [192.0.2.248]
+2018-01-07 13:41:28,603 p=20362 u=root |  TASK [server/sensu-server-remove : Disable sensu repository] ****************************************************************************************************************
+2018-01-07 13:41:28,918 p=20362 u=root |  changed: [192.0.2.248]
+2018-01-07 13:41:28,925 p=20362 u=root |  TASK [server/sensu-server-remove : Remove sensu] ****************************************************************************************************************************
+2018-01-07 13:41:41,225 p=20362 u=root |  changed: [192.0.2.248]
+2018-01-07 13:41:41,244 p=20362 u=root |  TASK [server/sensu-server-remove : Remove sensu directory /etc/sensu] *******************************************************************************************************
+2018-01-07 13:41:42,138 p=20362 u=root |  changed: [192.0.2.248]
+2018-01-07 13:41:42,158 p=20362 u=root |  TASK [server/sensu-server-remove : Check if firewalld is installed] *********************************************************************************************************
+2018-01-07 13:41:43,703 p=20362 u=root |  ok: [192.0.2.248]
+2018-01-07 13:41:43,711 p=20362 u=root |  TASK [server/sensu-server-remove : Close tcp port 4567 for dashboard access] ************************************************************************************************
+2018-01-07 13:41:44,701 p=20362 u=root |  ok: [192.0.2.248]
+2018-01-07 13:41:44,703 p=20362 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:41:44,704 p=20362 u=root |  192.0.2.248                : ok=6    changed=3    unreachable=0    failed=0   
+2018-01-07 13:45:10,308 p=20569 u=root |  PLAY [sensu-servers] ********************************************************************************************************************************************************
+2018-01-07 13:45:10,345 p=20569 u=root |  TASK [Gathering Facts] ******************************************************************************************************************************************************
+2018-01-07 13:45:11,701 p=20569 u=root |  ok: [192.0.2.248]
+2018-01-07 13:45:11,718 p=20569 u=root |  TASK [server/sensu-server-remove : Disable sensu repository] ****************************************************************************************************************
+2018-01-07 13:45:12,400 p=20569 u=root |  ok: [192.0.2.248]
+2018-01-07 13:45:12,415 p=20569 u=root |  TASK [server/sensu-server-remove : Remove sensu] ****************************************************************************************************************************
+2018-01-07 13:45:13,671 p=20569 u=root |  ok: [192.0.2.248]
+2018-01-07 13:45:13,678 p=20569 u=root |  TASK [server/sensu-server-remove : Remove sensu directory /etc/sensu] *******************************************************************************************************
+2018-01-07 13:45:14,017 p=20569 u=root |  ok: [192.0.2.248]
+2018-01-07 13:45:14,021 p=20569 u=root |  PLAY RECAP ******************************************************************************************************************************************************************
+2018-01-07 13:45:14,021 p=20569 u=root |  192.0.2.248                : ok=4    changed=0    unreachable=0    failed=0   
