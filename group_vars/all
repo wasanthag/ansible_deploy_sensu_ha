@@ -7,8 +7,13 @@ rabbitmq_vip_port: 5670
 rabbitmq_port: 5672
 rabbitmq_vhost: sensu
 rabbitmq_user: sensu
-rabbitmq_password: "sprint"
+rabbitmq_password: "xxxxx"
 sentinel_port: 26379
 env_name: "Raleigh-Lab"
 redis_port: 6379
-redis_password: "sprint"
+redis_password: "xxxxx"
+dashboard_port: 3000
+keepalived_from_email: "keepalived@example.com"
+keepalived_to_email: "sysadmins@example.com"
+vrrp_rid: 51
+smtp_server: 1.1.1.1

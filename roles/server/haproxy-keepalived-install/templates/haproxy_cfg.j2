@@ -1,0 +1,58 @@
+global
+    log         127.0.0.1 local2
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     40000
+    user        haproxy
+    group       haproxy
+    daemon
+
+defaults
+    log global
+    option contstats
+    option dontlognull
+    retries 3
+    mode tcp
+
+frontend rabbitmq
+    bind {{ haproxy_vip }}:{{rabbitmq_vip_port }}
+    default_backend rabbit-nodes
+
+backend rabbit-nodes
+    balance roundrobin
+    {% for r in groups["rabbitmq"] %}
+    server  rabbit1 {{ hostvars[r] }}:{{ rabbitmq_port }} check
+    {% endfor %}
+
+frontend sensu-api
+    bind 192.0.2.251:4567
+    default_backend sensu-api-nodes
+
+backend sensu-api-nodes
+    balance roundrobin
+    server  api1 192.0.2.225:4567 check
+    server  api2 192.0.2.235:4567 check
+    server  api3 192.0.2.245:4567 check
+
+frontend uchiwa
+    bind 192.0.2.251:3000
+    default_backend uchiwa-nodes
+
+backend uchiwa-nodes
+    balance roundrobin
+    server  uchiwa1 192.0.2.226:3000 check
+    server  uchiwa2 192.0.2.236:3000 check
+    server  uchiwa3 192.0.2.246:3000 check
+
+
+#---------------------------------------------------------------------
+# Stats.
+#---------------------------------------------------------------------
+listen stats 192.0.2.223:8080
+    mode http
+    stats enable
+    stats uri /
+    #stats hide-version
+    stats realm HAProxy\ Statistics
+    stats auth admin:passwd
+

@@ -1,0 +1,61 @@
+- name: Yum update and install keepalived and haproxy
+  yum:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  with_items:
+    - keepalived
+    - haproxy
+- name: Configure /etc/keepalived/keepalived.conf
+  template:
+    src: keepalived_conf.j2
+    dest: /etc/keepalived/keepalived.conf
+    owner: root
+    group: root
+    mode: 0644
+- name: Configure /etc/haproxy/haproxy.cfg
+  template:
+    src: haproxy_cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    owner: root
+    group: root
+    mode: 0644
+- name: Update SElinux
+  seboolean:
+    name: haproxy_connect_any
+    state: yes
+    persistent: yes
+- name: Update ip forwarding
+  shell: 'echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf ; echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf'
+- name: Enable and start keepalived and haproxy
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: true
+  with_items:
+    - keepalived
+    - haproxy
+- name: Check if firewalld is installed
+  yum:
+    list: firewalld
+  register: firewalld_op
+- name: Open tcp port {{ sensu-api-port }}for dashboard access
+  firewalld:
+    port: "{{ item }}/tcp"
+    permanent: true
+    state: enabled
+    immediate: true
+  with_items:
+    - sensu_api_port
+    - rabbitmq_vip_port
+    - dashboard_port
+  when: firewalld_op.results|selectattr("yumstate", "match", "installed")|list|length != 0
+- name: Verify if sensu API is listening on TCP port {{ sensu_api_port }}
+  get_url:
+    url: "http://{{ ansible_default_ipv4.address }}:{{ sensu_api_port }}/info"
+    dest: /tmp
+  register: sensu_api_access
+- fail:
+    msg: "Sensu API is not listening on port {{ sensu_api_port }} on server {{ ansible_default_ipv4.address }}"
+  when: sensu_api_access.status_code != 200
+   
