@@ -21,34 +21,34 @@ frontend rabbitmq
 backend rabbit-nodes
     balance roundrobin
     {% for r in groups["rabbitmq"] %}
-    server  rabbit1 {{ hostvars[r] }}:{{ rabbitmq_port }} check
+    server  {{ hostvars[r].ansible_hostname}} {{ hostvars[r].inventory_hostname }}:{{ rabbitmq_port }} check
     {% endfor %}
 
 frontend sensu-api
-    bind 192.0.2.251:4567
+    bind {{ haproxy_vip }}:{{ sensu_api_port }}
     default_backend sensu-api-nodes
 
 backend sensu-api-nodes
     balance roundrobin
-    server  api1 192.0.2.225:4567 check
-    server  api2 192.0.2.235:4567 check
-    server  api3 192.0.2.245:4567 check
+    {% for s in groups["sensu-api"] %}
+    server  {{ hostvars[s].ansible_hostname}} {{ hostvars[s].inventory_hostname }}:{{ sensu_api_port }} check
+    {% endfor %}
 
 frontend uchiwa
-    bind 192.0.2.251:3000
+    bind {{ haproxy_vip }}:{{ dashboard_port }}
     default_backend uchiwa-nodes
 
 backend uchiwa-nodes
     balance roundrobin
-    server  uchiwa1 192.0.2.226:3000 check
-    server  uchiwa2 192.0.2.236:3000 check
-    server  uchiwa3 192.0.2.246:3000 check
+    {% for u in groups["uchiwa"] %}
+    server  {{ hostvars[u].ansible_hostname}} {{ hostvars[u].inventory_hostname }}:{{ dashboard_port }} check
+    {% endfor %}
 
 
 #---------------------------------------------------------------------
 # Stats.
 #---------------------------------------------------------------------
-listen stats 192.0.2.223:8080
+listen stats {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:8080
     mode http
     stats enable
     stats uri /

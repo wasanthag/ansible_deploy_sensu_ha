@@ -24,7 +24,11 @@ vrrp_instance VI_1 {
    state MASTER
    interface eth0
    virtual_router_id {{ vrrp_rid}}
+   {% if hostvars[inventory_hostname]['ansible_default_ipv4']['address'] == groups["haproxy"][0] %}
    priority 101   ///set to 100 on slave ha proxy
+   {% else %}
+   priority 100   ///set to 100 on slave ha proxy
+   {% endif %}
    advert_int 1
    authentication {
        auth_type PASS
