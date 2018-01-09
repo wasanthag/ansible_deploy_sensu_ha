@@ -1,10 +1,3 @@
-- name: Disable sensu repository
-  yum_repository:
-    name: sensu
-    description: EPEL YUM repo
-    baseurl: https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/
-    gpgcheck: no
-    state: absent
 - name: Remove Redis
   yum:
     name: redis
