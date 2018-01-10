@@ -9,12 +9,13 @@ Ansible playbooks to deploy highly available sensu infrastructure
 * DNS or hosts files are configured for name resolution(critical for rabbitmq cluster)
 * Firewall ports are opened between target servers being monitored and Sensu infrastructure
 * Firewall ports are opened between uchiwa dashboard and users 
+* Local MTA postfix is configured to send emails from sensu servers for alerts
 # Package versions
 
 |Package           |Version      |Ports                                                     |
 |------------------|-------------|----------------------------------------------------------|
 |Redis + Sentinel  |3.2.10       |TCP 6379/26379                                            |
-|Rabbitmq          |3.6.9        |TCP 5672/25672                                            |
+|Rabbitmq          |3.6.9        |TCP 5672/25672/4369                                       |
 |HAproxy           |1.5.18       |TCP 5670-rabbitmq, 4567-sensu-api, 3000-uchiwa, 8080 stats|
 |Keepalived        |1.3.9        |                                                          |
 |Sensu server      |1.2.0-1      |                                                          |
