@@ -34,6 +34,25 @@ Following shows deploying just rabbitmq
 ```
 ansible-playbook playbooks/install_rabbitmq.yaml
 ```
+To install all the components one at a time,
+```
+ansible-playbook playbooks/install_rabbitmq.yaml
+ansible-playbook playbooks/install_redis.yaml
+ansible-playbook playbooks/install_sensu_api.yaml
+ansible-playbook playbooks/install_sensu_server.yaml
+ansible-playbook playbooks/install_uchiwa.yaml
+ansible-playbook playbooks/install_haproxy.yaml
+ansible-playbook playbooks/install_osp_checks_alerts.yaml
+```
+To install all components and configure sensu checks and alerts
+```
+ansible-playbook playbooks/install_all.yaml
+```
+To configure target hosts for sensu client ,
+```
+ansible-playbook playbooks/configure_targets.yaml
+```
+
 # To Do
 * Add options to install packages from a local folder for offline environments.
 * Add tests to verify components are installed/removed properly.
