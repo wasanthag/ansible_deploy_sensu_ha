@@ -24,4 +24,4 @@
 - name: Start sensu client
   service:
     name: sensu-client
-    state: started
+    state: restarted

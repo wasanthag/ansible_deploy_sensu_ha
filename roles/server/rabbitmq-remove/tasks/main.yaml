@@ -10,6 +10,10 @@
   file:
     path: /var/lib/rabbitmq
     state: absent
+- name: Remove /etc/rabbitmq
+  file:
+    path: /etc/rabbitmq
+    state: absent
 - name: Check if firewalld is installed
   yum:
       list: firewalld

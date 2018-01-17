@@ -10,6 +10,10 @@
   file:
     path: /etc/redis-sentinel.conf
     state: absent
+- name: Remove redis db on disk
+  file:
+    path: /var/lib/redis
+    state: absent
 - name: Check if firewalld is installed
   yum:
       list: firewalld

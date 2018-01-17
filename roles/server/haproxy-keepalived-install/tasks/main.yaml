@@ -1,4 +1,4 @@
-- name: Yum update and install keepalived and haproxy
+- name: Yum update and install keepalived,haproxy and psmisc
   yum:
     name: "{{ item }}"
     state: latest
@@ -6,6 +6,7 @@
   with_items:
     - keepalived
     - haproxy
+    - psmisc
 - name: Configure /etc/keepalived/keepalived.conf
   template:
     src: keepalived_conf.j2
